@@ -409,20 +409,22 @@ Hooks.once('lib-themerIsLoaded', () => {
 				// Set Default --[name]-light && --[name]-dark
 				palette[`${name}-light`] = new Color(color).tint(30);
 				palette[`${name}-light-contrast-text`] = new Color(palette[`${name}-light`]).contrast();
-				palette[`${name}-light-shaded-text`] = new Color(palette[`${name}-light`]).contrast() == '#000000' ? new Color(palette[`${name}-light`]).shade(70) : new Color(palette[`${name}-light`]).tint(70);
+				palette[`${name}-light-shaded-text`] = new Color(palette[`${name}-light`]).contrast() == '#00000' ? new Color(palette[`${name}-light`]).shade(70) : new Color(palette[`${name}-light`]).tint(70);
 				palette[`${name}-dark`] = new Color(color).shade(30);
 				palette[`${name}-dark-contrast-text`] = new Color(palette[`${name}-dark`]).contrast();
 				palette[`${name}-dark-shaded-text`] = new Color(palette[`${name}-dark`]).contrast() == '#ffffff' ? new Color(palette[`${name}-light`]).shade(70) : new Color(palette[`${name}-light`]).tint(70);
 				
 				// Set Default --[name]-hover && --[name]-active
-				if (palette[`${name}-contrast-text`] == '#000000') {
+				if (palette[`${name}-contrast-text`] == '#ffffff') {
 					palette[`${name}-hover`] = new Color(color).shade(15);
 					palette[`${name}-active`] = new Color(color).shade(20);
-					palette[`${name}-shade-text`] = new Color(color).shade(70);
+					palette[`${name}-shade-text`] = new Color(color).tint(70);
+					this.WARN(new Color(color).brightness())
 				}else{
 					palette[`${name}-hover`] = new Color(color).tint(15);
 					palette[`${name}-active`] = new Color(color).tint(20);
-					palette[`${name}-shaded-text`] = new Color(color).tint(70);
+					palette[`${name}-shaded-text`] = new Color(color).shade(70);
+					this.WARN(new Color(color).brightness())
 				}
 			}
 

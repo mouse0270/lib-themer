@@ -1,0 +1,67 @@
+.dnd5e.sheet .window-content {
+	background-color: var(--palette-dialog-background);
+	background-image: var(--palette-dialog-background-image);
+	background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
+	backdrop-filter: blur(8px);
+	color: var(--palette-dialog-background-contrast-text);
+}
+.dnd5e input[type="text"], .dnd5e input[type="number"], .dnd5e select,
+.dnd5e.sheet .items-list .item .item-name {
+	color: var(--palette-dialog-background-contrast-text);
+}
+.dnd5e.sheet .items-list {
+	color: var(--palette-dialog-background-shaded-text);
+}
+.dnd5e.sheet .sheet-header .summary li,
+.dnd5e.sheet.actor h4.box-title,
+.dnd5e.sheet.actor .counters .counter h4,
+.dnd5e .form-group label,
+.dnd5e.sheet.actor.npc .header-exp .experience, .dnd5e.sheet.actor.npc .header-exp .proficiency {
+	color: var(--palette-dialog-background-shaded-text);
+}
+.dnd5e.sheet.actor .ability-scores,
+.dnd5e.sheet.actor ul.skills-list,
+.dnd5e.sheet .items-list .items-header {
+	border-color: var(--palette-dialog-background-dark);
+}
+.dnd5e.sheet .sheet-header,
+.dnd5e.sheet.actor .sheet-header .summary,
+.dnd5e.sheet .sheet-navigation .item,
+.dnd5e.sheet.actor h4.box-title,
+.dnd5e.sheet .items-list .item,
+.dnd5e.sheet .filter-list .filter-item,
+.dnd5e.sheet.actor .ability-scores .ability {
+	border-bottom-color: var(--palette-dialog-background-dark);
+}
+.dnd5e.sheet.actor .ability-scores .ability .ability-modifiers span.ability-save {
+	border-left-color: var(--palette-dialog-background-dark);
+}
+.dnd5e.sheet .sheet-header img.profile,
+.dnd5e.sheet .sheet-header .summary li,
+.dnd5e.sheet.actor .sheet-header .attributes .attribute,
+.dnd5e.sheet.actor .ability-scores .ability .ability-modifiers span.ability-mod {
+	border-right-color: var(--palette-dialog-background-dark);
+}
+.dnd5e.sheet .sheet-header .summary,
+.dnd5e.sheet.actor .ability-scores .ability .ability-modifiers span.ability-mod, 
+.dnd5e.sheet.actor .ability-scores .ability .ability-modifiers span.ability-save {
+	border-top-color: var(--palette-dialog-background-dark);
+}
+
+.dnd5e.sheet .sheet-navigation .item.active,
+.dnd5e.sheet .filter-list .filter-item.active {
+	border-bottom-color: var(--palette-primary);
+}
+.dnd5e.sheet .editable h4.rollable:hover, 
+.dnd5e.sheet .editable .rollable:hover > h4 {
+	color: var(--palette-dialog-background-contrast-text);
+	text-shadow: 0 0 10px var(--palette-primary-light);
+}
+.dnd5e.sheet.actor .inventory-list .item-summary {
+	border-top-color: var(--palette-dialog-background-dark);
+	color: var(--palette-dialog-background-contrast-text);
+}
+.dnd5e.sheet .filter-list .filter-item:hover {
+	border-bottom-color: var(--palette-primary-hover);
+	text-shadow: 0 0 10px var(--palette-primary-light);
+}

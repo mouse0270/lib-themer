@@ -27,6 +27,11 @@ class Color {
 		return `#${rgba.r.toString(16).padStart(2, '0')}${rgba.g.toString(16).padStart(2, '0')}${rgba.b.toString(16).padStart(2, '0')}${Math.round(rgba.a * 255).toString(16).padStart(2, '0')}`
 	}
 
+	brightness = () => {
+		let rgba = this.#hex2rgba(this.color);
+		return (rgba.r * 0.299 + rgba.g * 0.587 + rgba.b * 0.114)
+	}
+
 	contrast = () => {
 		let rgba = this.#hex2rgba(this.color);
 		return (rgba.r * 0.299 + rgba.g * 0.587 + rgba.b * 0.114) > 130 ? '#000000' : '#ffffff';

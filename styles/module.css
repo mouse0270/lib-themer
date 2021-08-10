@@ -8,7 +8,7 @@
 }
 #libThemerDialog nav {
     background-color: rgba(0, 0, 0, 0.2);
-    color: rgb(0 0 0 );
+    color: rgb(0 0 0);
     height: 100%;
     overflow-y: auto;
     position: absolute;
@@ -25,10 +25,10 @@
 #libThemerDialog nav ul li:hover,
 #libThemerDialog nav ul li:active,
 #libThemerDialog nav ul li:focus {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 #libThemerDialog nav ul li.active {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 #libThemerDialog nav ul li a {
     align-items: center;

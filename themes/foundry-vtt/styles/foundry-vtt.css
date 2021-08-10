@@ -1,3 +1,21 @@
+#libThemerDialog nav {
+    color: var(--palette-dialog-background-contrast-text);
+}
+#libThemerDialog main {
+	background-color: var(--palette-dialog-background);
+	background-image: var(--palette-dialog-background-image);
+	background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
+	backdrop-filter: blur(8px);
+	color: var(--palette-dialog-background-contrast-text);
+}
+#libThemerDialog main footer {
+	background-color: var(--palette-dialog-background);
+	background-image: var(--palette-dialog-background-image);
+	background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
+	backdrop-filter: blur(8px);
+	color: var(--palette-dialog-background-contrast-text);
+}
+
 ::-webkit-scrollbar-thumb {
     background: var(--palette-primary-dark);
     border-color:  var(--palette-primary);
@@ -17,17 +35,21 @@ select > * {
 	background-color: var(--palette-dialog-background-light);
 	color: var(--palette-dialog-background-light-contrast-text);
 }
+
+input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+	color: var(--palette-dialog-background-contrast-text);
+}
+
 form h1.form-header, form h2.form-header, form h3.form-header {
+	color: var(--palette-dialog-background-contrast-text);
+}
+form button {
+	background-color: var(--palette-dialog-background-light);
+	border-color: var(--palette-dialog-background-dark);
 	color: var(--palette-dialog-background-contrast-text);
 }
 form .notes, form .hint {
 	color: var(--palette-dialog-background-shaded-text);
-}
-
-#libThemerDialog main {
-	background-color: var(--palette-dialog-background);
-	background-image: none;
-	color: var(--palette-dialog-background-contrast-text);
 }
 
 .app {
@@ -134,7 +156,7 @@ form .notes, form .hint {
 }
 #hotbar .macro .macro-key {
 	background-color: var(--palette-app-background-dark);
-	color: var(--palette-app-background-dark-shaded-text);
+	color: var(--palette-app-background-dark-contrast-text);
 }
 
 
