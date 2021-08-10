@@ -1,0 +1,9 @@
+{
+	"name": "Window Controls Setting",
+	
+	"--window-controls-theme": {
+		"type": "stylesheet",
+		"default": false,
+		"style": "window-controls/styles/window-controls.css"
+	}
+}

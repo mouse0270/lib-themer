@@ -1,0 +1,144 @@
+{
+	"--palette-app-background": {
+		"type": "shades",
+		"default": "#2a3132cc"
+	},
+	"--palette-app-background-image": {
+		"type": "imagevideo",
+		"default": ""
+	},
+	"--palette-dialog-background": {
+		"type": "shades",
+		"default": "#dfddd1ff"
+	},
+	"--palette-dialog-background-image": {
+		"type": "imagevideo",
+		"default": ""
+	},
+	
+
+	"--palette-primary": {
+		"type": "shades",
+		"default": "#ff6400ff"
+	},
+	"--palette-secondary": {
+		"type": "shades",
+		"default": "#3a00aeff"
+	},
+	"--palette-tertiary": {
+		"type": "shades",
+		"default": "#f44336ff"
+	},
+	"--palette-quaternary": {
+		"type": "shades",
+		"default": "#009BFFff"
+	},
+
+	"--palette-info": {
+		"type": "shades",
+		"default": "#0dcaf0ff"
+	},
+	"--palette-success": {
+		"type": "shades",
+		"default": "#198754ff"
+	},
+	"--palette-warning": {
+		"type": "shades",
+		"default": "#ffc107ff"
+	},
+	"--palette-danger": {
+		"type": "shades",
+		"default": "#dc3545ff"
+	},
+
+	"--palette-danger": {
+		"type": "shades",
+		"default": "#dc3545ff"
+	},
+
+	"--palette-light": {
+		"type": "shades",
+		"default": "#f8f9faff"
+	},
+	"--palette-dark": {
+		"type": "shades",
+		"default": "#212529ff"
+	},
+
+	"--palette-red": {
+		"type": "palette",
+		"default": "#f44336"
+	},
+	"--palette-pink": {
+		"type": "palette",
+		"default": "#e91e63"
+	},
+	"--palette-purple": {
+		"type": "palette",
+		"default": "#9c27b0"
+	},
+	"--palette-deep-purple": {
+		"type": "palette",
+		"default": "#673ab7"
+	},
+	"--palette-indigo": {
+		"type": "palette",
+		"default": "#3f51b5"
+	},
+	"--palette-blue": {
+		"type": "palette",
+		"default": "#2196f3"
+	},
+	"--palette-light-blue": {
+		"type": "palette",
+		"default": "#03a9f4"
+	},
+	"--palette-cyan": {
+		"type": "palette",
+		"default": "#00bcd4"
+	},
+	"--palette-teal": {
+		"type": "palette",
+		"default": "#009688"
+	},
+	"--palette-green": {
+		"type": "palette",
+		"default": "#4caf50"
+	},
+	"--palette-light-green": {
+		"type": "palette",
+		"default": "#8bc34a"
+	},
+	"--palette-lime": {
+		"type": "palette",
+		"default": "#cddc39"
+	},
+	"--palette-yellow": {
+		"type": "palette",
+		"default": "#ffeb3b"
+	},
+	"--palette-amber": {
+		"type": "palette",
+		"default": "#ffc107"
+	},
+	"--palette-orange": {
+		"type": "palette",
+		"default": "#ff9800"
+	},
+	"--palette-deep-orange": {
+		"type": "palette",
+		"default": "#ff5722"
+	},
+	"--palette-brown": {
+		"type": "palette",
+		"default": "#795548"
+	},
+	"--palette-grey": {
+		"type": "palette",
+		"default": "#9e9e9e"
+	},
+	"--palette-blue-grey": {
+		"type": "palette",
+		"default": "#607d8b"
+	}
+}

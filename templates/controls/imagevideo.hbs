@@ -1,0 +1,28 @@
+<div class="form-group form-group-file-picker">
+	<label for="{{property}}">{{localize name}}</label>
+	<div class="form-fields">
+		<select>
+			<option value="normal">Normal</option>
+			<option value="multiply">Multiply</option>
+			<option value="screen">Screen</option>
+			<option value="overlay">Overlay</option>
+			<option value="darken">Darken</option>
+			<option value="lighten">Lighten</option>
+			<option value="color-dodge">Color Dodge</option>
+			<option value="color-burn">Color Burn</option>
+			<option value="hard-light">Hard Light</option>
+			<option value="soft-light">Soft Light</option>
+			<option value="difference">Difference</option>
+			<option value="exclusion">Exclusion</option>
+			<option value="hue">Hue</option>
+			<option value="saturation">Saturation</option>
+			<option value="color">Color</option>
+			<option value="luminosity">Luminosity</option>
+		</select>
+		<input type="text" name="{{property}}" value="" />
+		<button type="button" class="file-picker" data-type="imagevideo" data-target="{{property}}" title="Browse Images" tabindex="-1">
+			<i class="fas fa-file-import fa-fw"></i>
+		</button>
+	</div>
+	<div class="notes">{{{markdown hint}}}</div>
+</div>

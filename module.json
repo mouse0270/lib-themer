@@ -1,30 +1,26 @@
 {
-  "name": "module",
-  "title": "New Module",
-  "description": "",
+  "name": "lib-themer",
+  "title": "Lib Themer",
+  "description": "A Library Designed to Manage CSS Variables for Theming",
   "version": "This is auto replaced",
-  "library": "false",
-  "manifestPlusVersion": "1.0.0",
+  "library": "true",
+  "manifestPlusVersion": "0.0.1",
   "minimumCoreVersion": "0.8.8",
   "compatibleCoreVersion": "0.8.8",
   "authors": [
     {
-      "name": "The League of Extraordinary FVTT Developers",
-      "url": "https://github.com/League-of-Foundry-Developers",
-      "discord": "discordID#0001"
+      "name": "Mouse0270",
+      "url": "https://github.com/mouse0270/module-credits",
+      "discord": "Mouse0270#0270"
     }
   ],
-  "dependencies": [
-
-  ],
-  "conflicts": [
-    
-  ],
-  "esmodules": [
-    "/scripts/module.js"
-  ],
+  "dependencies": [ ],
+  "conflicts": [ ],
+  "esmodules": [ ],
   "scripts": [
-    "/scripts/lib/lib.js"
+    "/scripts/lib/color.js",
+    "/scripts/module.js",
+    "/scripts/hooks.js"
   ],
   "styles": [
     "/styles/module.css"

@@ -1,0 +1,11 @@
+{
+	"title": "Tidy5e Sheet Settings",
+	
+	"--tidy5esheet-theme": {
+		"name": "Enable Tidy5e Sheet Settings",
+		"hint": "Enabling this will modify Tidy5e Sheet css to use colors from Lib Themer.",
+		"type": "stylesheet",
+		"default": false,
+		"style": "tidy5esheet/styles/tidy5esheet.css"
+	}
+}

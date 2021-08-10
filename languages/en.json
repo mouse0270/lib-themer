@@ -1,3 +1,84 @@
 {
-    "MODULE.hello": "hello"
+    "lib-themer" : {
+        "core": {
+            "title": "Lib Themer"
+        },
+        "setting": {
+           "menu.name": "Theme Options",
+           "menu.label": "Open Theming Menu",
+           "menu.hint": "A dialog that allows you to manage themes"
+        },
+        "theme": {
+            "lib-themer.name": "lib-themer-title",
+            "lib-themer.title": "Lib Themer Settings"
+        },
+        "palette": {
+            "app.background.name": "Titlebar / Sidebar Color",
+            "app.background.hint": "Color used to theme the title bar and sidebar elements of foundry.",
+            "dialog.background.name": "Dialog / Sheet Color",
+            "dialog.background.hint": "Color used to theme dialog and sheet elements of foundry.",
+            "dialog.background.image.name": "Dialog / Sheet Background Image",
+            "dialog.background.image.hint": "Image used to theme dialog and sheet elements of foundry.",
+            "primary.name": "Primary Color",
+            "primary.hint": "This color will be used to style primary elements",
+            "secondary.name": "Secondary Color",
+            "secondary.hint": "This color will be used to style secondary elements",
+            "tertiary.name": "Tertiary Color",
+            "tertiary.hint": "This color will be used to style tertiary elements",
+            "quaternary.name": "Quaternary Color",
+            "quaternary.hint": "This color will be used to style quaternary elements",
+            "light.name": "Light Color",
+            "light.hint": "This color will be used to style light elements",
+            "dark.name": "Dark Color",
+            "dark.hint": "This color will be used to style dark elements",
+
+            "info.name": "Info Color",
+            "info.hint": "This color will be used to style success related elements",
+            "success.name": "Success Color",
+            "success.hint": "This color will be used to style success related elements",
+            "warning.name": "Warning Color",
+            "warning.hint": "This color will be used to style warning related elements",
+            "danger.name": "Error Color",
+            "danger.hint": "This color will be used to style error related elements",
+
+            "red.name": "Red Color",
+            "red.hint": "This color will be used to style red colored elements",
+            "pink.name": "Pink Color",
+            "pink.hint": "This color will be used to style pink colored elements",
+            "purple.name": "Purple Color",
+            "purple.hint": "This color will be used to style purple colored elements",
+            "deep.purple.name": "Deep Purple Color",
+            "deep.purple.hint": "This color will be used to style deep purple colored elements",
+            "indigo.name": "Indigo Color",
+            "indigo.hint": "This color will be used to style indigo colored elements",
+            "blue.name": "Blue Color",
+            "blue.hint": "This color will be used to style blue colored elements",
+            "light.blue.name": "Light Blue Color",
+            "light.blue.hint": "This color will be used to style light blue colored elements",
+            "cyan.name": "Cyan Color",
+            "cyan.hint": "This color will be used to style cyan colored elements",
+            "teal.name": "Teal Color",
+            "teal.hint": "This color will be used to style teal colored elements",
+            "green.name": "Green Color",
+            "green.hint": "This color will be used to style green colored elements",
+            "light.green.name": "Light Green Color",
+            "light.green.hint": "This color will be used to style light-green colored elements",
+            "lime.name": "Lime Color",
+            "lime.hint": "This color will be used to style lime colored elements",
+            "yellow.name": "Yellow Color",
+            "yellow.hint": "This color will be used to style yellow colored elements",
+            "amber.name": "Amber Color",
+            "amber.hint": "This color will be used to style amber colored elements",
+            "orange.name": "Orange Color",
+            "orange.hint": "This color will be used to style orange colored elements",
+            "deep.orange.name": "Deep Orange Color",
+            "deep.orange.hint": "This color will be used to style deep orange colored elements",
+            "brown.name": "Brown Color",
+            "brown.hint": "This color will be used to style brown colored elements",
+            "grey.name": "Grey Color",
+            "grey.hint": "This color will be used to style grey colored elements",
+            "blue.grey.name": "Blue Grey Color",
+            "blue.grey.hint": "This color will be used to style blue grey colored elements"
+        }
+    }
 }

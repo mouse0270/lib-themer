@@ -1,0 +1,52 @@
+
+button, form button {
+    background: var(--palette-secondary);
+    border-color: var(--palette-secondary-dark);
+	color: var(--palette-secondary-contrast-text);	
+}
+button:hover,
+form button:hover {
+    background: var(--palette-secondary-hover);
+	box-shadow: none;
+}
+button:active, button.active, 
+form button:active, form button:active {
+    background: var(--palette-secondary-active);
+	box-shadow: none;
+}
+
+#controls .scene-control, #controls .control-tool {
+	background: var(--palette-primary-active);
+	border-color: var(--palette-primary-dark);
+	box-shadow: none;
+	color: var(--palette-primary-shaded-text);
+}
+#controls .scene-control:hover, 
+#controls .control-tool:hover {
+	background: var(--palette-primary-hover);
+	border-color: var(--palette-primary-dark);
+	box-shadow: 0px 0px 5px var(--palette-dark);
+}
+#controls .scene-control:active,
+#controls .scene-control:focus,
+#controls .scene-control.active, 
+#controls .control-tool:active,
+#controls .control-tool:focus, 
+#controls .control-tool.active {
+	background: var(--palette-primary-hover);
+	border-color: var(--palette-primary-dark);
+	box-shadow: 0 0 10px var(--palette-primary-dark);
+	color: var(--palette-primary-contrast-text);
+}
+#sidebar-tabs > .item:hover {
+	background: var(--palette-primary-hover);
+	box-shadow: none;
+	color: var(--palette-primary-contrast-text);
+	text-shadow: none;
+}
+#sidebar-tabs > .item.active {
+	background: var(--palette-primary-active);
+	border-color: var(--palette-primary-dark);
+	box-shadow: none;
+	color: var(--palette-primary-contrast-text);
+}

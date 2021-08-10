@@ -1,0 +1,174 @@
+::-webkit-scrollbar-thumb {
+    background: var(--palette-primary-dark);
+    border-color:  var(--palette-primary);
+}
+
+a:hover {
+	text-shadow: 0 0 8px var(--palette-tertiary);
+}
+h2 {
+	border-bottom-color: var(--palette-tertiary-dark);
+}
+select {
+	border-color: var(--palette-dialog-background-light);
+	color: var(--palette-dialog-background-contrast-text);
+}
+select > * {
+	background-color: var(--palette-dialog-background-light);
+	color: var(--palette-dialog-background-light-contrast-text);
+}
+form h1.form-header, form h2.form-header, form h3.form-header {
+	color: var(--palette-dialog-background-contrast-text);
+}
+form .notes, form .hint {
+	color: var(--palette-dialog-background-shaded-text);
+}
+
+#libThemerDialog main {
+	background-color: var(--palette-dialog-background);
+	background-image: none;
+	color: var(--palette-dialog-background-contrast-text);
+}
+
+.app {
+	background-color: var(--palette-app-background);
+	background-image: var(--palette-app-background-image);
+	background-blend-mode: var(--palette-app-background-image-blend-mode, normal);
+	backdrop-filter: blur(8px);
+	color: var(--palette-app-background-contrast-text);
+}
+.window-app .window-content {
+	background-color: var(--palette-dialog-background);
+	background-image: var(--palette-dialog-background-image);
+	background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
+	backdrop-filter: blur(8px);
+	color: var(--palette-dialog-background-contrast-text);
+}
+
+#controls, #navigation {
+	backdrop-filter: none;
+}
+#controls .scene-control,
+#controls .control-tool {
+	transition: all 0.3s ease-in-out;
+}
+.placeable-hud .control-icon.active,
+#controls .scene-control.active, 
+#controls .control-tool.active, 
+#controls .scene-control:hover, 
+#controls .control-tool:hover {
+	border-color: var(--palette-primary);
+	box-shadow: 0 0 10px var(--palette-primary);
+}
+
+#controls .control-tool.toggle {
+	background-color: var(--palette-secondary-light);
+	border-color: var(--palette-secondary);
+	box-shadow: none;
+	color: var(--palette-secondary-light-contrast-text);
+}
+#controls .control-tool.toggle:hover {
+	background-color: var(--palette-secondary-hover);
+	border-color: var(--palette-secondary);
+}
+#controls .control-tool.toggle.active {
+	background-color: var(--palette-secondary);
+	border-color: var(--palette-secondary);
+	color: var(--palette-secondary-contrast-text);
+}
+#navigation #scene-list .scene {
+	transition: all 0.3s ease-in-out;
+}
+#navigation #scene-list .scene.gm {
+	background: var(--palette-app-background-light);
+    border-color:  var(--palette-app-background-dark);
+	color: var(--palette-app-background-shaded-text);
+}
+#navigation #scene-list .scene.gm:hover {
+	background: var(--palette-app-background);
+    border-color:  var(--palette-app-background-dark);
+	color: var(--palette-app-background-contrast-text);
+}
+#navigation #scene-list .scene.view:hover,
+#navigation #scene-list .scene.view, 
+#navigation #scene-list .scene.context {
+    background: var(--palette-app-background);
+    border-color: var(--palette-primary);
+	box-shadow: 0 0 10px var(--palette-primary);
+    color: var(--palette-app-background-contrast-text);
+}
+#navigation #scene-list .scene.gm > a:hover {
+	text-shadow: none;
+}
+.tabs .item.active {
+	text-shadow: 0 0 10px var(--palette-primary-dark);	
+}
+#sidebar-tabs {
+    border-bottom-color: var(--palette-primary);
+    box-shadow: 0 0 10px var(--palette-primary-dark);	
+}
+#sidebar-tabs > .item.active {
+    border-color: var(--palette-primary-dark);
+    box-shadow: 0 0 6px inset var(--palette-primary);
+}
+.notification-pip {
+	color: var(--palette-warning);
+}
+#settings h2 {
+    background: var(--palette-app-background-light);
+    border-color: var(--palette-app-background-dark);
+    color: var(--palette-app-background-light-contrast-text);	
+}
+#hotbar .macro {
+	background-color: var(--palette-app-background);
+	background-image: none;
+	backdrop-filter: blur(8px);
+	color: var(--palette-app-background-contrast-text);
+}
+
+#hotbar .macro.inactive {
+	box-shadow: 0 0 5px var(--palette-gb-app-light) inset;
+}
+#hotbar .macro:hover {
+	box-shadow: 0 0 10px var(--palette-primary) inset;
+}
+#hotbar .macro .macro-key {
+	background-color: var(--palette-app-background-dark);
+	color: var(--palette-app-background-dark-shaded-text);
+}
+
+
+
+
+.header-actions {
+	padding: 0.5rem 0.75rem;
+}
+.directory .action-buttons button {
+    border-radius: 0;
+    line-height: normal;
+    height: auto;
+    margin: 0px;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    position: relative;
+}
+.directory .action-buttons button:first-child {
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+	border-right: 0px;
+}
+.directory .action-buttons button:last-child {
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.directory .action-buttons button i.fas {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0px;
+    margin: 0px;
+    position: absolute;
+    width: 2rem;
+    text-align: center;
+    top: 0px;
+}
