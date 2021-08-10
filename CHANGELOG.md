@@ -4,3 +4,9 @@ This module does very little by itself, its purpose is to provide developers a l
 I've packaged some default styles into this package to show how it works and how to create your own.
 
 ## THIS IS A BETA
+
+### Beta3
+Added DnD5e
+Fixed missing Foundry
+
+Beta log with color brightness... working on adding better shaded text generation.
