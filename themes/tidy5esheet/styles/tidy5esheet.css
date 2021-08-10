@@ -1,0 +1,96 @@
+.tidy5e.sheet.actor .sheet-body {
+	color: var(--palette-dialog-background-contrast-text);
+}
+.tidy5e.sheet.actor.npc .skills-list .toggle-proficient,
+.tidy5e.sheet.actor .traits .toggle-traits,
+.tidy5e.sheet.actor .traits .configure-flags {
+	border-color: var(--palette-dialog-background-dark);
+	color: var(--palette-dialog-background-shaded-text);
+}
+.tidy5e.sheet.actor.npc .skills-list .toggle-proficient:hover,
+.tidy5e.sheet.actor .traits .toggle-traits:hover,
+.tidy5e.sheet.actor .traits .configure-flags:hover {
+	color: var(--palette-dialog-background-contrast-text);
+}
+.tidy5e.sheet.actor .traits {
+	border-color: var(--palette-dialog-background-dark);
+}
+.tidy5e.sheet.actor .traits i,
+.tidy5e.sheet.actor .traits .configure-flags i.fas,
+.tidy5e.sheet.actor .items-list .items-header-labels {
+	color: var(--palette-dialog-background-shaded-text);
+}
+.tidy5e.sheet.actor .traits.show-labels label span {
+	color: var(--palette-dialog-background-shaded-text);
+}
+.tidy5e.sheet.actor .list-layout .items-list .item-detail {
+	border-left-color: var(--palette-dialog-background-dark);
+	color: var(--palette-dialog-background-shaded-text);
+}
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a {
+	color: var(--palette-dialog-background-contrast-text);
+}
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a .inactive {
+	color: var(--palette-dialog-background-shaded-text);
+}
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a .inactive:hover, 
+.tidy5e.sheet.actor .list-layout .items-list .item .item-controls:not(.context-menu) a:hover {
+	color: var(--palette-dialog-background-contrast-text);
+}
+.tidy5e.sheet.actor .inventory-currency .currency-item {
+	background-color: var(--palette-dialog-background-dark);
+	color: var(--palette-dialog-background-dark-contrast-text);
+}
+.tidy5e.sheet.actor [contenteditable], .tidy5e.sheet.actor input[type="text"] {
+	color: var(--palette-dialog-background-dark-contrast-text);
+}
+.tidy5e.sheet.actor [contenteditable=true]:hover, 
+.tidy5e.sheet.actor [contenteditable=true]:focus, 
+.tidy5e.sheet.actor input[type="text"]:hover, 
+.tidy5e.sheet.actor input[type="text"]:focus {
+	box-shadow: 0px 0px 0px 1px var(--palette-primary) inset;
+}
+
+.tidy5e.sheet.actor .tidy5e-navigation .item:hover {
+	color: var(--palette-primary);
+}
+.tidy5e.sheet.actor .tidy5e-navigation .item.active:hover {
+	color: var(--palette-dialog-background-contrast-text);
+}
+
+.tidy5e.sheet.actor .tidy5e-header {
+	background-color: var(--palette-dialog-background-light);
+    background-image: var(--palette-dialog-background-image);
+    background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
+	color: var(--palette-dialog-background-light-contrast-text);
+}
+.tidy5e.sheet.actor .tidy5e-navigation .item {
+	background-color: var(--palette-dialog-background-light);
+    background-image: var(--palette-dialog-background-image);
+    background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
+	border-bottom-color: var(--palette-dialog-background-dark);
+	color: var(--palette-dialog-background-light-contrast-text);
+}
+.tidy5e.sheet.actor .tidy5e-navigation .item.active {
+	border-color: var(--palette-dialog-background-dark);
+	border-bottom-color: transparent;
+}
+.tidy5e.sheet.actor .origin-summary li span::after {
+	background: var(--palette-dialog-background-dark);
+}
+.tidy5e.sheet.actor.npc .level-information .xp,
+.tidy5e.sheet.actor.npc .level-information .level [contenteditable] {
+	color: var(--palette-dialog-background-light-contrast-text);
+}
+.tidy5e.sheet.actor .level {
+	background-color: var(--palette-dialog-background-active);
+	color: var(--palette-dialog-background-contrast-text);
+}
+.tidy5e.sheet.actor .ability-scores .ability .ability-mod {
+	background-color: var(--palette-primary-light);
+	color: var(--palette-primary-light-shaded-text);
+}
+.tidy5e.sheet.actor .ability-scores .ability .save-mod {
+	background-color: var(--palette-secondary-light);
+	color: var(--palette-secondary-light-shaded-text);
+}
