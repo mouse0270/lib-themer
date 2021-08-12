@@ -32,6 +32,28 @@ class Color {
 		return (rgba.r * 0.299 + rgba.g * 0.587 + rgba.b * 0.114)
 	}
 
+	luminance = (color) => {
+		color = (typeof color != 'undefined' ? color : this.color);
+		color = this.#hex2rgba(color);
+
+		let colorLuminance = [color.r, color.g, color.b].map(colorValue => {
+			colorValue /= 255;
+			return colorValue <= 0.03928 ? colorValue / 12.92 : Math.pow((colorValue + 0.055) / 1.055, 2.4);
+		})
+
+		return (colorLuminance[0] * 0.2126) + (colorLuminance[1] * 0.7152) + (colorLuminance[2] * 0.0722);
+	}
+
+	contrastRatio = (color1, color2) => {
+		color2 = (typeof color2 != 'undefined' ? color2 : this.color);
+		let color1Luminance = this.luminance(color1);
+		let color2Luminance = this.luminance(color2);
+		let brightest = Math.max(color1Luminance, color2Luminance);
+		let darkest = Math.min(color1Luminance, color2Luminance);
+
+		return (brightest + 0.05) / (darkest + 0.05);
+	}
+
 	contrast = () => {
 		let rgba = this.#hex2rgba(this.color);
 		return (rgba.r * 0.299 + rgba.g * 0.587 + rgba.b * 0.114) > 130 ? '#000000' : '#ffffff';
@@ -61,4 +83,14 @@ class Color {
 	}
 	tint = (weight) => this.mix('#ffffff', weight);
 	shade = (weight) => this.mix('#000000', weight);
+	shiftColor = (weight) => {
+		weight = (typeof weight != 'undefined' ? 100 - weight : 50);
+		let shiftedColor = weight > 0 ? this.shade(weight) : this.tint(weight);
+
+		if (this.contrastRatio(shiftedColor) < 4.5) {
+			shiftedColor = this.mix(this.contrast(), Math.abs(weight));
+		}
+
+		return shiftedColor;
+	}
 }

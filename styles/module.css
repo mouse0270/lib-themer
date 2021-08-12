@@ -166,6 +166,7 @@
 	height: 50px;
 	display: flex;
 	flex: 1;
+    flex-direction: column;
 	justify-content: center;
 }
 #libThemerDialog main footer {
