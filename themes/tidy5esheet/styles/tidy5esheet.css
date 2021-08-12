@@ -64,6 +64,12 @@
     background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
 	color: var(--palette-dialog-background-light-contrast-text);
 }
+.tidy5e.sheet.actor.npc .spellcasting-ability {
+	background-color: var(--palette-dialog-background-light);
+    background-image: var(--palette-dialog-background-image);
+    background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
+	color: var(--palette-dialog-background-light-contrast-text);
+}
 .tidy5e.sheet.actor .tidy5e-navigation .item {
 	background-color: var(--palette-dialog-background-light);
     background-image: var(--palette-dialog-background-image);

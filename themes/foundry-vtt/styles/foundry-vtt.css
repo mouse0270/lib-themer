@@ -20,7 +20,12 @@
     background: var(--palette-primary-dark);
     border-color:  var(--palette-primary);
 }
-
+input::placeholder {
+	color: var(--palette-dialog-background-shaded-text);
+}
+a[href] {
+	color: var(--palette-primary);
+}
 a:hover {
 	text-shadow: 0 0 8px var(--palette-tertiary);
 }
@@ -28,7 +33,7 @@ h2 {
 	border-bottom-color: var(--palette-tertiary-dark);
 }
 select {
-	border-color: var(--palette-dialog-background-light);
+	border-color: var(--palette-dialog-background-dark);
 	color: var(--palette-dialog-background-contrast-text);
 }
 select > * {
@@ -37,6 +42,7 @@ select > * {
 }
 
 input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+	border-color: var(--palette-dialog-background-dark);
 	color: var(--palette-dialog-background-contrast-text);
 }
 
@@ -133,6 +139,20 @@ form .notes, form .hint {
     border-color: var(--palette-primary-dark);
     box-shadow: 0 0 6px inset var(--palette-primary);
 }
+
+#module-management .package-list .package-title {
+	color: var(--palette-dialog-background-contrast-text);
+}
+#module-management .package-list .package-metadata, 
+#module-management .package-list .package-description {
+	color: var(--palette-dialog-background-shaded-text);
+}
+
+#chat-controls .roll-type-select {
+	background-color: var(--palette-dialog-background-light);
+	color: var(--palette-dialog-background-light-contrast-text);
+}
+
 .notification-pip {
 	color: var(--palette-warning);
 }
@@ -193,4 +213,10 @@ form .notes, form .hint {
     width: 2rem;
     text-align: center;
     top: 0px;
+}
+nav.list-filters a.filter {
+	border-bottom-color: var(--palette-dialog-background-dark);
+}
+nav.list-filters a.filter.active {
+	border-bottom-color: var(--palette-primary);
 }

@@ -1,3 +1,7 @@
+.picker_wrapper button {
+    color: #444 !important;
+}
+
 #libThemerDialog {
     font-size: 16px;
     padding: 0px;
@@ -142,6 +146,7 @@
     flex: 0 1;
     height: auto;
     margin: 0px;
+    width: auto;
 }
 #libThemerDialog main .lib-themer-dialog-content .form-group.form-group-file-picker .form-fields button {
     align-items: center;

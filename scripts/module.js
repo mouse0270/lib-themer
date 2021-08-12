@@ -418,7 +418,7 @@ Hooks.once('lib-themerIsLoaded', () => {
 				if (palette[`${name}-contrast-text`] == '#ffffff') {
 					palette[`${name}-hover`] = new Color(color).shade(15);
 					palette[`${name}-active`] = new Color(color).shade(20);
-					palette[`${name}-shade-text`] = new Color(color).tint(70);
+					palette[`${name}-shaded-text`] = new Color(color).tint(70);
 					this.WARN(new Color(color).brightness())
 				}else{
 					palette[`${name}-hover`] = new Color(color).tint(15);

@@ -14,7 +14,7 @@
       "discord": "Mouse0270#0270"
     }
   ],
-  "dependencies": [ ],
+  "dependencies": [ { "name": "mouses-library" }, { "name": "colorsettings" } ],
   "conflicts": [ ],
   "esmodules": [ ],
   "scripts": [
