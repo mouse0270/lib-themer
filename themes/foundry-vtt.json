@@ -4,16 +4,17 @@
 	  {
 		"lang": "en",
 		"name": "English",
-		"path": "foundry-vtt/languages/en.json"
+		"path": "./modules/lib-themer/themes/foundry-vtt/languages/en.json"
 	  }
 	],
+	"description": "<p>This is a description<p>",
 	
 	"--foundry-vtt-theme": {
 		"name": "Enable Foundry Stylesheet",
 		"hint": "Enabling this will modifiy foundry css to use colors from Lib Themer.",
 		"type": "stylesheet",
 		"default": false,
-		"style": "foundry-vtt/styles/foundry-vtt.css"
+		"style": "./modules/lib-themer/themes/foundry-vtt/styles/foundry-vtt.css"
 	},
 	
 	"--foundry-vtt-colors-theme": {
@@ -21,12 +22,12 @@
 		"hint": "This sheets attempts to use more colors to stylize the buttons and other elements of foundry.",
 		"type": "stylesheet",
 		"default": false,
-		"style": "foundry-vtt/styles/foundry-vtt-colors.css"
+		"style": "./modules/lib-themer/themes/foundry-vtt/styles/foundry-vtt-colors.css"
 	},
 	
 	"--foundry-vtt-square-corners-theme": {
 		"type": "stylesheet",
 		"default": false,
-		"style": "foundry-vtt/styles/square-corners.css"
+		"style": "./modules/lib-themer/themes/foundry-vtt/styles/square-corners.css"
 	}
 }

@@ -1,4 +1,28 @@
 {
+	"--preset-core-foundry": {
+		"type": "preset",
+		"default": {
+			"lib-themer": {}
+		}
+	},
+	"--preset-cobalt": {
+		"type": "preset",
+		"default": {
+			"lib-themer": {
+				"--palette-app-background": { "default" : "#2a3132cc" },
+				"--palette-dialog-background": { "default" : "#2a3132cc" },
+				"--palette-primary": { "default" : "#336b87" },
+				"--palette-secondary": { "default" : "#41338780" },
+				"--palette-tertiary": { "default" : "#763626" },
+				"--palette-quaternary": { "default" : "#33874fcc" }
+			},
+			"foundry-vtt": {
+				"--foundry-vtt-theme": { "default": true },
+				"--foundry-vtt-colors-theme": { "default": true }
+			}
+		}
+	},
+
 	"--palette-app-background": {
 		"type": "shades",
 		"default": "#2a3132cc"
@@ -46,11 +70,6 @@
 		"type": "shades",
 		"default": "#ffc107ff"
 	},
-	"--palette-danger": {
-		"type": "shades",
-		"default": "#dc3545ff"
-	},
-
 	"--palette-danger": {
 		"type": "shades",
 		"default": "#dc3545ff"

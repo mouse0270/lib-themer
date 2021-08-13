@@ -6,6 +6,6 @@
 		"hint": "Enabling this will modify DnD 5e css to use colors from Lib Themer.",
 		"type": "stylesheet",
 		"default": false,
-		"style": "dnd5e/styles/dnd5e.css"
+		"style": "./modules/lib-themer/themes/dnd5e/styles/dnd5e.css"
 	}
 }

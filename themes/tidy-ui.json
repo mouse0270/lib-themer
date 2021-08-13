@@ -6,6 +6,6 @@
 		"hint": "Enabling this will modify Tidy UI - Game Settings css to use colors from Lib Themer.",
 		"type": "stylesheet",
 		"default": false,
-		"style": "tidy-ui/styles/tidy-ui.css"
+		"style": "./modules/lib-themer/themes/tidy-ui/styles/tidy-ui.css"
 	}
 }

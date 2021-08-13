@@ -3,6 +3,7 @@ class libThemerDialog extends FormApplication {
 	constructor(themes) {
 		super(themes)
 		this.THEMES = libThemer.setting('themeSettings');
+		this.presets = {};
 	}
 
 	static get defaultOptions() {
@@ -45,13 +46,60 @@ class libThemerDialog extends FormApplication {
 			if (!$listElement.hasClass('active')) {
 				// Deactivate current Item
 				$element.closest('ul').find('li.active').removeClass('active');
+				$('#libThemerDialog .lib-themer-dialog-title').text($element.text());
 
 				$('#libThemerDialog .lib-themer-dialog-content').html('');
 				const supportedTypes = ["color", "shades", "palette", "stylesheet", "imagevideo"];
+
+				// Show Description
+				if (theme?.description ?? false) {
+					let content = Handlebars.compile(theme.description);
+					$('#libThemerDialog .lib-themer-dialog-content').prepend(`<div class="form-group">
+						${content({})}
+					</div>`);
+				}
+
+				// Add Preset
+				if ($element.data('load') == 'lib-themer') {
+					const presetTemplate = () => {
+						let options = `<option value="custom">${libThemer.localize('preset.custom.name')}</option>`;
+						for (let [themeId, settings] of Object.entries(libThemer.themes)) {
+							for (let [settingId, setting] of Object.entries(settings)) {
+								if (setting.type == 'preset') {
+									setting = mergeObject({name: `${themeId}.${settingId.substr(2).replace(/-/g, '.')}.name`}, setting, { inplace: false });
+									this.presets[settingId] = setting;
+
+									options += `<option value="${settingId}">${game.i18n.localize(setting.name)}</option>`
+								}
+							}
+						}
+
+						return `<div class="form-group">
+							<label>${libThemer.localize(`theme.${libThemer.MODULE.name}.preset.name`)}</label>
+							<div class="form-fields">
+								<select name="lib-themer.preset">
+									${options}
+								</select>
+							</div>
+							<div class="notes">${libThemer.localize(`theme.${libThemer.MODULE.name}.preset.hint`)}</div>
+						</div>`;
+					}
+
+					$('#libThemerDialog .lib-themer-dialog-content').prepend(presetTemplate());
+					$('#libThemerDialog .lib-themer-dialog-content').find('select[name="lib-themer.preset"]').on('change', (event) => {
+						let $select = $(event.currentTarget);
+						if ($select.val() != 'custom') {
+							this.THEMES = mergeObject(libThemer.themeDefaults, this.presets[$select.val()].default, { inplace: false });
+							libThemer.setTheme(this.THEMES);
+							$listElement.removeClass('active').find('a').trigger('click');
+						}
+					});
+				}
+				
 	
 				for (let [key, setting] of Object.entries(theme)) {
 					if (supportedTypes.includes(setting.type)) {
-						let settings = Object.extend(true, {
+						let settings = mergeObject({
 							name: `lib-themer.${key.substr(2).replace(/-/g, '.')}.name`,
 							hint: `lib-themer.${key.substr(2).replace(/-/g, '.')}.hint`,
 						}, setting)
@@ -62,22 +110,15 @@ class libThemerDialog extends FormApplication {
 							// Handle if type is color picker
 							$element.find('input[is="colorpicker-input"]').on('pickerDone pickerChange', event => {
 								let $input = $(event.currentTarget);
-								let colorName = $input.attr('name');
 								let color = event.detail.hex;
-								let colors = null;
 								let settingFor = $(html).find('nav li.active a').data('load');
-								let settingName = $input.attr('name')
-	
-								if ($input.data('type') == 'color' || $input.data('type') == 'shades') {
-									colors = libThemer.generateColor(colorName, color, $input.data('type'))
-								}else if ($input.data('type') == 'palette') {
-									colors = libThemer.generatePalette(colorName, color);
-								}
+								let settingName = $input.attr('name');
+								let setting = {};
 
 								// Update Color
-								this.THEMES[settingFor][settingName].default = color;
-	
-								if (colors != null) libThemer.setTheme(settingFor, 'setColors', colors)
+								setting[`${settingFor}.${settingName}.default`] = color;
+								mergeObject(this.THEMES, foundry.utils.expandObject(setting));
+								libThemer.setTheme(foundry.utils.expandObject(setting));
 							});
 
 							// Handle if type is checkbox
@@ -85,11 +126,12 @@ class libThemerDialog extends FormApplication {
 								let $input = $(event.currentTarget);
 								let settingFor = $(html).find('nav li.active a').data('load');
 								let settingName = $input.attr('name');
+								let setting = {};
 
-								// Update Color
-								this.THEMES[settingFor][settingName].default = $input.is(':checked');
-
-								libThemer.toggleStyleSheet(`${settingName}`, this.THEMES[settingFor][settingName]);
+								// Update Stylesheet
+								setting[`${settingFor}.${settingName}.default`] = $input.is(':checked');
+								mergeObject(this.THEMES, foundry.utils.expandObject(setting));
+								libThemer.setTheme(foundry.utils.expandObject(setting));
 							});
 
 							// Handle if type is imagevideo
@@ -120,14 +162,16 @@ class libThemerDialog extends FormApplication {
 									let $input = $(event.currentTarget);
 									let settingFor = $(html).find('nav li.active a').data('load');
 									let settingName = $input.attr('name');
+									let setting = {};
 									// Update Color
 									let imageProperties = {};
 									imageProperties[`${settingName}-blend-mode`] = $input.closest('.form-fields').find('select').val();
 									imageProperties[settingName] = $input.val();
+									
+									setting[`${settingFor}.${settingName}.default`] = imageProperties
+									mergeObject(this.THEMES, foundry.utils.expandObject(setting));
 
-									this.THEMES[settingFor][settingName].default = imageProperties;
-
-									libThemer.setTheme(settingFor, 'setImage', imageProperties);
+									libThemer.setTheme(foundry.utils.expandObject(setting));
 								});
 							}
 						});
@@ -166,11 +210,9 @@ Hooks.once('lib-themerIsLoaded', () => {
 			super(module);
 
 			// Store Active Colors
+			this.themeDefaults = {};
 			this.themes = {};
-			this.cssVariables = {};
-			this.stylesheets = {};
-
-			this.gameReady = false;
+			this.presets = {};
 
 			game.modules.get("lib-themer").registerTheme = this.registerTheme;
 		}
@@ -180,25 +222,36 @@ Hooks.once('lib-themerIsLoaded', () => {
 
 			await this.registerTheme('./modules/lib-themer/themes/lib-themer.json');
 			await this.registerLocalThemes(['lib-themer.json']);
+			if (this.setting('localStorage').length > 0) {
+				await this.registerLocalStorage(this.setting('localStorage'))
+			}
+
 			this.setTheme();
 		}
 
-		gameIsReady() {
-			this.gameReady = true;
-			this.setting('themeSettings', this.themes);
-		}
-
-		setTheme(theme, property, value) {
-			if (typeof theme == 'undefined') {
-				// no property was passed, set all colors
-				if (typeof property == 'undefined') {
-					for (const [key, color] of Object.entries(this.cssVariables)) {
-						document.documentElement.style.setProperty(key, color);
-					}
-
-					for (const [themeId, settings] of Object.entries(this.themes)) {
-						for (const [settingId, setting] of Object.entries(settings).filter(([key, setting]) => setting.type == "imagevideo")) {
-							if (typeof setting.default == 'string') {
+		setTheme = (options) => {
+			// If options are left blank, use saved themes setting
+			options = (typeof options == 'undefined' ? this.themes : options);
+			for (const [themeId, settings] of Object.entries(options)) {
+				for (const [settingId, setting] of Object.entries(settings)) {
+					if (setting.type == 'color' || setting.type == 'shades' || setting.type == 'palette') {
+						let colors = setting.type == 'palette' ? this.generatePalette(settingId, setting.default) : this.generateColor(settingId, setting.default, setting.type);
+						for (const [key, color] of Object.entries(colors)) {
+							document.documentElement.style.setProperty(key, color);
+						}
+					}else if (setting.type == 'stylesheet') {
+						if (!setting.default) { // Remove Setting if its false
+							$(`head link[name="${settingId}"]`).remove();
+						} else if ($(`head link[name="${settingId}"]`).length == 0) { // If setting is enabled but stylesheet is not laoded
+							// Verify File Exists
+							this.WARN(setting, setting.style);
+							this.checkIfFileExists(setting.style).then(file => {
+								if ($(`head link[name="${settingId}"]`).length == 0) { // Check incase async call has happened again. Prevent adding again.
+									$('head').append(`<link rel="stylesheet" type="text/css" name="${settingId}" href="${file}">`);
+								}
+							});
+						} else if (setting.type == 'imagevideo') {
+							if (typeof setting.default == 'string') { // If only the background image was provided, set blend mode to normal;
 								document.documentElement.style.setProperty(`${settingId}-blend-mode`, 'normal');
 								document.documentElement.style.setProperty(settingId, setting.default.length == 0 ? 'none' : `url('/${setting.default}')`);
 							}else if (typeof setting.default == 'object') {
@@ -208,46 +261,22 @@ Hooks.once('lib-themerIsLoaded', () => {
 									}else{
 										document.documentElement.style.setProperty(key, imageProperty.length >= 1 ? `url('/${imageProperty}')` : 'none');
 									}
-								}
-							}
-						}
-						
-						for (const [settingId, setting] of Object.entries(settings).filter(([key, setting]) => setting.type == "stylesheet")) {
-							if (!setting.default) {
-								$(`head link[name="${settingId}"]`).remove();
-							}else{
-								// check if stylesheet exists in DOM | Add if it doesn't
-								if ($(`head link[name="${settingId}"]`).length == 0) {
-									// Verify File Exists
-									this.checkIfFileExists(setting.style).then(file => {
-										if ($(`head link[name="${settingId}"]`).length == 0) {
-											$('head').append(`<link rel="stylesheet" type="text/css" name="${settingId}" href="${file}">`);
-										}
-									});
-								}
+								};
 							}
 						}
 					}
 				}
-			}else{
-				if (typeof property != 'undefined') {
-					if (property == 'setColors') {
-						for (const [key, color] of Object.entries(value)) {
-							document.documentElement.style.setProperty(key, color);
-						};
-					}else if (property == 'setImage') {
-						for (const [key, imageProperty] of Object.entries(value)) {
-							if (key.endsWith('-blend-mode')) {
-								document.documentElement.style.setProperty(key, imageProperty);
-							}else{
-								document.documentElement.style.setProperty(key, imageProperty.length >= 1 ? `url('/${imageProperty}')` : 'none');
-							}
-						}
-					}else if (document.documentElement.style.getPropertyValue(property).length >= 1) {
-						document.documentElement.style.setProperty(property, value.length >= 1 ? `url('/${value}')` : 'none');
-					}
-				}
-			}
+			};
+		}
+
+		registerLocalStorage = async (path) => {
+			let files = await FilePicker.browse('user', `./${path}/`, { extensions: ['.json'] }).then(response => {
+				return response.files
+			});
+
+			for (const file of files) {
+				await this.registerTheme(file);
+			};
 		}
 
 		registerLocalThemes = async (exclude) => {
@@ -261,24 +290,11 @@ Hooks.once('lib-themerIsLoaded', () => {
 			};
 		}
 
-		toggleStyleSheet = (stringId, option) => {
-			if (!option.style.startsWith('./'))  option.style = `./modules/lib-themer/themes/${option.style}`;
-			if (option.default) {
-				this.checkIfFileExists(option.style).then(styleSheet => {
-					if ($(`head link[name="${stringId}"]`).length == 0) {
-						$('head').append(`<link rel="stylesheet" type="text/css" name="${stringId}" href="${styleSheet}">`);
-					}
-				});
-			}else{
-				$('head').find(`link[name="${stringId}"]`).remove();
-			}
-		}
-
 		loadTranslationFile = async (files) => {
 			let langFile = files[0];
 			if (files.length > 1) langFile = files.filter(file => file.lang == game.i18n.lang)[0];
 
-			if (!langFile.path.startsWith('./')) langFile.path = `./modules/lib-themer/themes/${langFile.path}`;
+			if (!langFile.path.startsWith('./')) langFile.path = `./${this.setting('localStorage')}/${langFile.path}`;
 
 			this.checkIfFileExists(langFile.path).then(file => { 
 				if (typeof file != 'undefined') {
@@ -298,60 +314,44 @@ Hooks.once('lib-themerIsLoaded', () => {
 			}).catch(error => this.WARN(error));
 		}
 
-		handleStylesheetsOnRegister(themeName) {
-			for (const [key, settings] of Object.entries(this.themes[themeName])) {
-				if (settings.type == 'stylesheet' && settings.default == true) {
-					if ($(`head link[name="${key}"]`).length == 0) {
-						this.checkIfFileExists(settings.style).then(styleSheet => {
-							this.INFO(key, $(`head link[name="${key}"]`).length)
-							if ($(`head link[name="${key}"]`).length == 0) {
-								$('head').append(`<link rel="stylesheet" type="text/css" name="${key}" href="${styleSheet}">`);
-							}
-						});
-					}
-				}
+		setupTheme = (themeName, theme) => {
+			let themeProperties = {
+				name: `lib-themer.theme.${themeName}.name`,
+				title: `lib-themer.theme.${themeName}.title`
 			}
+
+			theme = Object.extend(true, themeProperties, theme)
+
+			// Handle for Language Files
+			if (theme?.languages?.filter(language => language.lang == game.i18n.lang || language.lang == "en")?.length > 0) {
+				let langFiles = theme?.languages?.filter(language => language.lang == game.i18n.lang || language.lang == "en");
+				this.loadTranslationFile(langFiles);
+			}
+
+			//this.INFO(`Has registered ${Object.keys(properties.css).length} css variables`);
+
+			let themeOptions = {}; themeOptions[themeName] = theme;
+			mergeObject(this.themeDefaults, themeOptions);
+			this.themes = Object.extend(true, themeOptions, this.themes);
+
+			// save theme
+			this.setting('themeSettings', this.themes);
 		}
 
-		handleColorsOnRegister() {
+		registerTheme = async (themeName, themeData) => {
+			themeData = (typeof themeData == 'undefined' ? themeName : themeData);
+			if (typeof themeData == 'string') {
+				let fileExists = await this.checkIfFileExists(themeData).then(file => file);
 
-		}
-
-		registerTheme = async (file) => {
-			let fileExists = await this.checkIfFileExists(file).then(file => {
-				return file;
-			});
-			
-			await this.fetchThemeFile(fileExists).then(({theme, properties}) => {
-				let themeName = fileExists.split('/').pop().replace('.json', '').replace(/[\W_]+/g,"-");
-				let themeProperties = {
-					name: `lib-themer.theme.${themeName}.name`,
-					title: `lib-themer.theme.${themeName}.title`
-				}
-
-				theme = Object.extend(true, themeProperties, theme)
-
-				// Handle for Language Files
-				if (theme?.languages?.filter(language => language.lang == game.i18n.lang || language.lang == "en")?.length > 0) {
-					let langFiles = theme?.languages?.filter(language => language.lang == game.i18n.lang || language.lang == "en");
-					this.loadTranslationFile(langFiles);
-				}
-
-				this.INFO(`Has registered ${Object.keys(properties.css).length} css variables`);
-
-				// Update CSS Variables
-				this.cssVariables = Object.extend(true, this.cssVariables, properties.css);
-				//this.stylesheets = Object.extend(true, this.stylesheets, properties.styles);
-
-				let themeOptions = {}; themeOptions[themeName] = theme;
-				this.themes = Object.extend(true, themeOptions, this.themes);
-
-				//this.handleStylesheetsOnRegister(themeName);
-				//if (Object.keys(theme).length > 0) this.setTheme();
-
-				// save theme
-				this.setting('themeSettings', this.themes);
-			});
+				await fetch(fileExists)
+					.then(response => response.json())
+					.then(json => {
+						let themeName = fileExists.split('/').pop().replace('.json', '').replace(/[\W_]+/g,"-");
+						this.setupTheme(themeName, json);
+					}).catch(error => this.ERROR(error));
+			}else if (typeof themeData == 'object') {
+				this.setupTheme(themeName, themeData);
+			}
 
 			return this.themes;
 		}
@@ -367,33 +367,6 @@ Hooks.once('lib-themerIsLoaded', () => {
 			}).then(file => file).catch(error => {
 				this.ERROR(error)
 			})
-		}
-
-		fetchThemeFile = async (file) => {
-			return await fetch(file)
-				.then(response => response.json())
-				.then(json => {
-					let fileName = file.split('/').pop().replace('.json', '').replace(/[\W_]+/g,"-");
-					let properties = {
-						css: {},
-						styles: {}
-					};
-
-					json = Object.extend(true, json, this.themes[fileName])
-
-					for(let [key, value] of Object.entries(json)) {
-						if (value.type == 'color' || value.type == "shades") {
-							properties.css = Object.extend(true, properties.css, this.generateColor(key, value.default, value.type));
-						}else if (value.type == 'palette') {
-							properties.css = Object.extend(true, properties.css, this.generatePalette(key, value.default));
-						}else if (value.type == 'stylesheet') {
-							let style = {}; style[key] = value;
-							properties.styles = Object.extend(true, properties.styles, style);
-						}
-					}
-
-					return ({theme: json, properties: properties});
-				}).catch(error => this.ERROR(error));
 		}
 
 		generateColor(name, color, type) {
@@ -455,11 +428,6 @@ Hooks.once('lib-themerIsLoaded', () => {
 			palette[`${name}-900-contrast-text`] = new Color(new Color(color).shade(80)).contrast();
 
 			return palette
-		}
-
-		getContrast = (color) => new Color(color).contrast();
-
-		renderThemeOptions = (theme) => {
 		}
 	}
 

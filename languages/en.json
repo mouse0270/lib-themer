@@ -3,18 +3,29 @@
         "core": {
             "title": "Lib Themer"
         },
-        "setting": {
+        "settings": {
            "menu.name": "Theme Options",
            "menu.label": "Open Theming Menu",
-           "menu.hint": "A dialog that allows you to manage themes"
+           "menu.hint": "A dialog that allows you to manage themes",
+           "localStorage.name": "Local Storage",
+           "localStorage.hint": "A folder in which Lib Themer will read in json files and import without the need of creating a whole module.<div class='alert"
         },
         "theme": {
             "lib-themer.name": "lib-themer-title",
-            "lib-themer.title": "Lib Themer Settings"
+            "lib-themer.title": "Lib Themer Settings",
+            "lib-themer.preset.name": "Select a Preset",
+            "lib-themer.preset.hint": "Choosing a preset applies that presets settings to your theme."
+        },
+        "preset": {
+            "custom.name": "Custom",
+            "core.foundry.name": "Core Foundry Theme",
+            "cobalt.name": "Cobalt Theme"
         },
         "palette": {
             "app.background.name": "Titlebar / Sidebar Color",
             "app.background.hint": "Color used to theme the title bar and sidebar elements of foundry.",
+            "app.background.image.name": "Titlebar / Sidebar Background Image",
+            "app.background.image.hint": "Image used to theme titlebar and sidebar elements of foundry.",
             "dialog.background.name": "Dialog / Sheet Color",
             "dialog.background.hint": "Color used to theme dialog and sheet elements of foundry.",
             "dialog.background.image.name": "Dialog / Sheet Background Image",
