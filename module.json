@@ -16,7 +16,9 @@
   ],
   "dependencies": [ { "name": "mouses-library" }, { "name": "colorsettings" } ],
   "conflicts": [ ],
-  "esmodules": [ ],
+  "esmodules": [
+    "/scripts/module.mjs"
+  ],
   "scripts": [
     "/scripts/lib/color.js",
     "/scripts/module.js",
