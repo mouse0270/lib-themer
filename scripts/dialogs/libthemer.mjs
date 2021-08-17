@@ -16,8 +16,6 @@ export default class libThemerDialog extends FormApplication {
 				}
 			}
 		}
-
-		console.log(this.presets);
 	}
 
 	static get defaultOptions() {
@@ -33,7 +31,6 @@ export default class libThemerDialog extends FormApplication {
 	}
 
 	getData() {
-		console.log(this.THEMES)
 		return {
 			themes: this.THEMES
 		}
@@ -97,7 +94,6 @@ export default class libThemerDialog extends FormApplication {
 
 				// Add Preset
 				if ($element.data('load') == MODULE.name) {
-					console.log(this.presets);
 					elements['preset'] = new Reef($formGroup($container)[0], {
 						data: foundry.utils.mergeObject(this.presets, {activePreset: MODULE.setting('themePreset') }),
 						template: (props) => CONTROLS.preset(props)
