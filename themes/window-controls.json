@@ -1,9 +1,0 @@
-{
-	"name": "Window Controls Setting",
-	
-	"--window-controls-theme": {
-		"type": "stylesheet",
-		"default": false,
-		"style": "./modules/lib-themer/themes/window-controls/styles/window-controls.css"
-	}
-}
