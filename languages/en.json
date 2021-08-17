@@ -7,14 +7,16 @@
            "menu.name": "Theme Options",
            "menu.label": "Open Theming Menu",
            "menu.hint": "A dialog that allows you to manage themes",
-           "localStorage.name": "Local Storage",
-           "localStorage.hint": "A folder in which Lib Themer will read in json files and import without the need of creating a whole module.<div class='alert"
+           "userStorage.name": "Local Storage",
+           "userStorage.hint": "A folder in which Lib Themer will read in json files and import without the need of creating a whole module.<div class='alert"
         },
-        "theme": {
-            "lib-themer.name": "lib-themer-title",
-            "lib-themer.title": "Lib Themer Settings",
-            "lib-themer.preset.name": "Select a Preset",
-            "lib-themer.preset.hint": "Choosing a preset applies that presets settings to your theme."
+        "theme.lib-themer": {
+            "name": "lib-themer-title",
+            "title": "Lib Themer Settings"
+        },
+        "dialog": {
+            "preset.name": "Select a Preset",
+            "preset.hint": "Choosing a preset applies that presets settings to your theme."
         },
         "preset": {
             "custom.name": "Custom",

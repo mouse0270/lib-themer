@@ -193,4 +193,14 @@
     transform: rotate(270deg);
 }
 
+#libThemerDialog input[type="color"]::-color-swatch {
+    border: none;
+}
+#libThemerDialog input[type="color"]::-moz-color-swatch {
+    border: none;
+}
+#libThemerDialog input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
 /* TOOLTIPS */

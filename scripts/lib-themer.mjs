@@ -1,25 +1,30 @@
-class LibThemerES extends MousesLib {
-	constructor(module) {
-		super(module);
+import { MODULE } from "./_module.mjs";
+import Color from "./lib/color.js";
 
+export default class LibThemerES {
+	constructor() {
 		// Store Theme Data
-		this.themeData = {};
-		this.themeDefaults = {};
-
-		// register API Calls
-		this.api();
+		MODULE.store = { themeData: {}, themeDefaults: {} };
 	}
 
-	api = () => {
+	static api = () => {
 		// Yes this only has one function
-		game.modules.get("lib-themer").api = {
-			registerTheme: this.registerTheme
+		game.modules.get(MODULE.name).api = {
+			registerTheme: this.registerTheme,
+			registerThemes: this.registerThemesInFolder,
+			setTheme: this.setTheme,
+			generateColor: this.generateColor,
+			generatePalette: this.generatePalette
 		}
 	}
 
-	setTheme = (options) => {
+	/**
+	 * Loops through a list of of theme settings and applies them
+	 * @param {Object} [options] - Theme options to be changed or applied. Leaving this empty will apply all theme options
+	 */
+	 static setTheme = (options) => {
 		// If options are left blank, use saved themes setting
-		options = (typeof options == 'undefined' ? this.themeData : options);
+		options = (typeof options == 'undefined' ? MODULE.store.themeData : options);
 		for (const [themeId, settings] of Object.entries(options)) {
 			for (const [settingId, setting] of Object.entries(settings)) {
 				if (setting.type == 'color' || setting.type == 'shades' || setting.type == 'palette') {
@@ -56,9 +61,15 @@ class LibThemerES extends MousesLib {
 		};
 	}
 
+	/**
+	 * Uses foundry's filebrowser to verify a specific file exists.
+	 * This should be used before attempting to fetch a file, as this will help prevent errors for missing files.
+	 * @param {string} [fileLocation] - The file to Check if it exists
+	 * @param {Object} options - Foundrys FileBrowser Options
+	 */
 	// TODO: Move Check if File exists to Mouses-Lib
 	// ? Should I make a function/method to get file name from string path... It looks ugly
-	checkIfFileExists = async (fileLocation, options={}) => {
+	static checkIfFileExists = async (fileLocation, options={}) => {
 		// Use Foundry FilePicker to get list of available files
 		return await FilePicker.browse('user', fileLocation, options).then(response => {
 			// Get filename from Path | Split pop found to be the fastest method
@@ -66,27 +77,29 @@ class LibThemerES extends MousesLib {
 			// Get a list of files that match fileName | Should only ever be one file
 			let files =  response.files.filter(file => file.toLowerCase().endsWith(fileName));
 			// If a file exists, return that file
-			if (files.length > 0) return files[0];
+			if (files.length > 0) return files;
 			throw TypeError(`unable to find ${file}, this theme will not be registered`);
 		})
 		// Return File That Was Found
 		.then(file => file)
 		// Throw Error
-		.catch(error => this.ERROR(error))
+		.catch(error => console.warn(error))
 	}
 
+	/**
+	 * Attempts to load a localization file and import it into foundrys localization
+	 * @param {string} fileLocation - The directory to loop through
+	 */
 	// ? Should this be off handed to mouses-lib.
 	// ? its a useful function for managing dynamic localization
-	loadLocalizationFile = async (fileLocation) => {
+	static loadLocalizationFile = async (fileLocation) => {
 		// Check if file Location has more then one file, if so use the default game language file, otherwise use the first file
-		const languageFile = fileLocation[
-			fileLocation.length > 1 ? fileLocation.filter(file => file.lang == game.i18n.lang)[0] : fileLocation[0]
-		];
+		const languageFile = fileLocation.length > 1 ? fileLocation.filter(file => file.lang == game.i18n.lang)[0] : fileLocation[0]
 
 		// Absolute paths are expected from registered modules. 
 		// Modules should provide `./` with their modules
 		// If this is missing from the string, assume were loading a user defined theme
-		if (!languageFile.path.startsWith('./')) languageFile.path = `./${this.setting('localStorage')}/${languageFile.path}`;
+		if (!languageFile.path.startsWith('./')) languageFile.path = `./${MODULE.setting('localStorage')}/${languageFile.path}`;
 
 		// Check if file Exists and assign the returning file to file variable.
 		let file = await this.checkIfFileExists(languageFile.path, { extensions: ['.json'] });
@@ -99,7 +112,7 @@ class LibThemerES extends MousesLib {
 				return response.json();
 			}).then(json => {
 				// Inform console that File was loaded
-				this.LOG(`Loaded localization file ${file}`);
+				console.log(`Loaded localization file ${file}`);
 				// Merge Dynamically loaded Localization inot Foundry.
 				// Expand json to make sure we account for user formatting.
 				foundry.utils.mergeObject(
@@ -110,11 +123,16 @@ class LibThemerES extends MousesLib {
 		}
 	}
 
-	setupThemeOptions = (themeId, themeData) => {
+   /**
+	* Stores the Theme Data.
+    * @param {string} themeId - They key given to lib-themer for internal use.
+    * @param {object} themeData - A json object containing theme data.
+    */
+	static setupThemeOptions = (themeId, themeData) => {
 		// define localization options as defaults if they are not provided
 		themeData = foundry.utils.mergeObject({
-			name: `lib-themer.theme.${themeId}.name`,
-			title: `lib-themer.theme.${themeId}.title`
+			name: `${MODULE.name}.theme.${themeId}.name`,
+			title: `${MODULE.name}.theme.${themeId}.title`
 		}, themeData, { inplace: false });
 
 		// Handle for Localization Files
@@ -125,24 +143,34 @@ class LibThemerES extends MousesLib {
 
 		// create theme option where themeId is key
 		let themeOptions = {}; themeOptions[themeId] = themeData;
-		foundry.utils.mergeObject(this.themeDefaults, themeOptions);
-		this.themeData = foundry.utils.mergeObject(themeOptions, this.themeData, { inplace: false });
+
+		foundry.utils.mergeObject(MODULE.store.themeDefaults ?? {}, themeOptions);
+		MODULE.store.themeData = foundry.utils.mergeObject(themeOptions, MODULE.store.themeData ?? {}, { inplace: false });
+		MODULE.store = {themeData: MODULE.store.themeData };
 
 		// Save Player Theme Data
-		this.setting('themeSettings', this.themeData);
+		MODULE.setting('themeSettings', MODULE.store.themeData);
 
 		// Return Theme Data
 		return ([themeId, themeOptions])
 	}
 
-	registerThemesInFolder = async(folderPath) => {
+   /**
+	* Loops through folder path and attempts to load any json files in that directory
+    * @param {string} folderPath - The directory to loop through
+    */
+	static registerThemesInFolder = async(folderPath) => {
 		let files = await FilePicker.browse('user', `${folderPath}`, { extensions: ['.json'] }).then(response => response.files);
+
+		let themeData = [];
 
 		if (files.length > 0) {
 			for (const file of files) {
-				await this.registerTheme(file);
+				themeData.push(await this.registerTheme(file));
 			}
 		}
+
+		return themeData;
 	}
 
    /**
@@ -151,10 +179,10 @@ class LibThemerES extends MousesLib {
     * @param {string | object} themeData - Either a string value pointing to a file, or a json object containing theme data.
     */
 	// ? Should I make a function/method to get file name from string path... It looks ugly
-	registerTheme = async (themeId, themeData) => {
+	static registerTheme = async (themeId, themeData) => {
 		// If themeData is empty, assume themeId contains themeData
 		themeData = themeData ?? themeId;
-		themeId = themeId == themeData ? themeId.split('\\').pop().split('/').pop() : themeId;
+		themeId = (themeId == themeData ? themeId.split('\\').pop().split('/').pop() : themeId).replace('.json', '');
 
 		// If themeData is a string, Assume its a File
 		if (typeof themeData == 'string') {
@@ -165,27 +193,71 @@ class LibThemerES extends MousesLib {
 			if (themeFile ?? false) {
 				// Fetch JSON data from file location and save into themeData
 				themeData = await fetch(themeFile).then(response => response.json()).then(json => json);
-
-				// Save Fetched JSON into Library Theme Data
-				this.themeData = foundry.utils.mergeObject(themeData, this.themeData);
 			} 
 		}
 
 		// Setup the Theme Options and return that for use by caller.
-		return this.setupThemeOptions(themeId, this.themeData);
+		return this.setupThemeOptions(themeId, themeData);
+	}
+
+	static generateColor(name, color, type) {
+		let palette = {};
+		// Set Default --[name]
+		palette[`${name}`] = new Color(color).color;
+
+		// If type is shades generate Shading and text contrast options
+		if (type == 'shades') {
+			// Set Default --[name]-contrast-text
+			palette[`${name}-contrast-text`] = new Color(new Color(color).color).contrast();
+
+			// Set Default --[name]-light && --[name]-dark
+			palette[`${name}-light`] = new Color(color).tint(30);
+			palette[`${name}-light-contrast-text`] = new Color(palette[`${name}-light`]).contrast();
+			palette[`${name}-light-shaded-text`] = new Color(palette[`${name}-light`]).shiftColor(40);
+
+			palette[`${name}-dark`] = new Color(color).shade(30);
+			palette[`${name}-dark-contrast-text`] = new Color(palette[`${name}-dark`]).contrast();
+			palette[`${name}-dark-shaded-text`] = new Color(palette[`${name}-dark`]).shiftColor(40);
+			
+			// Set Default --[name]-hover && --[name]-active
+			if (palette[`${name}-contrast-text`] == '#ffffff') {
+				palette[`${name}-hover`] = new Color(color).shade(15);
+				palette[`${name}-active`] = new Color(color).shade(20);
+			}else{
+				palette[`${name}-hover`] = new Color(color).tint(15);
+				palette[`${name}-active`] = new Color(color).tint(20);
+			}
+			palette[`${name}-shaded-text`] = new Color(color).shiftColor(40);
+		}
+
+		return palette
+	}
+
+	static generatePalette(name, color) {
+		let palette = {};
+		// Set Default --palette-[color]
+		palette[`${name}`] = new Color(color).color;
+		palette[`${name}-contrast-text`] = new Color(new Color(color).color).contrast();
+		// Set Default --palette-[color]-[level]
+		palette[`${name}-100`] = new Color(color).tint(80);
+		palette[`${name}-100-contrast-text`] = new Color(new Color(color).tint(80)).contrast();
+		palette[`${name}-200`] = new Color(color).tint(60);
+		palette[`${name}-200-contrast-text`] = new Color(new Color(color).tint(60)).contrast();
+		palette[`${name}-300`] = new Color(color).tint(40);
+		palette[`${name}-300-contrast-text`] = new Color(new Color(color).tint(40)).contrast();
+		palette[`${name}-400`] = new Color(color).tint(20);
+		palette[`${name}-400-contrast-text`] = new Color(new Color(color).tint(20)).contrast();
+		palette[`${name}-500`] = new Color(color).color;
+		palette[`${name}-500-contrast-text`] = new Color(new Color(color).color).contrast();
+		palette[`${name}-600`] = new Color(color).shade(20);
+		palette[`${name}-600-contrast-text`] = new Color(new Color(color).shade(20)).contrast();
+		palette[`${name}-700`] = new Color(color).shade(40);
+		palette[`${name}-700-contrast-text`] = new Color(new Color(color).shade(40)).contrast();
+		palette[`${name}-800`] = new Color(color).shade(60);
+		palette[`${name}-800-contrast-text`] = new Color(new Color(color).shade(60)).contrast();
+		palette[`${name}-900`] = new Color(color).shade(80);
+		palette[`${name}-900-contrast-text`] = new Color(new Color(color).shade(80)).contrast();
+
+		return palette
 	}
 }
-
-Hooks.on('init', () => {
-	let libThemerES	= new LibThemerES({
-		name: 'lib-themer',
-		title: 'Lib Themer',
-	});
-	console.log(libThemerES)
-});
-
-Hooks.once('ready', async () => {
-	game.modules.get('lib-themer').api.registerTheme('./modules/lib-themer/themes/lib-themer.json').then(([themeId, themeData]) => {
-		console.log(themeId, themeData);
-	});
-})

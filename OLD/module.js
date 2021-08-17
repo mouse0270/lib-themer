@@ -1,7 +1,10 @@
+
+
 let libThemer = null;
 class libThemerDialog extends FormApplication {
 	constructor(themes) {
 		super(themes)
+
 		this.THEMES = libThemer.setting('themeSettings');
 		this.presets = {};
 	}

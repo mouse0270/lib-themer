@@ -14,16 +14,12 @@
       "discord": "Mouse0270#0270"
     }
   ],
-  "dependencies": [ { "name": "mouses-library" }, { "name": "colorsettings" } ],
+  "dependencies": [ ],
   "conflicts": [ ],
   "esmodules": [
-    "/scripts/module.mjs"
+    "/scripts/_init.mjs"
   ],
-  "scripts": [
-    "/scripts/lib/color.js",
-    "/scripts/module.js",
-    "/scripts/hooks.js"
-  ],
+  "scripts": [],
   "styles": [
     "/styles/module.css"
   ],
