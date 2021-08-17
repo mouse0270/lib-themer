@@ -1,7 +1,6 @@
 import { MODULE } from '../_module.mjs';
 import Reef from '../lib/reef.es.min.js';
 import { CONTROLS } from './controls.mjs';
-import Color from '../lib/color.js';
 
 export default class libThemerDialog extends FormApplication {
 	constructor() {

@@ -19,7 +19,7 @@ export class CONTROLS {
 	}
 	static shades(props) { 
 		return `<label>${game.i18n.localize(props.name)}</label>
-			<input type="${game.modules.get('colorsetting') ?? false ? 'text' : 'color'}" name="${props.property}" style="background: var(${props.property}); color: var(${props.property}-contrast-text);" data-type="${props.type}" value="${game.modules.get('colorsetting') ?? false ? props.default : props.default.substr(0, 7)}" ${game.modules.get('colorsetting') ?? false ? 'is="colorpicker-input" data-responsive-color data-watch-picker-change' : ''}>
+			<input type="${game.modules.get('colorsettings')?.active ?? false ? 'text' : 'color'}" name="${props.property}" style="background: var(${props.property}); color: var(${props.property}-contrast-text);" data-type="${props.type}" value="${game.modules.get('colorsettings')?.active ?? false ? props.default : props.default.substr(0, 7)}" ${game.modules.get('colorsettings')?.active ?? false ? 'is="colorpicker-input" data-responsive-color data-watch-picker-change' : ''}>
 			<div class="notes">${game.i18n.localize(props.hint)}</div>
 			<div class="lib-themer-preview shades">
 				<span style="background: var(${props.property}); color: var(${props.property}-contrast-text);">
@@ -40,7 +40,7 @@ export class CONTROLS {
 	}
 	static palette(props) {
 		return `<label>${game.i18n.localize(props.name)}</label>
-				<input type="${game.modules.get('colorsetting') ?? false ? 'text' : 'color'}" name="${props.property}" style="background: var(${props.property}); color: var(${props.property}-contrast-text);" data-type="${props.type}" value="${game.modules.get('colorsetting') ?? false ? props.default : props.default.substr(0, 7)}" ${game.modules.get('colorsetting') ?? false ? ' is="colorpicker-input" data-responsive-color data-watch-picker-change' : ''} >
+				<input type="${game.modules.get('colorsettings')?.active ?? false ? 'text' : 'color'}" name="${props.property}" style="background: var(${props.property}); color: var(${props.property}-contrast-text);" data-type="${props.type}" value="${game.modules.get('colorsettings')?.active ?? false ? props.default : props.default.substr(0, 7)}" ${game.modules.get('colorsettings')?.active ?? false ? ' is="colorpicker-input" data-responsive-color data-watch-picker-change' : ''} >
 				<div class="notes">${game.i18n.localize(props.hint)}</div>
 				<div class="lib-themer-preview shades">
 					<span style="background: var(${props.property}-100); color: var(${props.property}-100-contrast-text);">100</span>

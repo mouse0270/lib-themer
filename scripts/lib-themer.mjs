@@ -1,5 +1,5 @@
 import { MODULE } from "./_module.mjs";
-import Color from "./lib/color.js";
+import Color from "./lib/color.mjs";
 
 export default class LibThemerES {
 	constructor() {

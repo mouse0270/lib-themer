@@ -1,5 +1,5 @@
 import { MODULE } from './_module.mjs';
-import libThemerDialog from './dialogs/libthemer.js';
+import libThemerDialog from './dialogs/libthemer.mjs';
 
 Hooks.once('setup', () => {
 	// SET MODULE SETTINGS
