@@ -7,6 +7,25 @@ export default class LibThemerES {
 		MODULE.store = { themeData: {}, themeDefaults: {} };
 	}
 
+	static init = () => {
+		// Initialize Settings be retrieving saved settings
+		MODULE.store.themeData = MODULE.setting('themeSettings');
+
+		// Initialize the API
+		this.api()
+
+		// Register Built in Themes
+		this.registerThemesInFolder(`./modules/${MODULE.name}/themes/`).then(response => {
+			if (MODULE.setting('userStorage').length > 0) {
+				this.registerThemesInFolder(MODULE.setting('userStorage')).then(response => {
+					this.setTheme(MODULE.setting('themeSettings'));
+				});
+			}else{
+				this.setTheme(MODULE.setting('themeSettings'));
+			}
+		});
+	}
+
 	static api = () => {
 		// Yes this only has one function
 		game.modules.get(MODULE.name).api = {

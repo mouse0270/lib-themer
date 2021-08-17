@@ -13,7 +13,7 @@ Hooks.once('setup', () => {
 	// SET MODULE SETTINGS
 	MODULE.setting('register', 'themePreset', {
 		type: String,
-		default: "--preset-core-foundry",
+		default: "--preset-custom",
 		scope: 'client',
 		config: false
 	});

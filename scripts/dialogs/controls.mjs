@@ -12,9 +12,11 @@ export class CONTROLS {
 			<div class="notes">${MODULE.localize('dialog.preset.hint')}</div>`
 	}
 	static presetOptions(props) {
-		return `<option>custom</option>
+		return `<option value="--preset-custom">${MODULE.localize('preset.custom.name')}</option>
 			${Object.entries(props).map(([settingId, setting]) => {
-				return `<option value="${settingId}">${MODULE.localize(`${settingId.substr(2).replace(/-/g, '.')}.name`)}</option>`;
+				if (settingId != 'activePreset'){ 
+					return `<option value="${settingId}" ${settingId == props.activePreset ? 'selected' : ''}>${MODULE.localize(`${settingId.substr(2).replace(/-/g, '.')}.name`)}</option>`;
+				}
 			}).join('')}`
 	}
 	static shades(props) { 

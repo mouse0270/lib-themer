@@ -11,7 +11,9 @@ export default class libThemerDialog extends FormApplication {
 		// Build Presets
 		for (const [themeId, settings] of Object.entries(MODULE.store.themeData)) {
 			for (const [settingId, setting] of Object.entries(settings)) {
-				if (setting.type == 'preset') this.presets[settingId] = setting;
+				if (setting.type == 'preset') {
+					this.presets[settingId] = setting;
+				}
 			}
 		}
 
@@ -63,6 +65,9 @@ export default class libThemerDialog extends FormApplication {
 				// Set Content Container
 				let $container = $('#libThemerDialog .lib-themer-dialog-content');
 				const $formGroup = ($container) => $container.append('<div class="form-group"></div>').children(".form-group:last-child");
+				
+				// Used to store Reactive Elements
+				// ? Should look into use the ReefStore and updating that instead of maintaining each inputs data
 				let elements = {};
 
 				// Deactivate current Item
@@ -94,7 +99,7 @@ export default class libThemerDialog extends FormApplication {
 				if ($element.data('load') == MODULE.name) {
 					console.log(this.presets);
 					elements['preset'] = new Reef($formGroup($container)[0], {
-						data: this.presets,
+						data: foundry.utils.mergeObject(this.presets, {activePreset: MODULE.setting('themePreset') }),
 						template: (props) => CONTROLS.preset(props)
 					});
 					elements['presetOptions'] = new Reef('select[name="lib-themer.preset"]', {
@@ -126,6 +131,27 @@ export default class libThemerDialog extends FormApplication {
 				}
 
 				// Bind Events
+				// Binds Change event for Preset
+				$container.find('div.form-group select[name="lib-themer.preset"]').on('change', (event) => {
+					let $select = $(event.currentTarget);
+
+					if ($select.val() != 'custom') {
+						this.THEMES = foundry.utils.mergeObject(MODULE.store.themeData, this.presets[$select.val()].default, { inplace: false });
+						MODULE.api.setTheme(foundry.utils.expandObject(this.THEMES));
+
+						// Update Element Data
+						let settingFor = $(html).find('nav li.active a').data('load');
+						Object.entries(elements).forEach(([key, element]) => {
+							if (element.data.default ?? false) {
+								element.data.default = this.THEMES[settingFor][key].default
+								element.elem.querySelector('input').value = this.THEMES[settingFor][key].default;
+							}
+						})
+					}
+					// Update Saved Theme
+					MODULE.setting('themePreset', $select.val());
+				});
+
 				// Binds pickerDone and pickerChange events to color Picker Elements
 				$container.find('div.form-group input[type="color"]').on('input change', (event) =>{
 					let $input = $(event.currentTarget);
@@ -186,8 +212,7 @@ export default class libThemerDialog extends FormApplication {
 	async close(options) { 
 		// User closed application without saving
 		if (typeof options == 'undefined') {
-			//libThemerES.LOG('Restore saved settings');
-			//libThemerES.setTheme();
+			MODULE.api.setTheme();
 		}
 
 		// Default Close
@@ -195,5 +220,9 @@ export default class libThemerDialog extends FormApplication {
 	}
 
 	async _updateObject(event, formData) {
+		let themeSettings = MODULE.setting('themeSettings');
+		themeSettings = foundry.utils.mergeObject(themeSettings, this.THEMES);
+
+		MODULE.setting('themeSettings', themeSettings);
 	}
 }
