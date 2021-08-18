@@ -77,7 +77,7 @@ export default class libThemerDialog extends FormApplication {
 
 				// Set the types of controls lib-themer supports
 				//const supportedTypes = ["color", "shades", "palette", "stylesheet", "imagevideo"];
-				const supportedTypes = ["shades", "palette", "stylesheet"];
+				const supportedTypes = ["shades", "palette", "stylesheet", "imagevideo"];
 
 				// Show Description
 				if (theme?.description ?? false) {
@@ -89,7 +89,6 @@ export default class libThemerDialog extends FormApplication {
 
 					// Render Element
 					elements['description'].render();
-					elements['description'].data.description = 'This is a state change';
 				}
 
 				// Add Preset
@@ -131,16 +130,24 @@ export default class libThemerDialog extends FormApplication {
 				$container.find('div.form-group select[name="lib-themer.preset"]').on('change', (event) => {
 					let $select = $(event.currentTarget);
 
-					if ($select.val() != 'custom') {
-						this.THEMES = foundry.utils.mergeObject(MODULE.store.themeData, this.presets[$select.val()].default, { inplace: false });
+					if ($select.val() != '--preset-custom') {
+						this.THEMES = foundry.utils.mergeObject(MODULE.store.themeDefaults, this.presets[$select.val()].default, { inplace: false });
 						MODULE.api.setTheme(foundry.utils.expandObject(this.THEMES));
 
 						// Update Element Data
 						let settingFor = $(html).find('nav li.active a').data('load');
+
 						Object.entries(elements).forEach(([key, element]) => {
 							if (element.data.default ?? false) {
 								element.data.default = this.THEMES[settingFor][key].default
-								element.elem.querySelector('input').value = this.THEMES[settingFor][key].default;
+
+								// Handle for Image being multiple values
+								if (this.THEMES[settingFor][key].type == 'imagevideo') {
+									element.elem.querySelector('select').value = this.THEMES[settingFor][key].default[`${key}-blend-mode`] ?? 'normal';
+									element.elem.querySelector('input').value = this.THEMES[settingFor][key].default[key] ?? '';
+								}else{
+									element.elem.querySelector('input').value = this.THEMES[settingFor][key].default;
+								}
 							}
 						})
 					}
@@ -148,7 +155,7 @@ export default class libThemerDialog extends FormApplication {
 					MODULE.setting('themePreset', $select.val());
 				});
 
-				// Binds pickerDone and pickerChange events to color Picker Elements
+				// Binds input, change, pickerDone and pickerChange events to color Picker Elements
 				$container.find('div.form-group input[type="color"]').on('input change', (event) =>{
 					let $input = $(event.currentTarget);
 					let settingFor = $(html).find('nav li.active a').data('load');
@@ -191,6 +198,44 @@ export default class libThemerDialog extends FormApplication {
 						...this.THEMES[settingFor][$input.attr('name')],
 						type: $input.data('type'),
 						default: $input.is(':checked')
+					};
+
+					this.THEMES = foundry.utils.mergeObject(this.THEMES, foundry.utils.expandObject(setting), { inplace: false });
+					MODULE.api.setTheme(foundry.utils.expandObject(setting));
+				});
+
+				// Binds click event for Browsing Folders
+				// TODO: Do not allow users to select file instead of folder...
+				$container.find('div.form-group-file-picker button[data-type="imagevideo"]').on('click', (event) => {
+					const filePicker = new FilePicker({
+						type: 'imagevideo',
+						current: $(event.currentTarget).closest('.form-fields').find('input[type="text"]').val(),
+						callback: path => {
+							$(event.currentTarget).closest('.form-fields').find('input[type="text"]').val(path).trigger('change');
+						}
+					});
+					return filePicker.browse();
+				});
+				// Updates Input when user changes blend mode
+				$container.find('div.form-group-file-picker select').on('change', (event) => { 
+					$(event.currentTarget).closest('.form-fields').find('input[type="text"]').trigger('change');
+				});
+				// When Input is updated, udpate the variable.
+				$container.find('div.form-group-file-picker input[type="text"]').on('change', (event) => { 
+					let $input = $(event.currentTarget);
+					let settingFor = $(html).find('nav li.active a').data('load');
+					let setting = {};
+					let imageProperties = {};
+						
+					// Set Image Properties
+					imageProperties[`${$input.attr('name')}-blend-mode`] = $input.closest('.form-fields').find('select').val();
+					imageProperties[$input.attr('name')] = $input.val();
+
+					// Update Input Status
+					setting[`${settingFor}.${$input.attr('name')}`] = {
+						...this.THEMES[settingFor][$input.attr('name')],
+						type: $input.data('type'),
+						default: imageProperties
 					};
 
 					this.THEMES = foundry.utils.mergeObject(this.THEMES, foundry.utils.expandObject(setting), { inplace: false });

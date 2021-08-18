@@ -70,7 +70,8 @@
     background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
 	color: var(--palette-dialog-background-light-contrast-text);
 }
-.tidy5e.sheet.actor .tidy5e-navigation .item {
+.tidy5e.sheet.actor .tidy5e-navigation .item,
+.tidy5e.sheet.actor .tidy5e-navigation .toggle-allow-edit {
 	background-color: var(--palette-dialog-background-light);
     background-image: var(--palette-dialog-background-image);
     background-blend-mode: var(--palette-dialog-background-image-blend-mode, normal);
@@ -99,4 +100,45 @@
 .tidy5e.sheet.actor .ability-scores .ability .save-mod {
 	background-color: var(--palette-secondary-light);
 	color: var(--palette-secondary-light-shaded-text);
+}
+.tidy5e.sheet.actor .items-list .item .item-charges input,
+.tidy5e.sheet.actor input[type="checkbox"], 
+.tidy5e.sheet.actor input[type="radio"], 
+.tidy5e.sheet.actor button, 
+.tidy5e.sheet.actor select {
+	color: var(--palette-dialog-background-contrast-text);
+}
+.tidy5e.sheet.actor .skills-list .skill .skill-passive, 
+.tidy5e.sheet.actor .skills-list .skill .skill-proficiency,
+.tidy5e.sheet.actor .resources .resource .resource-header .res-options,
+.tidy5e.sheet.actor .items-list .items-header-labels i,
+.tidy5e.sheet.actor .filter-list .filter-title {
+	color: var(--palette-dialog-background-shaded-text);
+}
+.tidy5e.sheet.actor .center-pane .resources,
+.tidy5e.sheet.actor .center-pane .resources .resource {
+	border-color: var(--palette-dialog-background-dark);
+	color: var(--palette-dialog-background-contrast-text);
+}
+.tidy5e.sheet.actor input[type="text"]::placeholder {
+	color: var(--palette-dialog-background-shaded-text);
+}
+.tidy5e.sheet.actor .attuned-items-counter {
+	box-shadow: 0 0 5px var(--palette-quaternary) inset;
+    border: 1px solid var(--palette-quaternary);
+}
+
+.tidy5e.sheet.actor .items-list .item.equipped,
+.tidy5e.sheet.actor .items-list .item.prepared {
+	background-color: var(--palette-success-light);
+	color: var(--palette-success-light-shaded-text);
+}
+.tidy5e.sheet.actor .items-list .item.alwaysPrepared {
+	background-color: var(--palette-primary-light);
+	color: var(--palette-info-primary-shaded-text);
+}
+.tidy5e.sheet.actor .list-layout .item.equipped .item-detail,
+.tidy5e.sheet.actor .list-layout .item.prepared .item-detail,
+.tidy5e.sheet.actor .list-layout .item.alwaysPrepared .item-detail {
+	color: inherit;
 }

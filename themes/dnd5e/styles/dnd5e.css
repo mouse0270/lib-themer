@@ -65,3 +65,40 @@
 	border-bottom-color: var(--palette-primary-hover);
 	text-shadow: 0 0 10px var(--palette-primary-light);
 }
+
+.dnd5e button {
+	border-color: var(--palette-dialog-background-dark);
+}
+
+.dnd5e.chat-card .card-header {
+	border-bottom-color: var(--palette-dialog-background-dark);
+	border-top-color: var(--palette-dialog-background-dark);
+}
+.dnd5e.chat-card .card-header h3 {
+	color: var(--palette-dialog-background-contrast-text);
+}
+.dnd5e.chat-card .card-buttons button {
+	border-radius: 0px;
+	border-top-width: 0px;
+	color: var(--palette-dialog-background-contrast-text);
+    height: auto;
+	margin: 0px;
+	padding: 0.5rem 0.75rem;
+	cursor: pointer;
+}
+.dnd5e.chat-card .card-buttons button:first-child {
+	border-top-width: 2px;
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+}
+.dnd5e.chat-card .card-buttons button:last-child {
+	border-bottom-left-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+}
+.dnd5e.chat-card .card-footer {
+	border-top-color: var(--palette-dialog-background-dark);
+}
+.dnd5e.chat-card .card-footer span {
+	border-right-color: var(--palette-dialog-background-dark);
+	color: var(--palette-dialog-background-shaded-text);
+}

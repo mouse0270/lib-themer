@@ -64,4 +64,34 @@ export class CONTROLS {
 			</div>
 			<div class="notes">${game.i18n.localize(props.hint)}</div>`
 	}
+	static imagevideo(props) {
+		return `<div class="form-group form-group-file-picker">
+			<label for="${props.property}">${game.i18n.localize(props.name)}</label>
+			<div class="form-fields">
+				<select>
+					<option value="normal" ${props.default?.[`${props.property}-blend-mode`] == 'normal' ? 'selected' : '' ?? ''}>Normal</option>
+					<option value="multiply" ${props.default?.[`${props.property}-blend-mode`] == 'multiply' ? 'selected' : '' ?? ''}>Multiply</option>
+					<option value="screen" ${props.default?.[`${props.property}-blend-mode`] == 'screen' ? 'selected' : '' ?? ''}>Screen</option>
+					<option value="overlay" ${props.default?.[`${props.property}-blend-mode`] == 'overlay' ? 'selected' : '' ?? ''}>Overlay</option>
+					<option value="darken" ${props.default?.[`${props.property}-blend-mode`] == 'darken' ? 'selected' : '' ?? ''}>Darken</option>
+					<option value="lighten" ${props.default?.[`${props.property}-blend-mode`] == 'lighten' ? 'selected' : '' ?? ''}>Lighten</option>
+					<option value="color-dodge" ${props.default?.[`${props.property}-blend-mode`] == 'color-dodge' ? 'selected' : '' ?? ''}>Color Dodge</option>
+					<option value="color-burn" ${props.default?.[`${props.property}-blend-mode`] == 'color-burn' ? 'selected' : '' ?? ''}>Color Burn</option>
+					<option value="hard-light" ${props.default?.[`${props.property}-blend-mode`] == 'hard-light' ? 'selected' : '' ?? ''}>Hard Light</option>
+					<option value="soft-light" ${props.default?.[`${props.property}-blend-mode`] == 'soft-light' ? 'selected' : '' ?? ''}>Soft Light</option>
+					<option value="difference" ${props.default?.[`${props.property}-blend-mode`] == 'difference' ? 'selected' : '' ?? ''}>Difference</option>
+					<option value="exclusion" ${props.default?.[`${props.property}-blend-mode`] == 'exclusion' ? 'selected' : '' ?? ''}>Exclusion</option>
+					<option value="hue" ${props.default?.[`${props.property}-blend-mode`] == 'hue' ? 'selected' : '' ?? ''}>Hue</option>
+					<option value="saturation" ${props.default?.[`${props.property}-blend-mode`] == 'saturation' ? 'selected' : '' ?? ''}>Saturation</option>
+					<option value="color" ${props.default?.[`${props.property}-blend-mode`] == 'color' ? 'selected' : '' ?? ''}>Color</option>
+					<option value="luminosity" ${props.default?.[`${props.property}-blend-mode`] == 'luminosity' ? 'selected' : '' ?? ''}>Luminosity</option>
+				</select>
+				<input type="text" data-type="${props.type}" name="${props.property}" value="${props.default?.[props.property] ?? ''}" />
+				<button type="button" class="file-picker" data-type="${props.type}" data-target="${props.property}" title="Browse Images" tabindex="-1">
+					<i class="fas fa-file-import fa-fw"></i>
+				</button>
+			</div>
+			<div class="notes">${game.i18n.localize(props.hint)}</div>
+		</div>`
+	}
 }

@@ -61,19 +61,19 @@ export default class LibThemerES {
 								$('head').append(`<link rel="stylesheet" type="text/css" name="${settingId}" href="${file}">`);
 							}
 						});
-					} else if (setting.type == 'imagevideo') {
-						if (typeof setting.default == 'string') { // If only the background image was provided, set blend mode to normal;
-							document.documentElement.style.setProperty(`${settingId}-blend-mode`, 'normal');
-							document.documentElement.style.setProperty(settingId, setting.default.length == 0 ? 'none' : `url('/${setting.default}')`);
-						}else if (typeof setting.default == 'object') {
-							for (const [key, imageProperty] of Object.entries(setting.default)) {
-								if (key.endsWith('-blend-mode')) {
-									document.documentElement.style.setProperty(key, imageProperty);
-								}else{
-									document.documentElement.style.setProperty(key, imageProperty.length >= 1 ? `url('/${imageProperty}')` : 'none');
-								}
-							};
-						}
+					}
+				} else if (setting.type == 'imagevideo') {
+					if (typeof setting.default == 'string') { // If only the background image was provided, set blend mode to normal;
+						document.documentElement.style.setProperty(`${settingId}-blend-mode`, 'normal');
+						document.documentElement.style.setProperty(settingId, setting.default.length == 0 ? 'none' : `url('/${setting.default}')`);
+					}else if (typeof setting.default == 'object') {
+						for (const [key, imageProperty] of Object.entries(setting.default)) {
+							if (key.endsWith('-blend-mode')) {
+								document.documentElement.style.setProperty(key, imageProperty);
+							}else{
+								document.documentElement.style.setProperty(key, imageProperty.length >= 1 ? `url('/${imageProperty}')` : 'none');
+							}
+						};
 					}
 				}
 			}
@@ -163,7 +163,7 @@ export default class LibThemerES {
 		// create theme option where themeId is key
 		let themeOptions = {}; themeOptions[themeId] = themeData;
 
-		foundry.utils.mergeObject(MODULE.store.themeDefaults ?? {}, themeOptions);
+		MODULE.store.themeDefaults = foundry.utils.mergeObject(MODULE.store.themeDefaults ?? {}, themeOptions, { inplace: false });
 		MODULE.store.themeData = foundry.utils.mergeObject(themeOptions, MODULE.store.themeData ?? {}, { inplace: false });
 		MODULE.store = {themeData: MODULE.store.themeData };
 
