@@ -160,6 +160,7 @@
 }
 #libThemerDialog main .lib-themer-dialog-content .form-group div.lib-themer-preview {
 	display: flex;
+    flex: 1 0 100%;
 }
 #libThemerDialog main .lib-themer-dialog-content .form-group div.lib-themer-preview  > span {
 	align-items: center;
@@ -168,6 +169,7 @@
 	flex: 1;
     flex-direction: column;
 	justify-content: center;
+    text-align: center;
 }
 #libThemerDialog main footer {
     background: url(../../../ui/parchment.jpg) repeat;

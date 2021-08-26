@@ -23,11 +23,5 @@
 		"type": "stylesheet",
 		"default": false,
 		"style": "./modules/lib-themer/themes/foundry-vtt/styles/foundry-vtt-colors.css"
-	},
-	
-	"--foundry-vtt-square-corners-theme": {
-		"type": "stylesheet",
-		"default": false,
-		"style": "./modules/lib-themer/themes/foundry-vtt/styles/square-corners.css"
 	}
 }

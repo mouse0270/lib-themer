@@ -5,7 +5,7 @@ import { CONTROLS } from './controls.mjs';
 export default class libThemerDialog extends FormApplication {
 	constructor() {
 		super();
-
+		console.log(MODULE.store.themeDefaults, MODULE.store.themeData)
 		this.THEMES = MODULE.store.themeData;
 		this.presets = {};
 		// Build Presets
@@ -19,7 +19,7 @@ export default class libThemerDialog extends FormApplication {
 	}
 
 	static get defaultOptions() {
-		return { 
+		return {
 			...super.defaultOptions,
 			title: `${MODULE.title} Settings`,
 			id: "libThemerDialog",
@@ -32,7 +32,7 @@ export default class libThemerDialog extends FormApplication {
 
 	getData() {
 		return {
-			themes: this.THEMES
+			themes: MODULE.store.themeDefaults
 		}
 	}
 
@@ -43,7 +43,7 @@ export default class libThemerDialog extends FormApplication {
 		});
 
 		// Organize Sidebar
-		$(html).find('nav > ul').children("li").sort(function(a, b) {
+		$(html).find('nav > ul').children("li").sort(function (a, b) {
 			var upA = $(a).data('sort').toUpperCase();
 			var upB = $(b).data('sort').toUpperCase();
 			return (upA < upB) ? -1 : (upA > upB) ? 1 : 0;
@@ -51,10 +51,11 @@ export default class libThemerDialog extends FormApplication {
 		$(html).find('nav > ul > li[data-sort="lib-themer"]').prependTo($(html).find('nav > ul'));
 
 		// Bind Load Data On Menu Click
-		$(html).find('nav li a').on('click', (event) => {
+		$(html).find('nav li a:not([data-load="lib-themer-css-vars"])').on('click', (event) => {
 			let $element = $(event.currentTarget);
 			let $listElement = $element.closest('li');
-			let theme = foundry.utils.mergeObject(MODULE.store.themeData, this.THEMES, { inplace: false });
+
+			let theme = myMergeObject(MODULE.store.themeDefaults, this.THEMES, { inplace: false, insertKeys: false, insertValues: false });
 
 			theme = theme[Object.keys(theme).filter(theme => theme == $element.data('load'))];
 
@@ -62,7 +63,7 @@ export default class libThemerDialog extends FormApplication {
 				// Set Content Container
 				let $container = $('#libThemerDialog .lib-themer-dialog-content');
 				const $formGroup = ($container) => $container.append('<div class="form-group"></div>').children(".form-group:last-child");
-				
+
 				// Used to store Reactive Elements
 				// ? Should look into use the ReefStore and updating that instead of maintaining each inputs data
 				let elements = {};
@@ -77,7 +78,7 @@ export default class libThemerDialog extends FormApplication {
 
 				// Set the types of controls lib-themer supports
 				//const supportedTypes = ["color", "shades", "palette", "stylesheet", "imagevideo"];
-				const supportedTypes = ["shades", "palette", "stylesheet", "imagevideo"];
+				const supportedTypes = ["color", "shades", "palette", "stylesheet", "imagevideo"];
 
 				// Show Description
 				if (theme?.description ?? false) {
@@ -94,7 +95,7 @@ export default class libThemerDialog extends FormApplication {
 				// Add Preset
 				if ($element.data('load') == MODULE.name) {
 					elements['preset'] = new Reef($formGroup($container)[0], {
-						data: foundry.utils.mergeObject(this.presets, {activePreset: MODULE.setting('themePreset') }),
+						data: foundry.utils.mergeObject(this.presets, { activePreset: MODULE.setting('themePreset') }),
 						template: (props) => CONTROLS.preset(props)
 					});
 					elements['presetOptions'] = new Reef('select[name="lib-themer.preset"]', {
@@ -145,7 +146,7 @@ export default class libThemerDialog extends FormApplication {
 								if (this.THEMES[settingFor][key].type == 'imagevideo') {
 									element.elem.querySelector('select').value = this.THEMES[settingFor][key].default[`${key}-blend-mode`] ?? 'normal';
 									element.elem.querySelector('input').value = this.THEMES[settingFor][key].default[key] ?? '';
-								}else{
+								} else {
 									element.elem.querySelector('input').value = this.THEMES[settingFor][key].default;
 								}
 							}
@@ -156,11 +157,11 @@ export default class libThemerDialog extends FormApplication {
 				});
 
 				// Binds input, change, pickerDone and pickerChange events to color Picker Elements
-				$container.find('div.form-group input[type="color"]').on('input change', (event) =>{
+				$container.find('div.form-group input[type="color"]').on('input change', (event) => {
 					let $input = $(event.currentTarget);
 					let settingFor = $(html).find('nav li.active a').data('load');
 					let setting = {};
-						
+
 					// Update Color
 					setting[`${settingFor}.${$input.attr('name')}`] = {
 						...this.THEMES[settingFor][$input.attr('name')],
@@ -175,7 +176,7 @@ export default class libThemerDialog extends FormApplication {
 					let $input = $(event.currentTarget);
 					let settingFor = $(html).find('nav li.active a').data('load');
 					let setting = {};
-						
+
 					// Update Color
 					setting[`${settingFor}.${$input.attr('name')}`] = {
 						...this.THEMES[settingFor][$input.attr('name')],
@@ -192,7 +193,7 @@ export default class libThemerDialog extends FormApplication {
 					let $input = $(event.currentTarget);
 					let settingFor = $(html).find('nav li.active a').data('load');
 					let setting = {};
-						
+
 					// Update Input Status
 					setting[`${settingFor}.${$input.attr('name')}`] = {
 						...this.THEMES[settingFor][$input.attr('name')],
@@ -217,16 +218,16 @@ export default class libThemerDialog extends FormApplication {
 					return filePicker.browse();
 				});
 				// Updates Input when user changes blend mode
-				$container.find('div.form-group-file-picker select').on('change', (event) => { 
+				$container.find('div.form-group-file-picker select').on('change', (event) => {
 					$(event.currentTarget).closest('.form-fields').find('input[type="text"]').trigger('change');
 				});
 				// When Input is updated, udpate the variable.
-				$container.find('div.form-group-file-picker input[type="text"]').on('change', (event) => { 
+				$container.find('div.form-group-file-picker input[type="text"]').on('change', (event) => {
 					let $input = $(event.currentTarget);
 					let settingFor = $(html).find('nav li.active a').data('load');
 					let setting = {};
 					let imageProperties = {};
-						
+
 					// Set Image Properties
 					imageProperties[`${$input.attr('name')}-blend-mode`] = $input.closest('.form-fields').find('select').val();
 					imageProperties[$input.attr('name')] = $input.val();
@@ -242,6 +243,7 @@ export default class libThemerDialog extends FormApplication {
 					MODULE.api.setTheme(foundry.utils.expandObject(setting));
 				});
 
+				// Set Selected Tab as Active
 				$listElement.addClass('active');
 			}
 		});
@@ -250,7 +252,7 @@ export default class libThemerDialog extends FormApplication {
 		$(html).find('nav li:first-child a').trigger('click');
 	}
 
-	async close(options) { 
+	async close(options) {
 		// User closed application without saving
 		if (typeof options == 'undefined') {
 			MODULE.api.setTheme();

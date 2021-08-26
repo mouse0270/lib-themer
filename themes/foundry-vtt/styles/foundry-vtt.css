@@ -32,7 +32,7 @@ a[href] {
 a:hover {
 	text-shadow: 0 0 8px var(--palette-tertiary);
 }
-h2 {
+h1, h2 {
 	border-bottom-color: var(--palette-tertiary-dark);
 }
 select {
@@ -44,7 +44,7 @@ select > * {
 	color: var(--palette-dialog-background-light-contrast-text);
 }
 
-input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], textarea {
 	border-color: var(--palette-dialog-background-dark);
 	color: var(--palette-dialog-background-contrast-text);
 }

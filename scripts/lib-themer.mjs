@@ -223,31 +223,33 @@ export default class LibThemerES {
 		let palette = {};
 		// Set Default --[name]
 		palette[`${name}`] = new Color(color).color;
+		// Set Default --[name]-contrast-text
+		palette[`${name}-contrast-text`] = new Color(new Color(color).color).contrast();
 
 		// If type is shades generate Shading and text contrast options
 		if (type == 'shades') {
-			// Set Default --[name]-contrast-text
-			palette[`${name}-contrast-text`] = new Color(new Color(color).color).contrast();
-
 			// Set Default --[name]-light && --[name]-dark
-			palette[`${name}-light`] = new Color(color).tint(30);
+			palette[`${name}-light`] = new Color(color).tint(20);
 			palette[`${name}-light-contrast-text`] = new Color(palette[`${name}-light`]).contrast();
 			palette[`${name}-light-shaded-text`] = new Color(palette[`${name}-light`]).shiftColor(40);
 
-			palette[`${name}-dark`] = new Color(color).shade(30);
+			palette[`${name}-lighter`] = new Color(color).tint(40);
+			palette[`${name}-lighter-contrast-text`] = new Color(palette[`${name}-lighter`]).contrast();
+			palette[`${name}-lighter-shaded-text`] = new Color(palette[`${name}-lighter`]).shiftColor(40);
+
+			palette[`${name}-dark`] = new Color(color).shade(20);
 			palette[`${name}-dark-contrast-text`] = new Color(palette[`${name}-dark`]).contrast();
 			palette[`${name}-dark-shaded-text`] = new Color(palette[`${name}-dark`]).shiftColor(40);
-			
-			// Set Default --[name]-hover && --[name]-active
-			if (palette[`${name}-contrast-text`] == '#ffffff') {
-				palette[`${name}-hover`] = new Color(color).shade(15);
-				palette[`${name}-active`] = new Color(color).shade(20);
-			}else{
-				palette[`${name}-hover`] = new Color(color).tint(15);
-				palette[`${name}-active`] = new Color(color).tint(20);
-			}
-			palette[`${name}-shaded-text`] = new Color(color).shiftColor(40);
+
+			palette[`${name}-darker`] = new Color(color).shade(40);
+			palette[`${name}-darker-contrast-text`] = new Color(palette[`${name}-darker`]).contrast();
+			palette[`${name}-darker-shaded-text`] = new Color(palette[`${name}-darker`]).shiftColor(40);
+
+			palette[`${name}-hover`] = new Color(color).shiftColor(95);
+			palette[`${name}-active`] = new Color(color).shiftColor(90);
 		}
+			
+		palette[`${name}-shaded-text`] = new Color(color).shiftColor(40);
 
 		return palette
 	}
@@ -260,22 +262,31 @@ export default class LibThemerES {
 		// Set Default --palette-[color]-[level]
 		palette[`${name}-100`] = new Color(color).tint(80);
 		palette[`${name}-100-contrast-text`] = new Color(new Color(color).tint(80)).contrast();
+		palette[`${name}-100-shaded-text`] = new Color(palette[`${name}-100`]).shiftColor(40);
 		palette[`${name}-200`] = new Color(color).tint(60);
 		palette[`${name}-200-contrast-text`] = new Color(new Color(color).tint(60)).contrast();
+		palette[`${name}-200-shaded-text`] = new Color(palette[`${name}-200`]).shiftColor(40);
 		palette[`${name}-300`] = new Color(color).tint(40);
 		palette[`${name}-300-contrast-text`] = new Color(new Color(color).tint(40)).contrast();
+		palette[`${name}-300-shaded-text`] = new Color(palette[`${name}-300`]).shiftColor(40);
 		palette[`${name}-400`] = new Color(color).tint(20);
 		palette[`${name}-400-contrast-text`] = new Color(new Color(color).tint(20)).contrast();
+		palette[`${name}-400-shaded-text`] = new Color(palette[`${name}-400`]).shiftColor(40);
 		palette[`${name}-500`] = new Color(color).color;
 		palette[`${name}-500-contrast-text`] = new Color(new Color(color).color).contrast();
+		palette[`${name}-500-shaded-text`] = new Color(palette[`${name}-500`]).shiftColor(40);
 		palette[`${name}-600`] = new Color(color).shade(20);
 		palette[`${name}-600-contrast-text`] = new Color(new Color(color).shade(20)).contrast();
+		palette[`${name}-600-shaded-text`] = new Color(palette[`${name}-600`]).shiftColor(40);
 		palette[`${name}-700`] = new Color(color).shade(40);
 		palette[`${name}-700-contrast-text`] = new Color(new Color(color).shade(40)).contrast();
+		palette[`${name}-700-shaded-text`] = new Color(palette[`${name}-700-contrast-text`]).shiftColor(40);
 		palette[`${name}-800`] = new Color(color).shade(60);
 		palette[`${name}-800-contrast-text`] = new Color(new Color(color).shade(60)).contrast();
+		palette[`${name}-800-shaded-text`] = new Color(palette[`${name}-800`]).shiftColor(40);
 		palette[`${name}-900`] = new Color(color).shade(80);
 		palette[`${name}-900-contrast-text`] = new Color(new Color(color).shade(80)).contrast();
+		palette[`${name}-900-shaded-text`] = new Color(palette[`${name}-900`]).shiftColor(40);
 
 		return palette
 	}

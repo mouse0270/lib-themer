@@ -8,7 +8,7 @@
            "menu.label": "Open Theming Menu",
            "menu.hint": "A dialog that allows you to manage themes",
            "userStorage.name": "Local Storage",
-           "userStorage.hint": "A folder in which Lib Themer will read in json files and import without the need of creating a whole module.<div class='alert"
+           "userStorage.hint": "A folder in which Lib Themer will read in json files and import without the need of creating a whole module."
         },
         "theme.lib-themer": {
             "name": "lib-themer-title",
