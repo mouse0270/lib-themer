@@ -1,38 +1,69 @@
+// GET MODULE CORE
 import { MODULE } from './_module.mjs';
-import libThemerDialog from './dialogs/libthemer.mjs';
 
+// FOUNDRY HOOKS -> SETUP
 Hooks.once('setup', () => {
-	// SET MODULE SETTINGS
+	MODULE.setting('register', 'registeredThemes', {
+		type: Object,
+		default: {},
+		scope: 'world',
+		config: false,
+	});
 	MODULE.setting('register', 'themeSettings', {
+		type: Object,
+		default: {},
+		config: false,
+		scope: 'client',
+		onChange: (event) => {
+			if (MODULE.setting('enableMasterTheme') && game.user.isGM)
+				MODULE.setting('masterTheme', event)
+		}
+	});
+	MODULE.setting('register', 'masterTheme', {
+		type: Object,
+		default: {},
+		scope: 'world',
+		config: false,
+		onChange: (event) => {
+			if (MODULE.setting('enableMasterTheme') && !game.user.isGM) {
+				MODULE.setting('themeSettings', event);
+				for (const [key, theme] of Object.entries(MODULE.setting('registeredThemes'))) {
+					game.modules.get(MODULE.ID).API.register(foundry.utils.mergeObject(theme, {
+						id: key
+					}, { inplace: false }));
+				}
+			}
+		}
+	});
+	MODULE.setting('register', 'presets', {
+		type: Object,
+		default: {},
+		scope: 'world',
+		config: false,
+	});
+
+	MODULE.setting('register', 'enableGoogleFonts', {
+		type: Boolean,
+		default: true,
+		scope: 'world',
+	});
+
+	MODULE.setting('register', 'fonts', {
 		type: Object,
 		default: {},
 		scope: 'world',
 		config: false
 	});
 
-	// SET MODULE SETTINGS
-	MODULE.setting('register', 'themePreset', {
-		type: String,
-		default: "--preset-custom",
-		scope: 'client',
-		config: false
+	MODULE.setting('register', 'enableMasterTheme', {
+		type: Boolean,
+		default: false,
+		scope: 'world',
 	});
-
-	game.settings.registerMenu(MODULE.name, 'libThemerOptions', {
-		name: MODULE.localize('settings.menu.name'),
-		label: MODULE.localize('settings.menu.label'),
-		hint: MODULE.localize('settings.menu.hint'),
-		icon: 'fas fa-bars',
-		type: libThemerDialog,
-		restricted: false 
-	});
-
-	// SET STORE LOCAL OPTIONS
 	MODULE.setting('register', 'userStorage', {
 		type: String,
 		default: "",
 		scope: 'world',
-		config: true,
 		filePicker: "folder"
 	});
 });

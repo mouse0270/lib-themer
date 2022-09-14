@@ -1,36 +1,82 @@
 {
-  "name": "lib-themer",
-  "title": "Lib Themer",
-  "description": "A Library Designed to Manage CSS Variables for Theming",
-  "version": "This is auto replaced",
-  "library": "true",
-  "manifestPlusVersion": "0.0.1",
-  "minimumCoreVersion": "0.8.8",
-  "compatibleCoreVersion": "0.8.8",
-  "authors": [
-    {
-      "name": "Mouse0270",
-      "url": "https://github.com/mouse0270/module-credits",
-      "discord": "Mouse0270#0270"
-    }
-  ],
-  "dependencies": [ ],
-  "conflicts": [ ],
-  "esmodules": [
-    "/scripts/_init.mjs"
-  ],
-  "scripts": [],
-  "styles": [
-    "/styles/module.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    }
-  ],
-  "url": "This is auto replaced",
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced"
+	"id": "lib-themer",
+	"title": "lib Themer",
+	"description": "One stop shop for styling Foundry",
+	"version": "2.0.0",
+	"compatibility": {
+		"minimum": 10,
+		"verified": 10,
+		"maximum": 10
+	},
+	"authors": [
+		{
+			"name": "Mouse0270",
+			"url": "https://github.com/mouse0270/module-credits",
+			"email": "rmcintosh@websitesbyfatdudes.com",
+			"discord": "Mouse0270#0270",
+
+			"flags": {
+				"twitter": "Mouse0270",
+				"patreon": "Mouse0270",
+				"github": "Mouse0270",
+				"ko-fi": "Mouse0270",
+				"reddit": "u/Mouse0270"
+			}
+		}
+	],
+
+	"library": false,
+	"socket": true,
+
+	"relationships": {
+		"systems": [],
+		"requires": [],
+		"conflicts": [
+			{
+				"id": "tidy-ui_game-settings",
+				"type": "module",
+				"manifest": "https://raw.githubusercontent.com/sdenec/tidy-ui_game-settings/master/module.json",
+				"reason": "Tidy UI and MM+ perform many of the same functions. MM+ will not be fixing compatibility issues between the two modules.",
+				"compatibility": {}
+			}, {
+				"id": "lib-changelogs",
+				"type": "module",
+				"manifest": "https://github.com/theripper93/libChangelogs/blob/master/module.json",
+				"reason": "Changelog & Conflicts is deprecated and the author recommends you use Module Management+ instead.",
+				"compatibility": {
+					"minimum": "0.7.7"
+				}
+			}
+		]
+	},
+	"esmodules": [
+        "/scripts/init.mjs"
+	],
+	"scripts": [],
+	"styles": [
+        "/styles/module.css"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json"
+		}
+	],
+	"url": "This is auto replaced",
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced",
+	"readme": "https://github.com/mouse0270/module-credits/blob/master/README.md",
+	"changelog": "https://github.com/mouse0270/module-credits/blob/master/CHANGELOG.md",
+	"license": "https://github.com/mouse0270/module-credits/blob/master/LICENSE",
+	"bugs": "https://github.com/mouse0270/module-credits/issues",
+	"media": [
+		{
+			"type": "icon",
+			"url": "https://raw.githubusercontent.com/mouse0270/module-credits/master/assets/mm%2B.png"
+		}
+	],
+	"flags": {
+		"attributions": "https://github.com/mouse0270/module-credits/blob/master/ATTRIBUTIONS.md"
+	}
 }

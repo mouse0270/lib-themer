@@ -1,0 +1,353 @@
+/* ────────────────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+/* OVERRIDE LIB-THEMER COLORS                                         */
+/* ────────────────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+html #settings.settings-sidebar h2 + div button i {
+    border-right-color: var(--palette-primary-700, var(--color-border-light-primary));
+}
+html #lib-themer-dialog .journal-entry-content article.journal-entry-page form .form-group {
+	border-bottom: 1px solid var(--app-dialog-background-shaded);
+}
+html #lib-themer-dialog input[type="number" i] + label {
+	border-color: var(--app-dialog-background-shaded);
+	color: var(--app-dialog-background-shaded);
+}
+
+/* ────────────────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+/* OVERRIDE FOUNDRY COLORS                                            */
+/* ────────────────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+form button, button { color: inherit; }
+select { color: inherit; }
+input::placeholder { color: var(--app-dialog-background-shaded); }
+input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="search"], input[type="color"], input[type="color"][data-edit], select {
+	background: rgba(0, 0, 0, 0.05);
+	border-color: var(--app-dialog-background-shaded);
+	color: var(--app-dialog-background-contrast);
+}
+option, optgroup {
+	background-color: var(--app-background);
+	color: var(--app-background-contrast);
+}
+textarea {
+	border-color: var(--app-background-dark);
+	color: var(--app-dialog-background-contrast);
+}
+input[type="color" i],
+input[type="color" i]::-webkit-color-swatch-wrapper {
+	padding: 0px;
+}
+button:hover, button:focus {
+	box-shadow: none;
+}
+button {
+	background-color: var(--palette-tertiary);
+	border-color: var(--palette-tertiary-700);
+	color: var(--palette-tertiary-contrast);
+	transition: all 0.1s ease-in-out;
+}
+button:hover {
+	background-color: var(--palette-tertiary-hover);
+	border-color: var(--palette-tertiary);
+	color: var(--palette-tertiary-hover-contrast);
+}
+button:active {
+	background-color: var(--palette-tertiary-active);
+	border-color: var(--palette-tertiary-900);
+	color: var(--palette-tertiary-active-contrast);
+}
+.app {
+	background-color: var(--app-background);
+	background-blend-mode: var(--app-background-image-blend);
+	background-image: var(--app-background-image-url);
+	color: var(--app-background-contrast);
+}
+.window-app .window-content,
+.sheet.journal-entry .journal-entry-content {
+	background-color: var(--app-dialog-background);
+	background-blend-mode: var(--app-dialog-background-image-blend);
+	background-image: var(--app-dialog-background-image-url);
+	border-color: var(--app-background-dark);
+	color: var(--app-dialog-background-contrast);
+}
+.sheet.journal-entry .pages-list .directory-item {
+	border-color: var(--app-background-dark);
+}
+form .notes, form .hint {
+	color: var(--app-dialog-background-shaded);
+}
+.prosemirror menu .pm-dropdown {
+	color: var(--color-contrast-dark-1);
+}
+form h1.form-header, form h2.form-header, form h3.form-header {
+	color: var(--app-dialog-background-contrast);
+}
+
+/* NOTIFICATION STYLES ────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+.notification {
+	padding-left: 45px;
+    position: relative;
+	text-shadow: none;
+}
+.notification:before{
+	position: absolute;
+    left: 0px;
+    width: 45px;
+    margin: 0px;
+    text-align: center;
+    font-size: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.notification.info {
+	background-color: var(--palette-info);
+    border-color: var(--palette-info-700);
+	box-shadow: 0 0 10px var(--palette-info-900);
+	color: var(--palette-info-contrast)
+}
+.notification.warning {
+	background-color: var(--palette-warning);
+    border-color: var(--palette-warning-700);
+	box-shadow: 0 0 10px var(--palette-warning-900);
+	color: var(--palette-warning-contrast)
+}
+.notification.error {
+	background-color: var(--palette-danger);
+    border-color: var(--palette-danger-700);
+	box-shadow: 0 0 10px var(--palette-danger-900);
+	color: var(--palette-danger-contrast)
+}
+
+/* MODULE MANAGEMENT WINDOW ───── ⋆⋅☆⋅⋆ ────────────────────────────── */
+#module-management .package-list .package-title, #module-management .package-list .package-metadata, #module-management .package-list .package-description {
+	color: var(--app-dialog-background-shaded);
+}
+
+/* SIDE BAR TABS STYLES ───────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+#sidebar.collapsed #sidebar-tabs {
+	margin-bottom: 0px;
+}
+#sidebar-tabs {
+	border-bottom-color: var(--palette-secondary);
+	box-shadow: 0 0 10px var(--palette-secondary-300);
+}
+#sidebar-tabs > .item,
+#sidebar-tabs > .collapse,
+#sidebar.collapsed #sidebar-tabs > .item.active {
+	border-radius: 0px;
+}
+#sidebar-tabs > .item:first-of-type {
+	border-top-left-radius: 5px;
+}
+#sidebar.collapsed #sidebar-tabs > .item:first-of-type {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#sidebar:not(.collapsed) #sidebar-tabs > .collapse {
+	border-top-right-radius: 5px;
+}
+#sidebar-tabs > .item.active {
+	background-color: var(--palette-secondary);
+	border-color: var(--palette-secondary-700);
+	box-shadow: none;
+	color: var(--palette-secondary-contrast);
+	transition: all 0.1s ease-in-out;
+	text-shadow: none;
+}
+#sidebar-tabs > .item:hover,
+#sidebar-tabs > .item:focus,
+#sidebar-tabs > .collapse:hover,
+#sidebar-tabs > .collapse:focus {
+	background-color: var(--palette-secondary-hover);
+	border-color: var(--palette-secondary);
+	box-shadow: none;
+	color: var(--palette-secondary-hover-contrast);
+	text-shadow: none;
+}
+#sidebar-tabs > .item:active,
+#sidebar-tabs > .item:active,
+#sidebar-tabs > .collapse:active {
+	background-color: var(--palette-secondary-active);
+	border-color: var(--palette-secondary-900);
+	box-shadow: none;
+	color: var(--palette-secondary-active-contrast);
+	text-shadow: none;
+}
+#sidebar #sidebar-tabs > .collapse i {
+	transition: transform 0.1s ease-in-out;
+}
+#sidebar.collapsed #sidebar-tabs > .collapse i {
+	transform: rotate(-90deg);
+}
+
+/* SIDE BAR STYLES ────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+.directory .directory-header .header-search input {
+	background: rgba(0, 0, 0, 0.05);
+}
+.directory .action-buttons button,
+.settings-sidebar button {
+	background-color: var(--palette-primary);
+	border-color: var(--palette-primary-700);
+	color: var(--palette-primary-contrast);
+	transition: all 0.1s ease-in-out;
+}
+.directory .action-buttons button:hover,
+.settings-sidebar button:hover, 
+.directory .action-buttons button:focus,
+.settings-sidebar button:focus {
+	background-color: var(--palette-primary-hover);
+	border-color: var(--palette-primary);
+	box-shadow: 0 0 5px var(--palette-primary);
+	color: var(--palette-primary-hover-contrast);
+}
+.directory .action-buttons button:active,
+.settings-sidebar button:active {
+	background-color: var(--palette-primary-active);
+	border-color: var(--palette-primary-900);
+	color: var(--palette-primary-active-contrast);
+}
+.directory .action-buttons button[disabled],
+.settings-sidebar button[disabled],
+.directory .action-buttons button[disabled]:hover,
+.settings-sidebar button[disabled]:hover, 
+.directory .action-buttons button[disabled]:focus,
+.settings-sidebar button[disabled]:focus,
+.directory .action-buttons button[disabled]:active,
+.settings-sidebar button[disabled]:active {
+	background-color: var(--palette-primary);
+	border-color: var(--palette-primary-700);
+	color: var(--palette-primary-contrast);
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+#chat-controls .roll-type-select {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+/* SIDE CHAT ──────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+.chat-message {
+	background-color: var(--app-dialog-background);
+	background-blend-mode: var(--app-dialog-background-image-blend);
+	background-image: var(--app-dialog-background-image-url);
+	border-color: var(--app-background-dark);
+	color: var(--app-dialog-background-contrast);
+}
+.chat-message.whisper {
+	background-color: var(--palette-deep-purple-100);
+	border-color: var(--palette-deep-purple-300);
+	color: var(--palette-deep-purple-100-contrast);
+}
+.chat-message .message-header {
+	color: var(--app-dialog-background-contrast);
+}
+
+/* UI CONTROLS ────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+#controls ol.control-tools > li {
+    background-color: var(--app-background);
+    border-color: var(--app-background-dark);
+	color: var(--app-background-shaded);
+	transition: all 0.1s ease-in-out;
+
+}
+#controls ol.control-tools > li.active, 
+#controls ol.control-tools > li:hover, 
+#controls ol.control-tools > li:focus {
+    background-color: var(--palette-secondary);
+    border-color: var(--palette-secondary-700);
+    box-shadow: 0 0 10px var(--palette-secondary-hover);
+	color: var(--palette-secondary-contrast);
+}
+#controls ol.control-tools > li.toggle {
+    background-color: var(--palette-tertiary-100);
+    border-color: var(--palette-tertiary-hover);
+	color: var(--palette-tertiary-100-contrast);
+}
+#controls ol.control-tools > li.toggle.active,
+#controls ol.control-tools > li.toggle:hover {
+    background-color: var(--palette-tertiary);
+    border-color: var(--palette-tertiary-active);
+	color: var(--palette-tertiary-contrast);
+}
+
+/* HOTBAR ─────────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+#hotbar #macro-list {
+	border-width: 0px;
+}
+#hotbar .bar-controls,
+#hotbar .macro {
+	background-color: var(--app-background);
+	border-color: var(--app-background-shaded);
+	color: var(--app-background-contrast);
+}
+#hotbar .macro {
+	border-right-width: 0px;
+}
+#hotbar .macro:last-of-type {
+	border-right-width: 1px;
+}
+
+/* DIALOG ─────────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+.dialog .dialog-buttons button {
+	border-style: solid;
+	border-width: 1px;
+	background-color: var(--palette-primary);
+	border-color: var(--palette-primary-700);
+	color: var(--palette-primary-contrast);
+	transition: all 0.1s ease-in-out;
+}
+.dialog .dialog-buttons button:hover {
+	background-color: var(--palette-primary-hover);
+	border-color: var(--palette-primary);
+	color: var(--palette-primary-hover-contrast);
+}
+.dialog .dialog-buttons button:active {
+	background-color: var(--palette-primary-active);
+	border-color: var(--palette-primary-900);
+	color: var(--palette-primary-active-contrast);
+}
+.dialog .dialog-buttons button.yes {
+	background-color: var(--palette-success);
+	border-color: var(--palette-success-700);
+	color: var(--palette-success-contrast);
+	transition: all 0.1s ease-in-out;
+}
+.dialog .dialog-buttons button.yes:hover {
+	background-color: var(--palette-success-hover);
+	border-color: var(--palette-success-500);
+	color: var(--palette-success-hover-contrast);
+}
+.dialog .dialog-buttons button.yes:active {
+	background-color: var(--palette-success-active);
+	border-color: var(--palette-success-900);
+	color: var(--palette-success-active-contrast);
+}
+.dialog .dialog-buttons button.no {
+	background-color: var(--palette-danger);
+	border-color: var(--palette-danger-700);
+	color: var(--palette-danger-contrast);
+	transition: all 0.1s ease-in-out;
+}
+.dialog .dialog-buttons button.no:hover {
+	background-color: var(--palette-danger-hover);
+	border-color: var(--palette-danger-500);
+	color: var(--palette-danger-hover-contrast);
+}
+.dialog .dialog-buttons button.no:active {
+	background-color: var(--palette-danger-active);
+	border-color: var(--palette-danger-900);
+	color: var(--palette-danger-active-contrast);
+}
+
+
+/* JOURNAL SHEET ──────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+.directory .directory-item.context, .directory .directory-item.active {
+	border-color: var(--palette-secondary);
+}
+.sheet.journal-entry .pages-list .directory-item.active:first-of-type,
+.sheet.journal-entry .pages-list .directory-item:not(.active) + .active,
+.sheet.journal-entry .pages-list .directory-item.active + :not(.active) {
+	border-top-color: var(--palette-secondary);
+}
+.sheet.journal-entry .pages-list .directory-item.active:last-of-type {
+	border-bottom-color: var(--palette-secondary);
+}
+
+

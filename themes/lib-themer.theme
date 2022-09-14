@@ -1,0 +1,363 @@
+{
+	"title": "lib-themer.title",
+	"cssTidySidebar": {
+		"name": "lib-themer.theme.cssTidySidebar.name",
+		"hint": "lib-themer.theme.cssTidySidebar.hint",
+		"type": "stylesheet",
+		"default": false,
+		"file": "./modules/lib-themer/styles/themes/tidy-sidebar.css",
+		"settings": {
+			"--tidy-sidebar-padding-y": {
+				"name": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingY.name",
+				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingY.hint",
+				"type": "number",
+				"default": "16px",
+				"properties": {
+					"min": 0,
+					"max": 24
+				}
+			},
+			"--tidy-sidebar-padding-x": {
+				"name": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingX.name",
+				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingX.hint",
+				"type": "number",
+				"default": "20px",
+				"properties": {
+					"min": 0,
+					"max": 24
+				}
+			},
+			"--tidy-sidebar-border-radius": {
+				"name": "lib-themer.theme.cssTidySidebar.settings.tidySidebarBorderRadius.name",
+				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarBorderRadius.hint",
+				"type": "number",
+				"default": "3px",
+				"properties": {
+					"min": 0,
+					"max": 30
+				}
+			}
+		}
+	},
+	"cssfoundryVTTColors": {
+		"name": "lib-themer.theme.cssfoundryVTTColors.name",
+		"hint": "lib-themer.theme.cssfoundryVTTColors.hint",
+		"type": "stylesheet",
+		"default": false,
+		"file": "./modules/lib-themer/styles/themes/foundry-vtt-colors.css",
+		"settings": {
+			"cssfoundryVTTColorsWarning": {
+				"name": "lib-themer.theme.cssfoundryVTTColors.settings.cssfoundryVTTColorsWarning.name",
+				"hint": "lib-themer.theme.cssfoundryVTTColors.settings.cssfoundryVTTColorsWarning.hint",
+				"type": "message"
+			},
+			"--app-background": {
+				"name": "lib-themer.theme.cssfoundryVTTColors.settings.--app-background.name",
+				"hint": "lib-themer.theme.cssfoundryVTTColors.settings.--app-background.hint",
+				"type": "color",
+				"default": "#2a3132cc",
+				"metadata": {
+					"variations": true
+				}
+				
+			},
+			"--app-background-image": {
+				"name": "lib-themer.theme.cssfoundryVTTColors.settings.--app-background-image.name",
+				"hint": "lib-themer.theme.cssfoundryVTTColors.settings.--app-background-image.hint",
+				"type": "background",
+				"default": {
+					"url": "url(/ui/denim075.png)"
+				}
+			},
+			"--app-dialog-background": {
+				"name": "lib-themer.theme.cssfoundryVTTColors.settings.--app-dialog-background.name",
+				"hint": "lib-themer.theme.cssfoundryVTTColors.settings.--app-dialog-background.hint",
+				"type": "color",
+				"default": "#dfddd1ff",
+				"metadata": {
+					"variations": true
+				}
+			},
+			"--app-dialog-background-image": {
+				"name": "lib-themer.theme.cssfoundryVTTColors.settings.--app-dialog-background-image.name",
+				"hint": "lib-themer.theme.cssfoundryVTTColors.settings.--app-dialog-background-image.hint",
+				"type": "background",
+				"default": {
+					"url": "url(/ui/parchment.jpg)"
+				}
+			}
+		}
+	},
+	"--palette-primary": {
+		"name": "lib-themer.theme.default.--palette-primary.name",
+		"hint": "lib-themer.theme.default.--palette-primary.hint",
+		"type": "color",
+		"default": "#ff6400ff",
+		"metadata": {
+			"palette": true,
+			"buttons": true
+		}
+	},
+	"--palette-secondary": {
+		"name": "lib-themer.theme.default.--palette-secondary.name",
+		"hint": "lib-themer.theme.default.--palette-secondary.hint",
+		"type": "color",
+		"default": "#3a00aeff",
+		"metadata": {
+			"palette": true,
+			"buttons": true
+		}
+	},
+	"--palette-tertiary": {
+		"name": "lib-themer.theme.default.--palette-tertiary.name",
+		"hint": "lib-themer.theme.default.--palette-tertiary.hint",
+		"type": "color",
+		"default": "#f44336ff",
+		"metadata": {
+			"palette": true,
+			"buttons": true
+		}
+	},
+	"--palette-quaternary": {
+		"name": "lib-themer.theme.default.--palette-quaternary.name",
+		"hint": "lib-themer.theme.default.--palette-quaternary.hint",
+		"type": "color",
+		"default": "#009BFFff",
+		"metadata": {
+			"palette": true,
+			"buttons": true
+		}
+	},
+
+	"--palette-info": {
+		"name": "lib-themer.theme.default.--palette-info.name",
+		"hint": "lib-themer.theme.default.--palette-info.hint",
+		"type": "color",
+		"default": "#0dcaf0ff",
+		"metadata": {
+			"palette": true,
+			"buttons": true
+		}
+	},
+	"--palette-success": {
+		"name": "lib-themer.theme.default.--palette-success.name",
+		"hint": "lib-themer.theme.default.--palette-success.hint",
+		"type": "color",
+		"default": "#198754ff",
+		"metadata": {
+			"palette": true,
+			"buttons": true
+		}
+	},
+	"--palette-warning": {
+		"name": "lib-themer.theme.default.--palette-warning.name",
+		"hint": "lib-themer.theme.default.--palette-warning.hint",
+		"type": "color",
+		"default": "#ffc107ff",
+		"metadata": {
+			"palette": true,
+			"buttons": true
+		}
+	},
+	"--palette-danger": {
+		"name": "lib-themer.theme.default.--palette-danger.name",
+		"hint": "lib-themer.theme.default.--palette-danger.hint",
+		"type": "color",
+		"default": "#dc3545ff",
+		"metadata": {
+			"palette": true,
+			"buttons": true
+		}
+	},
+
+	"--palette-light": {
+		"name": "lib-themer.theme.default.--palette-light.name",
+		"hint": "lib-themer.theme.default.--palette-light.hint",
+		"type": "color",
+		"default": "#f8f9faff",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-dark": {
+		"name": "lib-themer.theme.default.--palette-dark.name",
+		"hint": "lib-themer.theme.default.--palette-dark.hint",
+		"type": "color",
+		"default": "#212529ff",
+		"metadata": {
+			"palette": true
+		}
+	},
+
+	"--palette-red": {
+		"name": "lib-themer.theme.default.--palette-red.name",
+		"hint": "lib-themer.theme.default.--palette-red.hint",
+		"type": "color",
+		"default": "#f44336",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-pink": {
+		"name": "lib-themer.theme.default.--palette-pink.name",
+		"hint": "lib-themer.theme.default.--palette-pink.hint",
+		"type": "color",
+		"default": "#e91e63",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-purple": {
+		"name": "lib-themer.theme.default.--palette-purple.name",
+		"hint": "lib-themer.theme.default.--palette-purple.hint",
+		"type": "color",
+		"default": "#9c27b0",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-deep-purple": {
+		"name": "lib-themer.theme.default.--palette-deep-purple.name",
+		"hint": "lib-themer.theme.default.--palette-deep-purple.hint",
+		"type": "color",
+		"default": "#673ab7",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-indigo": {
+		"name": "lib-themer.theme.default.--palette-indigo.name",
+		"hint": "lib-themer.theme.default.--palette-indigo.hint",
+		"type": "color",
+		"default": "#3f51b5",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-blue": {
+		"name": "lib-themer.theme.default.--palette-blue.name",
+		"hint": "lib-themer.theme.default.--palette-blue.hint",
+		"type": "color",
+		"default": "#2196f3",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-light-blue": {
+		"name": "lib-themer.theme.default.--palette-light-blue.name",
+		"hint": "lib-themer.theme.default.--palette-light-blue.hint",
+		"type": "color",
+		"default": "#03a9f4",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-cyan": {
+		"name": "lib-themer.theme.default.--palette-cyan.name",
+		"hint": "lib-themer.theme.default.--palette-cyan.hint",
+		"type": "color",
+		"default": "#00bcd4",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-teal": {
+		"name": "lib-themer.theme.default.--palette-teal.name",
+		"hint": "lib-themer.theme.default.--palette-teal.hint",
+		"type": "color",
+		"default": "#009688",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-green": {
+		"name": "lib-themer.theme.default.--palette-green.name",
+		"hint": "lib-themer.theme.default.--palette-green.hint",
+		"type": "color",
+		"default": "#4caf50",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-light-green": {
+		"name": "lib-themer.theme.default.--palette-light-green.name",
+		"hint": "lib-themer.theme.default.--palette-light-green.hint",
+		"type": "color",
+		"default": "#8bc34a",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-lime": {
+		"name": "lib-themer.theme.default.--palette-lime.name",
+		"hint": "lib-themer.theme.default.--palette-lime.hint",
+		"type": "color",
+		"default": "#cddc39",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-yellow": {
+		"name": "lib-themer.theme.default.--palette-yellow.name",
+		"hint": "lib-themer.theme.default.--palette-yellow.hint",
+		"type": "color",
+		"default": "#ffeb3b",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-amber": {
+		"name": "lib-themer.theme.default.--palette-amber.name",
+		"hint": "lib-themer.theme.default.--palette-amber.hint",
+		"type": "color",
+		"default": "#ffc107",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-orange": {
+		"name": "lib-themer.theme.default.--palette-orange.name",
+		"hint": "lib-themer.theme.default.--palette-orange.hint",
+		"type": "color",
+		"default": "#ff9800",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-deep-orange": {
+		"name": "lib-themer.theme.default.--palette-deep-orange.name",
+		"hint": "lib-themer.theme.default.--palette-deep-orange.hint",
+		"type": "color",
+		"default": "#ff5722",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-brown": {
+		"name": "lib-themer.theme.default.--palette-brown.name",
+		"hint": "lib-themer.theme.default.--palette-brown.hint",
+		"type": "color",
+		"default": "#795548",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-grey": {
+		"name": "lib-themer.theme.default.--palette-grey.name",
+		"hint": "lib-themer.theme.default.--palette-grey.hint",
+		"type": "color",
+		"default": "#9e9e9e",
+		"metadata": {
+			"palette": true
+		}
+	},
+	"--palette-blue-grey": {
+		"name": "lib-themer.theme.default.--palette-blue-grey.name",
+		"hint": "lib-themer.theme.default.--palette-blue-grey.hint",
+		"type": "color",
+		"default": "#607d8b",
+		"metadata": {
+			"palette": true
+		}
+	}
+}

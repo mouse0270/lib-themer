@@ -1,0 +1,23 @@
+{
+	"title": "Tidy5e Sheet",
+	"requires": [
+		{
+			"id": "tidy5e-sheet",
+			"type": "module"
+		}
+	],
+	"cssTidy5eColors": {
+		"name": "Colorize Tidy5e Character Sheet",
+		"hint": "Enabling this stylesheet will theme your Tidy5e Character Sheet to use libThemer colors",
+		"type": "stylesheet",
+		"default": false,
+		"file": "./modules/lib-themer/styles/themes/tidy5e-colors.css",
+		"settings": {
+			"csstidy5eSheetColorsWarning": {
+				"name": "lib-themer.theme.warning.stylesheet.name",
+				"hint": "lib-themer.theme.warning.stylesheet.hint",
+				"type": "message"
+			}
+		}
+	}
+}

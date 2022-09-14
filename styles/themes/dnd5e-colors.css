@@ -1,0 +1,62 @@
+.dnd5e.sheet .window-content {
+	background-color: var(--app-dialog-background);
+    background-blend-mode: var(--app-dialog-background-image-blend);
+    background-image: var(--app-dialog-background-image-url);
+    border-color: var(--app-background-dark);
+    color: var(--app-dialog-background-contrast);
+}
+.dnd5e.sheet input[type="text"], .dnd5e input[type="number"], .dnd5e select {
+	background-color: var(--app-dialog-background);
+    border-color: var(--app-background-dark);
+    color: var(--app-dialog-background-contrast);
+}
+
+.dnd5e .form-group label,
+.dnd5e .items-list .item .item-name {
+    color: var(--app-dialog-background-contrast);
+}
+.dnd5e.sheet.actor h4.box-title,
+.dnd5e.sheet.actor .sheet-header .summary li,
+.dnd5e.sheet.actor.character .sheet-header .charlevel,
+.dnd5e.sheet.actor.character .sheet-header .experience span.max,
+.dnd5e.sheet.actor ul.skills-list li.skill .skill-passive,
+.dnd5e.sheet.actor .counters .counter h4,
+.dnd5e.sheet.actor .form-group label {
+    color: var(--app-dialog-background-shaded);
+}
+.dnd5e.sheet.actor.character .characteristics textarea {
+    border-color: var(--app-dialog-background-shaded);
+    font-family: var(--font-primary), "Palatino Linotype", serif;
+    font-size: var(--font-size-13);
+}
+
+.dnd5e .form-header {
+    border-color: var(--app-dialog-background-shaded);
+    font-family: var(--font-primary), "Palatino Linotype", serif;
+}
+.dnd5e .items-list,
+.dnd5e .items-list .items-header,
+.dnd5e .items-list .item {
+    border-color: var(--app-dialog-background-shaded);
+    color: var(--app-dialog-background-shaded);
+}
+.dnd5e .effects .item .effect-source, .dnd5e .effects .item .effect-duration, .dnd5e .effects .item .effect-controls {
+    color: var(--app-dialog-background-shaded);
+    font-size: var(--font-size-12);
+}
+.dnd5e.sheet .editable h4.rollable:hover, .dnd5e.sheet .editable .rollable:hover > h4 {
+    color: var(--app-dialog-background-contrast);
+    text-shadow: 0 0 10px var(--palette-primary);
+}
+.dnd5e.sheet.actor .spell-slots, .dnd5e.sheet.actor .spell-comps,
+.dnd5e.sheet.actor .spell-school, .dnd5e.sheet.actor .spell-action, .dnd5e.sheet.actor .spell-target {
+    border-color: var(--app-dialog-background-shaded);
+    color: var(--app-dialog-background-shaded);
+}
+.dnd5e.sheet.actor .inventory-filters .currency label,
+.dnd5e.sheet.actor.npc .header-exp .experience, .dnd5e.sheet.actor.npc .header-exp .proficiency {
+    color: var(--app-dialog-background-shaded);
+}
+.dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.active, .dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.active {
+    color: var(--app-dialog-background-dark);
+}

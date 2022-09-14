@@ -1,0 +1,50 @@
+.tidy5e.sheet.actor .window-content {
+	color: var(--app-dialog-background-contrast);
+    font-family: var(--primary-font);
+}
+.tidy5e.sheet.actor [contenteditable], .tidy5e.sheet.actor input[type=text],
+.tidy5e.sheet.actor input[type=checkbox], .tidy5e.sheet.actor input[type=radio], .tidy5e.sheet.actor button, .tidy5e.sheet.actor select {
+	color: var(--app-dialog-background-contrast);
+}
+.tidy5e.sheet.actor .skills-list .skill .config-button,
+.tidy5e.sheet.actor .skills-list .skill .skill-proficiency,
+.tidy5e.sheet.actor .skills-list .skill .skill-passive,
+.tidy5e.sheet.actor .resources .resource .resource-header .res-options,
+.tidy5e.sheet.actor input[type=text]::placeholder,
+.tidy5e.sheet.actor .traits.show-labels label span,
+.tidy5e.sheet.actor .traits i,
+.tidy5e.sheet.actor .items-list .items-header-labels i,
+.tidy5e.sheet.actor .items-list .items-header-labels,
+.tidy5e.sheet.actor .list-layout .items-list .item-detail,
+.tidy5e.sheet.actor .items-list .item .item-charges input,
+.tidy5e.sheet.actor .filter-list .filter-title,
+.tidy5e.sheet.actor .items-list .items-header .spell-slots,
+.tidy5e.sheet.actor .class-list,
+.tidy5e.sheet.actor [contenteditable]:empty::before,
+.tidy5e.sheet.actor .ability-scores .ability .config-button {
+	color: var(--app-dialog-background-shaded);
+}
+.tidy5e.sheet.actor .traits svg path {
+	fill: var(--app-dialog-background-shaded);
+}
+.tidy5e.sheet.actor .items-list .items-header .spell-slots .slot-max-override,
+.tidy5e.sheet.actor .traits .configure-flags {
+	color: var(--app-dialog-background-light);
+}
+
+.tidy5e.sheet.actor .list-layout .items-list .items-footer a {
+	background-color: var(--palette-secondary);
+	border-color: var(--palette-secondary-700);
+	color: var(--palette-secondary-contrast);
+	transition: all 0.1s ease-in-out;
+}
+.tidy5e.sheet.actor .list-layout .items-list .items-footer a:hover {
+	background-color: var(--palette-secondary-300);
+	border-color: var(--palette-secondary-500);
+	color: var(--palette-secondary-300-contrast);
+}
+.tidy5e.sheet.actor .list-layout .items-list .items-footer a:active {
+	background-color: var(--palette-secondary-700);
+	border-color: var(--palette-secondary-900);
+	color: var(--palette-secondary-700-contrast);
+}

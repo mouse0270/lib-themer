@@ -1,0 +1,46 @@
+<div class="journal-sheet-container">
+	<aside class="sidebar journal-sidebar directory flexcol">
+		<header class="directory-header">
+			<div class="header-search flexrow">
+				<p style="flex: 1;margin: 0px;border-bottom: 2px solid var(--color-border-dark);font-weight: 600;text-align: left;padding-left: 32px;">Theme Options</p>
+				<a class="action-button collapse-toggle" data-action="toggleCollapse" data-tooltip="{{localize 'module-credits.dialog.collapseModeLabel'}}"><i class="fa-solid fa-caret-right"></i></a>
+			</div>
+		</header>
+		<nav class="pages-list" aria-label="" data-tooltip-direction="RIGHT">
+			<ol class="directory-list scrollable">
+			{{#each THEMES}}
+				<li class="directory-item level1" data-theme-id="{{@key}}" draggable="true">
+					<div class="page-heading">
+						<span class="page-number" data-tooltip="{{this.title}}">{{incIndex @index}}.</span>
+						<span class="page-title">{{localize this.title}}</span>
+						<span class="page-ownership observer">{{this.properties}}</span>
+					</div>
+				</li>
+			{{/each}}
+			</ol>
+		</nav>
+		<div class="action-buttons flexrow">
+			<button class="manage" type="button" data-action="managePresets" data-tooltip="" data-tooltip-direction="RIGHT">
+                <i class="fa-solid fa-list-check"></i> {{localize 'lib-themer.dialog.presets.manage'}}
+            </button>
+			<button class="previous" type="button" data-action="previous" data-tooltip="" disabled="">
+				<i class="fa-solid fa-chevron-left"></i>
+			</button>
+			<button class="next" type="button" data-action="next" data-tooltip="">
+				<i class="fa-solid fa-chevron-right"></i>
+			</button>
+		</div>
+	</aside>
+	<section class="journal-entry-content flexcol">
+		<form class="journal-header">
+			<input class="title" name="name" type="text" value="Foundry VTT" placeholder="Entry Title">
+		</form>
+		<div class="journal-entry-pages editable">
+			<div class="scrollable">
+				<article class="journal-entry-page text">
+					<form></form>
+				</article>
+			</div>
+		</div>
+	</section>
+</div>

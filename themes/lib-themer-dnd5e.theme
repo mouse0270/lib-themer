@@ -1,0 +1,23 @@
+{
+	"title": "D&D 5e",
+	"requires": [
+		{
+			"id": "dnd5e",
+			"type": "system"
+		}
+	],
+	"cssDnDColors": {
+		"name": "Colorize D&D 5e Character Sheet",
+		"hint": "Enabling this stylesheet will theme your D&D5e Character sheet to use libThemer colors",
+		"type": "stylesheet",
+		"default": false,
+		"file": "./modules/lib-themer/styles/themes/dnd5e-colors.css",
+		"settings": {
+			"cssDnDColorsColorsWarning": {
+				"name": "lib-themer.theme.warning.stylesheet.name",
+				"hint": "lib-themer.theme.warning.stylesheet.hint",
+				"type": "message"
+			}
+		}
+	}
+}

@@ -1,0 +1,59 @@
+#settings.settings-sidebar h2 {
+    margin: 0px;
+    padding: 9px;
+}
+#settings.settings-sidebar h2 + div {
+    margin: var(--tidy-sidebar-padding-y, 16px) var(--tidy-sidebar-padding-x, 20px);
+}
+#sidebar .directory .action-buttons button,
+#settings.settings-sidebar h2 + div button {
+    border-bottom-width: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0.25rem 0.5rem;
+    padding-left: 45px;
+    position: relative;
+}
+#settings.settings-sidebar h2 + div button:first-of-type {
+    border-top-left-radius: var(--tidy-sidebar-border-radius, 3px);
+    border-top-right-radius: var(--tidy-sidebar-border-radius, 3px);
+}
+#settings.settings-sidebar h2 + div button:last-of-type {
+    border-bottom-left-radius: var(--tidy-sidebar-border-radius, 3px);
+    border-bottom-right-radius: var(--tidy-sidebar-border-radius, 3px);
+    border-bottom-width: 1px;
+}
+#settings.settings-sidebar h2 + div button i {
+    position: absolute;
+    left: 0px;
+    width: 45px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    font-size: 1rem;
+    border-right: 1px solid var(--color-border-light-primary);
+}
+
+#sidebar {
+    border-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    height: calc(100%);
+    margin: 0px;
+}
+#sidebar .directory .action-buttons {
+    padding: 0px 0.5rem;
+}
+#sidebar .directory .action-buttons button {
+    border-right-width: 0px;
+    font-size: 0.8rem;
+    height: auto;
+    padding: 0.25rem 0.5rem;
+}
+#sidebar .directory .action-buttons button:first-of-type {
+}
+#sidebar .directory .action-buttons button:last-of-type {
+    border-right-width: 1px;
+}
