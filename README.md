@@ -1,8 +1,6 @@
 # libThemer
 libThemer is mostly a library module designed to allow developers to define css variables and optional stylesheets for users to customize the look and feel of foundry, game systems or modules.
 
-![image](https://user-images.githubusercontent.com/564874/190036294-db2c5d92-0104-4d39-85e9-95942fddd984.png)
-
 > **PLEASE NOTE** This is a library module and isn't intended to do much on its own. Its designed to give developers an easy system to define and edit css varibles and optional stylesheets. With that said, I understand no one would really want a module that doesn't do much, so I have added the ability to modify all of foundry's default CSS variables and created my own examples for how you could implement libThemer into your project.
 
 ## Features
