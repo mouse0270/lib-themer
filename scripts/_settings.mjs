@@ -26,12 +26,13 @@ Hooks.once('setup', () => {
 		config: false,
 		onChange: (event) => {
 			if (MODULE.setting('enableMasterTheme') && !game.user.isGM) {
-				MODULE.setting('themeSettings', event);
-				for (const [key, theme] of Object.entries(MODULE.setting('registeredThemes'))) {
-					game.modules.get(MODULE.ID).API.register(foundry.utils.mergeObject(theme, {
-						id: key
-					}, { inplace: false }));
-				}
+				MODULE.setting('themeSettings', event).then(response => {
+					for (const [key, theme] of Object.entries(MODULE.setting('registeredThemes'))) {
+						game.modules.get(MODULE.ID).API.register(foundry.utils.mergeObject(theme, {
+							id: key
+						}, { inplace: false }));
+					}
+				});
 			}
 		}
 	});
@@ -59,6 +60,14 @@ Hooks.once('setup', () => {
 		type: Boolean,
 		default: false,
 		scope: 'world',
+		onChange: (event) => {
+			if (MODULE.setting('enableMasterTheme') && !game.user.isGM) {
+				document.querySelector('#settings-game button[data-action="themer"]').classList.add('hidden');
+				document.querySelector('#lib-themer-dialog .header-button.close').click() ?? false;
+			}else{
+				document.querySelector('#settings-game button[data-action="themer"]').classList.remove('hidden');
+			}
+		}
 	});
 	MODULE.setting('register', 'userStorage', {
 		type: String,

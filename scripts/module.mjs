@@ -389,8 +389,11 @@ export class Themer {
 				<i class="fa-solid fa-palette"></i> Configure Theme
 			</button>`);
 
+			if (MODULE.setting('enableMasterTheme') && !game.user.isGM) {
+				elem[0].querySelector('#settings-game button[data-action="themer"]').classList.add('hidden');
+			}
+
 			elem[0].querySelector('#settings-game button[data-action="themer"]').addEventListener('click', async (event) => {
-				MODULE.log(Themer.#THEMES);
 				new ThemeDialog(Themer.#THEMES).render(true);
 			})
 		}
