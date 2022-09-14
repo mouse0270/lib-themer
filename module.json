@@ -11,7 +11,7 @@
 	"authors": [
 		{
 			"name": "Mouse0270",
-			"url": "https://github.com/mouse0270/module-credits",
+			"url": "https://github.com/mouse0270/lib-themer",
 			"email": "rmcintosh@websitesbyfatdudes.com",
 			"discord": "Mouse0270#0270",
 
@@ -31,23 +31,7 @@
 	"relationships": {
 		"systems": [],
 		"requires": [],
-		"conflicts": [
-			{
-				"id": "tidy-ui_game-settings",
-				"type": "module",
-				"manifest": "https://raw.githubusercontent.com/sdenec/tidy-ui_game-settings/master/module.json",
-				"reason": "Tidy UI and MM+ perform many of the same functions. MM+ will not be fixing compatibility issues between the two modules.",
-				"compatibility": {}
-			}, {
-				"id": "lib-changelogs",
-				"type": "module",
-				"manifest": "https://github.com/theripper93/libChangelogs/blob/master/module.json",
-				"reason": "Changelog & Conflicts is deprecated and the author recommends you use Module Management+ instead.",
-				"compatibility": {
-					"minimum": "0.7.7"
-				}
-			}
-		]
+		"conflicts": []
 	},
 	"esmodules": [
         "/scripts/init.mjs"
@@ -66,17 +50,12 @@
 	"url": "This is auto replaced",
 	"manifest": "This is auto replaced",
 	"download": "This is auto replaced",
-	"readme": "https://github.com/mouse0270/module-credits/blob/master/README.md",
-	"changelog": "https://github.com/mouse0270/module-credits/blob/master/CHANGELOG.md",
-	"license": "https://github.com/mouse0270/module-credits/blob/master/LICENSE",
-	"bugs": "https://github.com/mouse0270/module-credits/issues",
-	"media": [
-		{
-			"type": "icon",
-			"url": "https://raw.githubusercontent.com/mouse0270/module-credits/master/assets/mm%2B.png"
-		}
-	],
+	"readme": "https://github.com/mouse0270/lib-themer/blob/master/README.md",
+	"changelog": "https://github.com/mouse0270/lib-themer/blob/master/CHANGELOG.md",
+	"license": "https://github.com/mouse0270/lib-themer/blob/master/LICENSE",
+	"bugs": "https://github.com/mouse0270/lib-themer/issues",
+	"media": [],
 	"flags": {
-		"attributions": "https://github.com/mouse0270/module-credits/blob/master/ATTRIBUTIONS.md"
+		"attributions": "https://github.com/mouse0270/lib-themer/blob/master/ATTRIBUTIONS.md"
 	}
 }
