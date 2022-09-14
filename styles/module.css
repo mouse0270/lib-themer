@@ -239,3 +239,9 @@ input[name="lib-themer-preset-title"] {
 	margin-bottom: 10px;
     width: 100%;
 }
+
+#lib-themer-preset-dialog.dialog .dialog-buttons button.import {
+	flex: 0;
+    padding: 0 1rem;
+    white-space: nowrap;
+}

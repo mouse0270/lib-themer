@@ -12,7 +12,7 @@
 				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingY.hint",
 				"type": "number",
 				"default": "16px",
-				"properties": {
+				"metadata": {
 					"min": 0,
 					"max": 24
 				}
@@ -22,7 +22,7 @@
 				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingX.hint",
 				"type": "number",
 				"default": "20px",
-				"properties": {
+				"metadata": {
 					"min": 0,
 					"max": 24
 				}
@@ -32,7 +32,7 @@
 				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarBorderRadius.hint",
 				"type": "number",
 				"default": "3px",
-				"properties": {
+				"metadata": {
 					"min": 0,
 					"max": 30
 				}

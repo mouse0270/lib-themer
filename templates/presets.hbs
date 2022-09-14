@@ -8,6 +8,9 @@
 		{{#each presets}}
 		<li data-preset="{{@key}}">
 			<label for="preset-{{@key}}">{{name}}</label>
+			<button data-action="export" data-tooltip="{{localize 'lib-themer.dialog.presets.export'}}">
+				<i class="fa-regular fa-file-export"></i>
+			</button>
 			<button data-action="update" data-tooltip="{{localize 'lib-themer.dialog.presets.update'}}">
 				<i class="fa-solid fa-floppy-disk"></i>
 			</button>
@@ -22,6 +25,9 @@
 	</ul>
 </div>
 <div class="dialog-buttons" style="flex: 0 1">
+	<button class="dialog-button import" data-action="import">
+		<i class="fa-regular fa-file-import"></i> {{localize 'lib-themer.dialog.presets.import'}}
+	</button>
 	<button class="dialog-button create" data-action="create">
 		<i class="fa-solid fa-plus"></i> {{localize 'lib-themer.dialog.presets.create'}}
 	</button>

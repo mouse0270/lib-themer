@@ -16,9 +16,11 @@
 			"presets": {
 				"header": "Preset Name(s)",
 				"manage": "Manage Presets",
+				"export": "Export",
 				"update": "Update",
 				"delete": "Delete",
 				"activate": "Activate",
+				"import": "Import Preset",
 				"create": "Create New Preset",
 				"overwritePreset": "Update this preset with your current theme values?",
 				"deletePreset": "Are you sure you want to delete this Preset?",

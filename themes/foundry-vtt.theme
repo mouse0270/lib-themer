@@ -311,88 +311,130 @@
 		"hint": "lib-themer.theme.fvtt.--z-index-canvas.hint",
 		"type": "number",
 		"default": "0",
-		"min": 0,
-		"max": 29
+		"metadata": {
+			"min": 0,
+			"max": 29
+		}
 	},
 	"--z-index-app": {
 		"name": "lib-themer.theme.fvtt.--z-index-app.name",
 		"hint": "lib-themer.theme.fvtt.--z-index-app.hint",
 		"type": "number",
 		"default": "30",
-		"min": 30,
-		"max": 59
+		"metadata": {
+			"min": 30,
+			"max": 59
+		}
 	},
 	"--z-index-ui": {
 		"name": "lib-themer.theme.fvtt.--z-index-ui.name",
 		"hint": "lib-themer.theme.fvtt.--z-index-ui.hint",
 		"type": "number",
 		"default": "60",
-		"min": 60,
-		"max": 99
+		"metadata": {
+			"min": 60,
+			"max": 99
+		}
 	},
 	"--z-index-window": {
 		"name": "lib-themer.theme.fvtt.--z-index-window.name",
 		"hint": "lib-themer.theme.fvtt.--z-index-window.hint",
 		"type": "number",
 		"default": "100",
-		"min": 100,
-		"max": 999
+		"metadata": {
+			"min": 100,
+			"max": 999
+		}
 	},
 	"--z-index-tooltip": {
 		"name": "lib-themer.theme.fvtt.--z-index-tooltip.name",
 		"hint": "lib-themer.theme.fvtt.--z-index-tooltip.hint",
 		"type": "number",
 		"default": "9999",
-		"min": 1000,
-		"max": 9999
+		"metadata": {
+			"min": 1000,
+			"max": 9999
+		}
 	},
 	"--sidebar-width": {
 		"name": "lib-themer.theme.fvtt.--sidebar-width.name",
 		"hint": "lib-themer.theme.fvtt.--sidebar-width.hint",
 		"type": "number",
-		"default": "300px"
+		"default": "300px",
+		"metadata": {
+			"min": 50,
+			"max": 600
+		}
 	},
 	"--sidebar-header-height": {
 		"name": "lib-themer.theme.fvtt.--sidebar-header-height.name",
 		"hint": "lib-themer.theme.fvtt.--sidebar-header-height.hint",
 		"type": "number",
-		"default": "32px"
+		"default": "32px",
+		"metadata": {
+			"min": 0,
+			"max": 64
+		}
 	},
 	"--sidebar-item-height": {
 		"name": "lib-themer.theme.fvtt.--sidebar-item-height.name",
 		"hint": "lib-themer.theme.fvtt.--sidebar-item-height.hint",
 		"type": "number",
-		"default": "48px"
+		"default": "48px",
+		"metadata": {
+			"min": 0,
+			"max": 96
+		}
 	},
 	"--hotbar-height": {
 		"name": "lib-themer.theme.fvtt.--hotbar-height.name",
 		"hint": "lib-themer.theme.fvtt.--hotbar-height.hint",
 		"type": "number",
-		"default": "52px"
+		"default": "52px",
+		"metadata": {
+			"min": 0,
+			"max": 102
+		}
 	},
 	"--hotbar-width": {
 		"name": "lib-themer.theme.fvtt.--hotbar-width.name",
 		"hint": "lib-themer.theme.fvtt.--hotbar-width.hint",
 		"type": "number",
-		"default": "578px"
+		"default": "578px",
+		"metadata": {
+			"min": 0,
+			"max": 1000
+		}
 	},
 	"--macro-size": {
 		"name": "lib-themer.theme.fvtt.--macro-size.name",
 		"hint": "lib-themer.theme.fvtt.--macro-size.hint",
 		"type": "number",
-		"default": "50px"
+		"default": "50px",
+		"metadata": {
+			"min": 0,
+			"max": 150
+		}
 	},
 	"--players-width": {
 		"name": "lib-themer.theme.fvtt.--players-width.name",
 		"hint": "lib-themer.theme.fvtt.--players-width.hint",
 		"type": "number",
-		"default": "200px"
+		"default": "200px",
+		"metadata": {
+			"min": 50,
+			"max": 400
+		}
 	},
 	"--form-field-height": {
 		"name": "lib-themer.theme.fvtt.--form-field-height.name",
 		"hint": "lib-themer.theme.fvtt.--form-field-height.hint",
 		"type": "number",
-		"default": "26px"
+		"default": "26px",
+		"metadata": {
+			"min": 0,
+			"max": 52
+		}
 	},
 	"--font-primary": {
 		"name": "lib-themer.theme.fvtt.--font-primary.name",
@@ -416,91 +458,151 @@
 		"name": "lib-themer.theme.fvtt.--font-size-11.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-11.hint",
 		"type": "number",
-		"default": "0.6875rem"
+		"default": "0.6875rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-12": {
 		"name": "lib-themer.theme.fvtt.--font-size-12.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-12.hint",
 		"type": "number",
-		"default": "0.75rem"
+		"default": "0.75rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-13": {
 		"name": "lib-themer.theme.fvtt.--font-size-13.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-13.hint",
 		"type": "number",
-		"default": "0.8125rem"
+		"default": "0.8125rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-14": {
 		"name": "lib-themer.theme.fvtt.--font-size-14.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-14.hint",
 		"type": "number",
-		"default": "0.875rem"
+		"default": "0.875rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-16": {
 		"name": "lib-themer.theme.fvtt.--font-size-16.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-16.hint",
 		"type": "number",
-		"default": "1rem"
+		"default": "1rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-18": {
 		"name": "lib-themer.theme.fvtt.--font-size-18.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-18.hint",
 		"type": "number",
-		"default": "1.125rem"
+		"default": "1.125rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-20": {
 		"name": "lib-themer.theme.fvtt.--font-size-20.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-20.hint",
 		"type": "number",
-		"default": "1.25rem"
+		"default": "1.25rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-24": {
 		"name": "lib-themer.theme.fvtt.--font-size-24.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-24.hint",
 		"type": "number",
-		"default": "1.5rem"
+		"default": "1.5rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-28": {
 		"name": "lib-themer.theme.fvtt.--font-size-28.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-28.hint",
 		"type": "number",
-		"default": "1.75rem"
+		"default": "1.75rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-32": {
 		"name": "lib-themer.theme.fvtt.--font-size-32.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-32.hint",
 		"type": "number",
-		"default": "2rem"
+		"default": "2rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--font-size-48": {
 		"name": "lib-themer.theme.fvtt.--font-size-48.name",
 		"hint": "lib-themer.theme.fvtt.--font-size-48.hint",
 		"type": "number",
-		"default": "3rem"
+		"default": "3rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--line-height-12": {
 		"name": "lib-themer.theme.fvtt.--line-height-12.name",
 		"hint": "lib-themer.theme.fvtt.--line-height-12.hint",
 		"type": "number",
-		"default": "0.75rem"
+		"default": "0.75rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--line-height-16": {
 		"name": "lib-themer.theme.fvtt.--line-height-16.name",
 		"hint": "lib-themer.theme.fvtt.--line-height-16.hint",
 		"type": "number",
-		"default": "1rem"
+		"default": "1rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--line-height-20": {
 		"name": "lib-themer.theme.fvtt.--line-height-20.name",
 		"hint": "lib-themer.theme.fvtt.--line-height-20.hint",
 		"type": "number",
-		"default": "1.25rem"
+		"default": "1.25rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--line-height-30": {
 		"name": "lib-themer.theme.fvtt.--line-height-30.name",
 		"hint": "lib-themer.theme.fvtt.--line-height-30.hint",
 		"type": "number",
-		"default": "1.875rem"
+		"default": "1.875rem",
+		"metadata": {
+			"min": 0,
+			"max": 5
+		}
 	},
 	"--color-level-info": {
 		"name": "lib-themer.theme.fvtt.--color-level-info.name",
