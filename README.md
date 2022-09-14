@@ -15,3 +15,17 @@ To help users expand on their UI design libThemer has added the ability to link 
 
 > **PLEASE NOTE:** That by adding a font via this interface, Google will recieve access to your IP address. If you are comfortable with this, turn off this feature.
 
+## TODO
+- [ ] Restrict user from editing settings when GM Theme is Enabled
+- [ ] Add Option to Export Theme
+- [ ] Add Option to Import theme
+- [ ] Add Option to reset theme options
+- [ ] Add Option to reset all theme options
+- [ ] Create documentation for registering themes and there settings
+- [x] Addition Controls
+ - [ ] Add Control for Background Blur
+ - [ ] Add Control for Box/Text Shadows
+ - [x] Background Image Controls
+  - [ ] Maybe Allow setting repeat
+  - [ ] Maybe Allow setting size
+  - [ ] Maybe Allow setting origin
