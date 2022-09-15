@@ -14,18 +14,3 @@ Define css variables with the following types:
 To help users expand on their UI design libThemer has added the ability to link to and use fonts from [Google Fonts](https://fonts.google.com/). The most common license is the [SIL Open Font License](https://scripts.sil.org/OFL). Some fonts are under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0) or [Ubuntu Font License](https://ubuntu.com/legal/font-licence).
 
 > **PLEASE NOTE:** That by adding a font via this interface, Google will recieve access to your IP address. If you are comfortable with this, turn off this feature.
-
-## TODO
-- [ ] Restrict user from editing settings when GM Theme is Enabled
-- [ ] Add Option to Export Theme
-- [ ] Add Option to Import theme
-- [ ] Add Option to reset theme options
-- [ ] Add Option to reset all theme options
-- [ ] Create documentation for registering themes and there settings
-- [x] Addition Controls
- - [ ] Add Control for Background Blur
- - [ ] Add Control for Box/Text Shadows
- - [x] Background Image Controls
-  - [ ] Maybe Allow setting repeat
-  - [ ] Maybe Allow setting size
-  - [ ] Maybe Allow setting origin
