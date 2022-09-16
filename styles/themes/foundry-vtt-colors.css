@@ -40,18 +40,18 @@ button:hover, button:focus {
 }
 button {
 	background-color: var(--palette-tertiary);
-	border-color: var(--palette-tertiary-700);
+	border-color: var(--palette-tertiary-outline);
 	color: var(--palette-tertiary-contrast);
 	transition: all 0.1s ease-in-out;
 }
 button:hover {
 	background-color: var(--palette-tertiary-hover);
-	border-color: var(--palette-tertiary);
+	border-color: var(--palette-tertiary-hover-outline);
 	color: var(--palette-tertiary-hover-contrast);
 }
 button:active {
 	background-color: var(--palette-tertiary-active);
-	border-color: var(--palette-tertiary-900);
+	border-color: var(--palette-tertiary-active-outline);
 	color: var(--palette-tertiary-active-contrast);
 }
 .app {
@@ -146,7 +146,7 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 }
 #sidebar-tabs > .item.active {
 	background-color: var(--palette-secondary);
-	border-color: var(--palette-secondary-700);
+	border-color: var(--palette-secondary-outline);
 	box-shadow: none;
 	color: var(--palette-secondary-contrast);
 	transition: all 0.1s ease-in-out;
@@ -157,7 +157,7 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 #sidebar-tabs > .collapse:hover,
 #sidebar-tabs > .collapse:focus {
 	background-color: var(--palette-secondary-hover);
-	border-color: var(--palette-secondary);
+	border-color: var(--palette-secondary-hover-outline);
 	box-shadow: none;
 	color: var(--palette-secondary-hover-contrast);
 	text-shadow: none;
@@ -166,7 +166,7 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 #sidebar-tabs > .item:active,
 #sidebar-tabs > .collapse:active {
 	background-color: var(--palette-secondary-active);
-	border-color: var(--palette-secondary-900);
+	border-color: var(--palette-secondary-active-outline);
 	box-shadow: none;
 	color: var(--palette-secondary-active-contrast);
 	text-shadow: none;
@@ -185,7 +185,7 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 .directory .action-buttons button,
 .settings-sidebar button {
 	background-color: var(--palette-primary);
-	border-color: var(--palette-primary-700);
+	border-color: var(--palette-primary-outline);
 	color: var(--palette-primary-contrast);
 	transition: all 0.1s ease-in-out;
 }
@@ -194,14 +194,14 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 .directory .action-buttons button:focus,
 .settings-sidebar button:focus {
 	background-color: var(--palette-primary-hover);
-	border-color: var(--palette-primary);
+	border-color: var(--palette-primary-hover-outline);
 	box-shadow: 0 0 5px var(--palette-primary);
 	color: var(--palette-primary-hover-contrast);
 }
 .directory .action-buttons button:active,
 .settings-sidebar button:active {
 	background-color: var(--palette-primary-active);
-	border-color: var(--palette-primary-900);
+	border-color: var(--palette-primary-active-outline);
 	color: var(--palette-primary-active-contrast);
 }
 .directory .action-buttons button[disabled],
@@ -213,7 +213,7 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 .directory .action-buttons button[disabled]:active,
 .settings-sidebar button[disabled]:active {
 	background-color: var(--palette-primary);
-	border-color: var(--palette-primary-700);
+	border-color: var(--palette-primary-outline);
 	color: var(--palette-primary-contrast);
 	cursor: not-allowed;
 	opacity: 0.5;
@@ -251,8 +251,8 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 #controls ol.control-tools > li:hover, 
 #controls ol.control-tools > li:focus {
     background-color: var(--palette-secondary);
-    border-color: var(--palette-secondary-700);
-    box-shadow: 0 0 10px var(--palette-secondary-hover);
+    border-color: var(--palette-secondary-outline);
+    box-shadow: 0 0 10px var(--palette-secondary-outline);
 	color: var(--palette-secondary-contrast);
 }
 #controls ol.control-tools > li.toggle {
@@ -261,9 +261,9 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 	color: var(--palette-tertiary-100-contrast);
 }
 #controls ol.control-tools > li.toggle.active,
-#controls ol.control-tools > li.toggle:hover {
+#controls ol.control-tools > li.toggle:active {
     background-color: var(--palette-tertiary);
-    border-color: var(--palette-tertiary-active);
+    border-color: var(--palette-tertiary-outline);
 	color: var(--palette-tertiary-contrast);
 }
 
@@ -295,12 +295,12 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 }
 .dialog .dialog-buttons button:hover {
 	background-color: var(--palette-primary-hover);
-	border-color: var(--palette-primary);
+	border-color: var(--palette-primary-hover-outline);
 	color: var(--palette-primary-hover-contrast);
 }
 .dialog .dialog-buttons button:active {
 	background-color: var(--palette-primary-active);
-	border-color: var(--palette-primary-900);
+	border-color: var(--palette-primary-active-outline);
 	color: var(--palette-primary-active-contrast);
 }
 .dialog .dialog-buttons button.yes {
@@ -311,28 +311,28 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 }
 .dialog .dialog-buttons button.yes:hover {
 	background-color: var(--palette-success-hover);
-	border-color: var(--palette-success-500);
+	border-color: var(--palette-success-hover-outline);
 	color: var(--palette-success-hover-contrast);
 }
 .dialog .dialog-buttons button.yes:active {
 	background-color: var(--palette-success-active);
-	border-color: var(--palette-success-900);
+	border-color: var(--palette-success-active-outline);
 	color: var(--palette-success-active-contrast);
 }
 .dialog .dialog-buttons button.no {
 	background-color: var(--palette-danger);
-	border-color: var(--palette-danger-700);
+	border-color: var(--palette-danger-outline);
 	color: var(--palette-danger-contrast);
 	transition: all 0.1s ease-in-out;
 }
 .dialog .dialog-buttons button.no:hover {
 	background-color: var(--palette-danger-hover);
-	border-color: var(--palette-danger-500);
+	border-color: var(--palette-danger-hover-outline);
 	color: var(--palette-danger-hover-contrast);
 }
 .dialog .dialog-buttons button.no:active {
 	background-color: var(--palette-danger-active);
-	border-color: var(--palette-danger-900);
+	border-color: var(--palette-danger-active-outline);
 	color: var(--palette-danger-active-contrast);
 }
 

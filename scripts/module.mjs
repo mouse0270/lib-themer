@@ -97,16 +97,18 @@ export class Themer {
 	/* ─────────────── ⋆⋅☆⋅⋆ ─────────────── */
 	// CUSTOM CSS SUPPORTS FUNCTIONS
 	/* ─────────────── ⋆⋅☆⋅⋆ ─────────────── */
+	static setColorContrast(property, value) {
+		//Update CSS Variable
+		document.querySelector(":root").style.setProperty(`${property}-contrast`, tinycolor.mostReadable(tinycolor(value).toHex8String(), ['#000', '#fff']));
+	}
+
 	static setColorVariations(property, value) {
 		const intensity = 10;
-		const contrastColor = tinycolor.mostReadable(tinycolor(value).toHex8String(), ['#000', '#fff']);
 		const colors = {
 			light: tinycolor(value).lighten(intensity * 2).toHex8String(),
 			base: tinycolor(value).toHex8String(),
 			dark: tinycolor(value).darken(intensity * 2).toHex8String()
 		}
-		//Update CSS Variable
-		document.querySelector(":root").style.setProperty(`${property}-contrast`, contrastColor);
 		// Set Shaded Colors
 		document.querySelector(":root").style.setProperty(`${property}-shaded`, tinycolor.mostReadable(colors['base'], [
 			tinycolor(colors['base']).lighten(50).toHex8String(), 
@@ -150,7 +152,6 @@ export class Themer {
 		document.querySelector(":root").style.setProperty(`${property}-900`, colors['900']);
 
 		// Set Contrast Colors
-		document.querySelector(":root").style.setProperty(`${property}-contrast`, tinycolor.mostReadable(colors['500'], ['#000', '#fff']));
 		document.querySelector(":root").style.setProperty(`${property}-100-contrast`, tinycolor.mostReadable(colors['100'], ['#000', '#fff']));
 		document.querySelector(":root").style.setProperty(`${property}-200-contrast`, tinycolor.mostReadable(colors['200'], ['#000', '#fff']));
 		document.querySelector(":root").style.setProperty(`${property}-300-contrast`, tinycolor.mostReadable(colors['300'], ['#000', '#fff']));
@@ -235,9 +236,12 @@ export class Themer {
 		}
 		
 		// Set Button States
+		document.querySelector(":root").style.setProperty(`${property}-outline`, tinycolor(colors['base']).darken((intensity - 3) * 1).toHex8String());
 		document.querySelector(":root").style.setProperty(`${property}-hover`, colors['hover']);
+		document.querySelector(":root").style.setProperty(`${property}-hover-outline`, tinycolor(colors['hover']).darken((intensity - 3) * 1).toHex8String());
 		document.querySelector(":root").style.setProperty(`${property}-hover-contrast`, tinycolor.mostReadable(colors['hover'], ['#000', '#fff']));
 		document.querySelector(":root").style.setProperty(`${property}-active`, colors['active']);
+		document.querySelector(":root").style.setProperty(`${property}-active-outline`, tinycolor(colors['active']).darken((intensity - 3) * 1).toHex8String());
 		document.querySelector(":root").style.setProperty(`${property}-active-contrast`, tinycolor.mostReadable(colors['active'], ['#000', '#fff']));
 	}
 
@@ -294,7 +298,9 @@ export class Themer {
 				//Update CSS Variable
 				document.querySelector(":root").style.setProperty(property, value);
 
-
+				if ((Themer.#THEME[property]?.type ?? "") == "color") {
+					Themer.setColorContrast(property, value);
+				}
 				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.metadata?.variations ?? false)) {
 					Themer.setColorVariations(property, value);
 				}

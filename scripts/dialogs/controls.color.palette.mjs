@@ -24,7 +24,7 @@ export function ControlColorPalette(elemContainer, setting, properties) {
 		<button type="button" data-action="reset" data-tooltip="${MODULE.localize('dialog.theme.reset')}"><i class="fa-duotone fa-rotate"></i></button>
 		<input type="range" name="${setting}" class="${controlProperties.colorPicker ? 'hidden' : ''}" value="${controlProperties.alpha}" min="0" max="100" data-tooltip="${controlProperties.alpha}" />
 		<p class="notes${(properties?.hint ?? false) ? '' : ' hidden'}">${this.localize(properties?.hint ?? `${setting}.hint`) ?? ''}</p>
-		<ul class="color-palette${controlProperties.palette ? '' : ' hidden'}">
+		<ul class="color-palette palette${controlProperties.palette ? '' : ' hidden'}">
 			<li style="background-color: var(${setting}-100);">
 				<span style="color: var(${setting}-100-contrast);">100</span>
 				<span${controlProperties.shades ? '' : ' class="hidden"'} style="color: var(${setting}-100-shaded);">shaded</span>
@@ -62,7 +62,7 @@ export function ControlColorPalette(elemContainer, setting, properties) {
 				<span${controlProperties.shades ? '' : ' class="hidden"'} style="color: var(${setting}-900-shaded);">shaded</span>
 			</li>
 		</ul>
-		<ul class="color-palette${controlProperties.variations ? '' : ' hidden'}">
+		<ul class="color-palette variations${controlProperties.variations ? '' : ' hidden'}">
 			<li style="background-color: var(${setting}-light);">
 				<span style="color: var(${setting}-light-shaded);">shaded</span>
 			</li>
@@ -74,12 +74,16 @@ export function ControlColorPalette(elemContainer, setting, properties) {
 				<span style="color: var(${setting}-dark-shaded);">shaded</span>
 			</li>
 		</ul>
-		<ul class="color-palette${controlProperties.buttons ? '' : ' hidden'}">
+		<ul class="color-palette buttons${controlProperties.buttons ? '' : ' hidden'}">
 			<li>
-				<a name="${setting}">Example Button </a>
+				<a name="${setting}">Example Button</a>
+				<a name="${setting}-hover">Button State :hover</a>
+				<a name="${setting}-active">Button State :active</a>
 			</li>
 			<style>
-				.color-palette a[name="${setting}"] {
+				.color-palette a[name="${setting}"],
+				.color-palette a[name="${setting}-hover"],
+				.color-palette a[name="${setting}-active"] {
 					width: 50%;
 					margin: 0 1px;
 					font-size: var(--font-size-14);
@@ -92,18 +96,23 @@ export function ControlColorPalette(elemContainer, setting, properties) {
 					-webkit-user-select: none !important;
 
 					background-color: var(${setting});
-					border: 1px solid var(${setting}-active);
+					border: 1px solid var(${setting}-outline);
 					color: var(${setting}-contrast);
 					transition: all 0.1s ease-in-out;
 				}
+				.color-palette a[name="${setting}-hover"],
 				.color-palette a[name="${setting}"]:hover {
-					background-color: var(${setting}-hover);
-					color: var(${setting}-hover-contrast);
-					text-shadow: none;
+					background-color: var(${setting}-hover) !important;
+					border-color: var(${setting}-hover-outline) !important;
+					color: var(${setting}-hover-contrast) !important;
+					text-shadow: none !important;
 				}
+				.color-palette a[name="${setting}-active"],
 				.color-palette a[name="${setting}"]:active {
-					background-color: var(${setting}-active);
-					color: var(${setting}-active-contrast);
+					background-color: var(${setting}-active) !important;
+					border-color: var(${setting}-active-outline) !important;
+					color: var(${setting}-active-contrast) !important;
+					text-shadow: none !important;
 				}
 			</style>
 		</ul>
@@ -149,8 +158,8 @@ export function ControlColorPalette(elemContainer, setting, properties) {
 		// Bind Events for Color and Range Silder
 		elem.querySelector('input[type="color"]').addEventListener('input', browserColorWidget, false);
 		elem.querySelector('input[type="color"]').addEventListener('change', browserColorWidget, false);
-		elem.querySelector('input[type="color"] + input[type="range"]').addEventListener('input', browserColorWidget, false);
-		elem.querySelector('input[type="color"] + input[type="range"]').addEventListener('change', browserColorWidget, false);
+		elem.querySelector('input[type="range"]').addEventListener('input', browserColorWidget, false);
+		elem.querySelector('input[type="range"]').addEventListener('change', browserColorWidget, false);
 	}
 
 	// Add Function to restore to default setting

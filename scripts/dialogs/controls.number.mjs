@@ -6,7 +6,7 @@ import { MODULE } from '../_module.mjs';
 export function ControlNumber(elemContainer, setting, properties) {
 	const controlProperties = {
 		min: (!isNaN(parseFloat(properties?.metadata?.min)) ? parseFloat(properties?.metadata?.min) : 0),
-		max: (!isNaN(parseFloat(properties?.metadata?.max)) ? parseFloat(properties?.metadata?.max) : parseFloat((properties?.value ?? properties.default)) ?? 0),
+		max: (!isNaN(parseFloat(properties?.metadata?.max)) ? parseFloat(properties?.metadata?.max) : (parseFloat((properties?.value ?? properties.default)) ?? 1) * 3),
 		step: (!isNaN(parseFloat(properties?.metadata?.step)) ? parseFloat(properties?.metadata?.step) : 1),
 		suffix: (properties?.suffix ?? (properties?.value ?? properties.default)).replace(parseFloat(properties?.value ?? properties.default), ''),
 		value: parseFloat(properties?.value ?? properties.default) ?? 0

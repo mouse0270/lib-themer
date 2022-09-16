@@ -159,6 +159,13 @@
 #lib-themer-dialog ul.color-palette li:last-of-type {
 	border-right-width: 1px;
 }
+#lib-themer-dialog ul.color-palette.buttons li {
+	border-width: 0px;
+	flex-direction: row;
+}
+#lib-themer-dialog ul.color-palette.buttons li a  {
+	flex: 0 0 25%;
+}
 
 #lib-themer-dialog div.form-group[data-type="background"] .form-fields {
 	flex-basis: 100%;

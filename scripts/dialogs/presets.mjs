@@ -93,6 +93,7 @@ export class PresetDialog extends FormApplication {
 						for (const [property, value] of Object.entries(MODULE.setting('themeSettings'))) {
 							game.modules.get(MODULE.ID).API.setCSSVariable(property, value.value);
 						}
+						Object.values(ui.windows)?.find(a => a.title === `${MODULE.TITLE}`)?.render(true) ?? false;
 					});
 				},
 				no: (elemDialog) => {
@@ -181,6 +182,7 @@ export class PresetDialog extends FormApplication {
 
 			const selectFile = (event) => {
 				const elemFiles = event.path[0].files;
+				
 				Array.from(elemFiles).forEach(file => {
 					try {
 						if (file?.type != 'application/json') {
