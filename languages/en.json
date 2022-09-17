@@ -269,8 +269,39 @@
 				"--color-level-error.name": "Info Color",
 				"--color-level-error.hint": "Danger color is used to highlight content that has failed to complete."
 			},
+			"cssTidyHUD": {
+				"name": "Tidy HUD",
+				"hint": "This stylesheet attempts to tidy up / minify the HUD elements of foundry for a cleaner look.",
+				"settings": {
+					"tidyHUDControlsAlignment": {
+						"name": "Controls Alignment",
+						"hint": "This allows you to adjust the alignment of the controls.",
+						"choices": {
+							"start": "Top",
+							"center": "Center",
+							"end": "Bottom"
+						}
+					},
+					"tidyHUDControlsMarginTop": {
+						"name": "Controls Margin Top",
+						"hint": "This allows you to adjust the controls spacing from the top."
+					},
+					"tidyHUDControlsFontSize": {
+						"name": "Controls Font Size",
+						"hint": "This allows you to adjust the font size of the main controls"
+					},
+					"tidyHUDControlsSize": {
+						"name": "Controls Size",
+						"hint": "This allows you to adjust the size of the main controls"
+					},
+					"tidyHUDOffsetMarginLeft": {
+						"name": "Scene Explorer Offset",
+						"hint": "This allows you to adjust the controls spacing from the left."
+					}
+				}
+			},
 			"cssTidySidebar": {
-				"name": "Tidy Sidebar Buttons",
+				"name": "Tidy Sidebar",
 				"hint": "This stylesheet attempts to clean up the sidebar settings buttons in a way I personally perfer.",
 				"settings": {
 					"tidySidebarPaddingY": {

@@ -36,7 +36,7 @@ export class ThemeDialog extends FormApplication {
 		
 
 		//this.THEMES = data;
-		const supportedTypes = ['color', 'number', 'font-family', 'stylesheet'];
+		const supportedTypes = ['color', 'number', 'font-family', 'choices', 'library'];
 
 		function countSettings(theme) {
 			let counter = 0;

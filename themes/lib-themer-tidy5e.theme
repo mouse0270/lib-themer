@@ -9,9 +9,12 @@
 	"cssTidy5eColors": {
 		"name": "Colorize Tidy5e Character Sheet",
 		"hint": "Enabling this stylesheet will theme your Tidy5e Character Sheet to use libThemer colors",
-		"type": "stylesheet",
+		"type": "library",
 		"default": false,
-		"file": "./modules/lib-themer/styles/themes/tidy5e-colors.css",
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/tidy5e-colors.css",
+			"type": "text/css"
+		}],
 		"settings": {
 			"csstidy5eSheetColorsWarning": {
 				"name": "lib-themer.theme.warning.stylesheet.name",

@@ -9,9 +9,12 @@
 	"cssDnDColors": {
 		"name": "Colorize D&D 5e Character Sheet",
 		"hint": "Enabling this stylesheet will theme your D&D5e Character sheet to use libThemer colors",
-		"type": "stylesheet",
+		"type": "library",
 		"default": false,
-		"file": "./modules/lib-themer/styles/themes/dnd5e-colors.css",
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/dnd5e-colors.css",
+			"type": "text/css"
+		}],
 		"settings": {
 			"cssDnDColorsColorsWarning": {
 				"name": "lib-themer.theme.warning.stylesheet.name",

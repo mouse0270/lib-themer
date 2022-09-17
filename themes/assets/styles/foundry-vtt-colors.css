@@ -240,32 +240,57 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 }
 
 /* UI CONTROLS ────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
+#navigation #nav-toggle,
+#navigation #scene-list .scene,
 #controls ol.control-tools > li {
     background-color: var(--app-background);
     border-color: var(--app-background-dark);
 	color: var(--app-background-shaded);
+    box-shadow: 0 0 10px var(--app-background-dark);
 	transition: all 0.1s ease-in-out;
 
 }
+#navigation #scene-list .scene.gm {
+    background-color: var(--app-background-light);
+    border-color: var(--app-background);
+	color: var(--app-background-shaded);
+    box-shadow: 0 0 10px var(--app-background);
+	transition: all 0.1s ease-in-out;
+} 
+#navigation #scene-list .scene.view, 
+#navigation #scene-list .scene.context,
+#navigation #scene-list .scene:hover,
+#controls ol.control-tools > li:hover {
+    background-color: var(--palette-secondary-hover);
+    border-color: var(--palette-secondary-hover-outline);
+    box-shadow: 0 0 10px var(--palette-secondary-hover-outline);
+	color: var(--palette-secondary-hover-contrast);
+	text-shadow: none;
+}
+#navigation #scene-list .scene.view,
+#navigation #scene-list .scene:active,
 #controls ol.control-tools > li.active, 
-#controls ol.control-tools > li:hover, 
-#controls ol.control-tools > li:focus {
-    background-color: var(--palette-secondary);
-    border-color: var(--palette-secondary-outline);
-    box-shadow: 0 0 10px var(--palette-secondary-outline);
-	color: var(--palette-secondary-contrast);
+#controls ol.control-tools > li:active {
+    background-color: var(--palette-secondary-active);
+    border-color: var(--palette-secondary-active-outline);
+    box-shadow: 0 0 10px var(--palette-secondary-active-outline);
+	color: var(--palette-secondary-active-contrast);
 }
 #controls ol.control-tools > li.toggle {
-    background-color: var(--palette-tertiary-100);
-    border-color: var(--palette-tertiary-hover);
-	color: var(--palette-tertiary-100-contrast);
-}
-#controls ol.control-tools > li.toggle.active,
-#controls ol.control-tools > li.toggle:active {
     background-color: var(--palette-tertiary);
-    border-color: var(--palette-tertiary-outline);
+    border-color: var(--palette-tertiary);
 	color: var(--palette-tertiary-contrast);
 }
+#navigation #scene-list .scene.active,
+#controls ol.control-tools > li.toggle.active,
+#controls ol.control-tools > li.toggle:active {
+    background-color: var(--palette-tertiary-active);
+    border-color: var(--palette-tertiary-active-outline);
+	color: var(--palette-tertiary-active-contrast);
+}
+#navigation #scene-list .scene a:hover {
+	text-shadow: none;
+} 
 
 /* HOTBAR ─────────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
 #hotbar #macro-list {

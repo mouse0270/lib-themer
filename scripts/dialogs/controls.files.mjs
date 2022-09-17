@@ -3,7 +3,7 @@
 // GET MODULE CORE
 import { MODULE } from '../_module.mjs';
 
-export function ControlStylesheet(elemContainer, setting, properties) {
+export function ControlFiles(elemContainer, setting, properties) {
 	const controlProperties = {
 		value: (properties?.value ?? properties.default).toString() == 'true'
 	}

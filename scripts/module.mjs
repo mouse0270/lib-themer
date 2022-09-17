@@ -245,14 +245,26 @@ export class Themer {
 		document.querySelector(":root").style.setProperty(`${property}-active-contrast`, tinycolor.mostReadable(colors['active'], ['#000', '#fff']));
 	}
 
-	static setManageStylesheet(property, value) {
+	static setManageLibrary(property, value) {
+		MODULE.log(property, value, Themer.#THEME[property]?.files)
 		if (value == 'true') {
-			if ((document.querySelector(`head link[name="${property}"]`)?.length ?? 0) == 0) {
-				document.querySelector('head link:last-of-type').insertAdjacentHTML('afterend', `<link name="${property}" href="${Themer.#THEME[property]?.file}"  rel="stylesheet" type="text/css" />`);
-			}
+			(Themer.#THEME[property]?.files ?? []).forEach(file => {
+				const isScriptFile = (file?.type ?? "").includes('javascript') || (file?.type ?? "").includes('js') || (file?.name ?? "").endsWith('js')
+				// Make sure file isn't already active
+				if ((document.querySelector(`head ${isScriptFile ? 'script' : 'link'}[name="${property}"][${isScriptFile ? 'src' : 'href'}="${file?.name}"]`)?.length ?? 0) == 0) {
+					if (isScriptFile) {
+						let script = document.createElement('script');
+						script.src = file?.name;
+						script.name = property;
+						document.querySelector(`head script:last-of-type`).insertAdjacentElement('afterend', script);
+					}else{
+						document.querySelector(`head link:last-of-type`).insertAdjacentHTML('afterend', `<link name="${property}" href="${file?.name}" rel="stylesheet" type="text/css" />`);
+					}
+				}
+			})
 		}else{
-			(document.querySelectorAll(`head link[name="${property}"]`) ?? []).forEach(stylesheet => {
-				stylesheet?.remove() ?? false;
+			(document.querySelectorAll(`head [name="${property}"]`) ?? []).forEach(file => {
+				file?.remove() ?? false;
 			});
 		}
 	}
@@ -324,8 +336,8 @@ export class Themer {
 					document.querySelector(":root").style.setProperty(`${property}-url`, value?.url != "url(/)" ? value?.url : '' ?? '');
 				}
 				
-				if ((Themer.#THEME[property]?.type ?? "") == "stylesheet") {
-					Themer.setManageStylesheet(property, value);
+				if ((Themer.#THEME[property]?.type ?? "") == "library") {
+					Themer.setManageLibrary(property, value);
 					for await (const [ssProperty, ssValue] of Object.entries(Themer.#THEME[property]?.settings ?? [])) {
 						if (typeof ssValue == 'object') {
 							Themer.#THEME[ssProperty] = foundry.utils.mergeObject(MODULE.setting('themeSettings')?.[ssProperty] ?? {}, ssValue);

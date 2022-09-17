@@ -1,11 +1,80 @@
 {
 	"title": "lib-themer.title",
+	"cssTidyHUD": {
+		"name": "lib-themer.theme.cssTidyHUD.name",
+		"hint": "lib-themer.theme.cssTidyHUD.hint",
+		"type": "library",
+		"default": false,
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/tidy-hud.css",
+			"type": "text/css"
+		},{
+			"name": "./modules/lib-themer/themes/assets/scripts/tidy-hud.js",
+			"type": "text/javscript"
+		}],
+		"settings": {
+			"--tidy-hud-controls-margin-top": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsMarginTop.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsMarginTop.hint",
+				"type": "number",
+				"default": "0px",
+				"metadata": {
+					"min": -300,
+					"max": 300
+				}
+			},
+			"--tidy-hud-controls-alignment": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.hint",
+				"type": "choices",
+				"default": "center",
+				"choices": {
+					"start": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.start",
+					"center": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.center",
+					"end": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.end"
+				}
+			},
+			"--tidy-hud-controls-font-size": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsFontSize.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsFontSize.hint",
+				"type": "number",
+				"default": "20px",
+				"metadata": {
+					"min": 16,
+					"max": 24
+				}
+			},
+			"--tidy-hud-controls-size": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsSize.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsSize.hint",
+				"type": "number",
+				"default": "30px",
+				"metadata": {
+					"min": 24,
+					"max": 36
+				}
+			},
+			"--tidy-hud-offset-margin-left": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.hint",
+				"type": "number",
+				"default": "-83px",
+				"metadata": {
+					"min": -200,
+					"max": 200
+				}
+			}
+		}
+	},
 	"cssTidySidebar": {
 		"name": "lib-themer.theme.cssTidySidebar.name",
 		"hint": "lib-themer.theme.cssTidySidebar.hint",
-		"type": "stylesheet",
+		"type": "library",
 		"default": false,
-		"file": "./modules/lib-themer/styles/themes/tidy-sidebar.css",
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/tidy-sidebar.css",
+			"type": "text/css"
+		}],
 		"settings": {
 			"--tidy-sidebar-padding-y": {
 				"name": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingY.name",
@@ -42,9 +111,12 @@
 	"cssfoundryVTTColors": {
 		"name": "lib-themer.theme.cssfoundryVTTColors.name",
 		"hint": "lib-themer.theme.cssfoundryVTTColors.hint",
-		"type": "stylesheet",
+		"type": "library",
 		"default": false,
-		"file": "./modules/lib-themer/styles/themes/foundry-vtt-colors.css",
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/foundry-vtt-colors.css",
+			"type": "text/css"
+		}],
 		"settings": {
 			"cssfoundryVTTColorsWarning": {
 				"name": "lib-themer.theme.cssfoundryVTTColors.settings.cssfoundryVTTColorsWarning.name",
