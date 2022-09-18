@@ -83,9 +83,13 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 
 /* NOTIFICATION STYLES ────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
 .notification {
+	opacity: 0.7;
 	padding-left: 45px;
+	padding-right: 0.5rem;
+	padding-top: 0.5rem;
     position: relative;
 	text-shadow: none;
+	transition: opacity 0.1s ease-in-out;
 }
 .notification:before{
 	position: absolute;
@@ -96,6 +100,9 @@ form h1.form-header, form h2.form-header, form h3.form-header {
     font-size: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
+}
+.notification:hover {
+	opacity: 1;
 }
 .notification.info {
 	background-color: var(--palette-info);
@@ -114,6 +121,13 @@ form h1.form-header, form h2.form-header, form h3.form-header {
     border-color: var(--palette-danger-700);
 	box-shadow: 0 0 10px var(--palette-danger-900);
 	color: var(--palette-danger-contrast)
+}
+.notification .close {
+    margin: 0rem;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    font-size: 1rem;
 }
 
 /* MODULE MANAGEMENT WINDOW ───── ⋆⋅☆⋅⋆ ────────────────────────────── */

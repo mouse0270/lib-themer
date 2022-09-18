@@ -77,3 +77,10 @@ aside#players ol li.player span.player-name {
 #ui-top.offset #navigation {
 	margin-top: var(--tidy-hud-offset-margin-top, '6px');
 }
+
+#notifications {
+    left: auto;
+    right: calc(var(--sidebar-width) + 1rem);
+	top: 1rem;
+    width: var(--sidebar-width);
+}
