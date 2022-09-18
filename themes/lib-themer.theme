@@ -18,7 +18,7 @@
 				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsMarginTop.hint",
 				"type": "number",
 				"default": "0px",
-				"metadata": {
+				"range": {
 					"min": -300,
 					"max": 300
 				}
@@ -39,7 +39,7 @@
 				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsFontSize.hint",
 				"type": "number",
 				"default": "20px",
-				"metadata": {
+				"range": {
 					"min": 16,
 					"max": 24
 				}
@@ -49,7 +49,7 @@
 				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsSize.hint",
 				"type": "number",
 				"default": "30px",
-				"metadata": {
+				"range": {
 					"min": 24,
 					"max": 36
 				}
@@ -59,7 +59,7 @@
 				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginTop.hint",
 				"type": "number",
 				"default": "6px",
-				"metadata": {
+				"range": {
 					"min": 0,
 					"max": 12
 				}
@@ -69,7 +69,7 @@
 				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.hint",
 				"type": "number",
 				"default": "-83px",
-				"metadata": {
+				"range": {
 					"min": -200,
 					"max": 200
 				}
@@ -91,7 +91,7 @@
 				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingY.hint",
 				"type": "number",
 				"default": "16px",
-				"metadata": {
+				"range": {
 					"min": 0,
 					"max": 24
 				}
@@ -101,7 +101,7 @@
 				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingX.hint",
 				"type": "number",
 				"default": "20px",
-				"metadata": {
+				"range": {
 					"min": 0,
 					"max": 24
 				}
@@ -111,7 +111,7 @@
 				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarBorderRadius.hint",
 				"type": "number",
 				"default": "3px",
-				"metadata": {
+				"range": {
 					"min": 0,
 					"max": 30
 				}
@@ -138,7 +138,7 @@
 				"hint": "lib-themer.theme.cssfoundryVTTColors.settings.--app-background.hint",
 				"type": "color",
 				"default": "#2a3132cc",
-				"metadata": {
+				"colors": {
 					"variations": true
 				}
 				
@@ -156,7 +156,7 @@
 				"hint": "lib-themer.theme.cssfoundryVTTColors.settings.--app-dialog-background.hint",
 				"type": "color",
 				"default": "#dfddd1ff",
-				"metadata": {
+				"colors": {
 					"variations": true
 				}
 			},
@@ -175,7 +175,7 @@
 		"hint": "lib-themer.theme.default.--palette-primary.hint",
 		"type": "color",
 		"default": "#ff6400ff",
-		"metadata": {
+		"colors": {
 			"palette": true,
 			"buttons": true
 		}
@@ -185,7 +185,7 @@
 		"hint": "lib-themer.theme.default.--palette-secondary.hint",
 		"type": "color",
 		"default": "#3a00aeff",
-		"metadata": {
+		"colors": {
 			"palette": true,
 			"buttons": true
 		}
@@ -195,7 +195,7 @@
 		"hint": "lib-themer.theme.default.--palette-tertiary.hint",
 		"type": "color",
 		"default": "#f44336ff",
-		"metadata": {
+		"colors": {
 			"palette": true,
 			"buttons": true
 		}
@@ -205,7 +205,7 @@
 		"hint": "lib-themer.theme.default.--palette-quaternary.hint",
 		"type": "color",
 		"default": "#009BFFff",
-		"metadata": {
+		"colors": {
 			"palette": true,
 			"buttons": true
 		}
@@ -216,7 +216,7 @@
 		"hint": "lib-themer.theme.default.--palette-info.hint",
 		"type": "color",
 		"default": "#0dcaf0ff",
-		"metadata": {
+		"colors": {
 			"palette": true,
 			"buttons": true
 		}
@@ -226,7 +226,7 @@
 		"hint": "lib-themer.theme.default.--palette-success.hint",
 		"type": "color",
 		"default": "#198754ff",
-		"metadata": {
+		"colors": {
 			"palette": true,
 			"buttons": true
 		}
@@ -236,7 +236,7 @@
 		"hint": "lib-themer.theme.default.--palette-warning.hint",
 		"type": "color",
 		"default": "#ffc107ff",
-		"metadata": {
+		"colors": {
 			"palette": true,
 			"buttons": true
 		}
@@ -246,7 +246,7 @@
 		"hint": "lib-themer.theme.default.--palette-danger.hint",
 		"type": "color",
 		"default": "#dc3545ff",
-		"metadata": {
+		"colors": {
 			"palette": true,
 			"buttons": true
 		}
@@ -257,7 +257,7 @@
 		"hint": "lib-themer.theme.default.--palette-light.hint",
 		"type": "color",
 		"default": "#f8f9faff",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -266,7 +266,7 @@
 		"hint": "lib-themer.theme.default.--palette-dark.hint",
 		"type": "color",
 		"default": "#212529ff",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -276,7 +276,7 @@
 		"hint": "lib-themer.theme.default.--palette-red.hint",
 		"type": "color",
 		"default": "#f44336",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -285,7 +285,7 @@
 		"hint": "lib-themer.theme.default.--palette-pink.hint",
 		"type": "color",
 		"default": "#e91e63",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -294,7 +294,7 @@
 		"hint": "lib-themer.theme.default.--palette-purple.hint",
 		"type": "color",
 		"default": "#9c27b0",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -303,7 +303,7 @@
 		"hint": "lib-themer.theme.default.--palette-deep-purple.hint",
 		"type": "color",
 		"default": "#673ab7",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -312,7 +312,7 @@
 		"hint": "lib-themer.theme.default.--palette-indigo.hint",
 		"type": "color",
 		"default": "#3f51b5",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -321,7 +321,7 @@
 		"hint": "lib-themer.theme.default.--palette-blue.hint",
 		"type": "color",
 		"default": "#2196f3",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -330,7 +330,7 @@
 		"hint": "lib-themer.theme.default.--palette-light-blue.hint",
 		"type": "color",
 		"default": "#03a9f4",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -339,7 +339,7 @@
 		"hint": "lib-themer.theme.default.--palette-cyan.hint",
 		"type": "color",
 		"default": "#00bcd4",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -348,7 +348,7 @@
 		"hint": "lib-themer.theme.default.--palette-teal.hint",
 		"type": "color",
 		"default": "#009688",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -357,7 +357,7 @@
 		"hint": "lib-themer.theme.default.--palette-green.hint",
 		"type": "color",
 		"default": "#4caf50",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -366,7 +366,7 @@
 		"hint": "lib-themer.theme.default.--palette-light-green.hint",
 		"type": "color",
 		"default": "#8bc34a",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -375,7 +375,7 @@
 		"hint": "lib-themer.theme.default.--palette-lime.hint",
 		"type": "color",
 		"default": "#cddc39",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -384,7 +384,7 @@
 		"hint": "lib-themer.theme.default.--palette-yellow.hint",
 		"type": "color",
 		"default": "#ffeb3b",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -393,7 +393,7 @@
 		"hint": "lib-themer.theme.default.--palette-amber.hint",
 		"type": "color",
 		"default": "#ffc107",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -402,7 +402,7 @@
 		"hint": "lib-themer.theme.default.--palette-orange.hint",
 		"type": "color",
 		"default": "#ff9800",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -411,7 +411,7 @@
 		"hint": "lib-themer.theme.default.--palette-deep-orange.hint",
 		"type": "color",
 		"default": "#ff5722",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -420,7 +420,7 @@
 		"hint": "lib-themer.theme.default.--palette-brown.hint",
 		"type": "color",
 		"default": "#795548",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -429,7 +429,7 @@
 		"hint": "lib-themer.theme.default.--palette-grey.hint",
 		"type": "color",
 		"default": "#9e9e9e",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	},
@@ -438,7 +438,7 @@
 		"hint": "lib-themer.theme.default.--palette-blue-grey.hint",
 		"type": "color",
 		"default": "#607d8b",
-		"metadata": {
+		"colors": {
 			"palette": true
 		}
 	}

@@ -311,7 +311,7 @@
 		"hint": "lib-themer.theme.fvtt.--z-index-canvas.hint",
 		"type": "number",
 		"default": "0",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 29
 		}
@@ -321,7 +321,7 @@
 		"hint": "lib-themer.theme.fvtt.--z-index-app.hint",
 		"type": "number",
 		"default": "30",
-		"metadata": {
+		"range": {
 			"min": 30,
 			"max": 59
 		}
@@ -331,7 +331,7 @@
 		"hint": "lib-themer.theme.fvtt.--z-index-ui.hint",
 		"type": "number",
 		"default": "60",
-		"metadata": {
+		"range": {
 			"min": 60,
 			"max": 99
 		}
@@ -341,7 +341,7 @@
 		"hint": "lib-themer.theme.fvtt.--z-index-window.hint",
 		"type": "number",
 		"default": "100",
-		"metadata": {
+		"range": {
 			"min": 100,
 			"max": 999
 		}
@@ -351,7 +351,7 @@
 		"hint": "lib-themer.theme.fvtt.--z-index-tooltip.hint",
 		"type": "number",
 		"default": "9999",
-		"metadata": {
+		"range": {
 			"min": 1000,
 			"max": 9999
 		}
@@ -361,7 +361,7 @@
 		"hint": "lib-themer.theme.fvtt.--sidebar-width.hint",
 		"type": "number",
 		"default": "300px",
-		"metadata": {
+		"range": {
 			"min": 50,
 			"max": 600
 		}
@@ -371,7 +371,7 @@
 		"hint": "lib-themer.theme.fvtt.--sidebar-header-height.hint",
 		"type": "number",
 		"default": "32px",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 64
 		}
@@ -381,7 +381,7 @@
 		"hint": "lib-themer.theme.fvtt.--sidebar-item-height.hint",
 		"type": "number",
 		"default": "48px",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 96
 		}
@@ -391,7 +391,7 @@
 		"hint": "lib-themer.theme.fvtt.--hotbar-height.hint",
 		"type": "number",
 		"default": "52px",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 102
 		}
@@ -401,7 +401,7 @@
 		"hint": "lib-themer.theme.fvtt.--hotbar-width.hint",
 		"type": "number",
 		"default": "578px",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 1000
 		}
@@ -411,7 +411,7 @@
 		"hint": "lib-themer.theme.fvtt.--macro-size.hint",
 		"type": "number",
 		"default": "50px",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 150
 		}
@@ -421,7 +421,7 @@
 		"hint": "lib-themer.theme.fvtt.--players-width.hint",
 		"type": "number",
 		"default": "200px",
-		"metadata": {
+		"range": {
 			"min": 50,
 			"max": 400
 		}
@@ -431,7 +431,7 @@
 		"hint": "lib-themer.theme.fvtt.--form-field-height.hint",
 		"type": "number",
 		"default": "26px",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 52
 		}
@@ -459,7 +459,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-11.hint",
 		"type": "number",
 		"default": "0.6875rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -469,7 +469,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-12.hint",
 		"type": "number",
 		"default": "0.75rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -479,7 +479,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-13.hint",
 		"type": "number",
 		"default": "0.8125rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -489,7 +489,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-14.hint",
 		"type": "number",
 		"default": "0.875rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -499,7 +499,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-16.hint",
 		"type": "number",
 		"default": "1rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -509,7 +509,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-18.hint",
 		"type": "number",
 		"default": "1.125rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -519,7 +519,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-20.hint",
 		"type": "number",
 		"default": "1.25rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -529,7 +529,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-24.hint",
 		"type": "number",
 		"default": "1.5rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -539,7 +539,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-28.hint",
 		"type": "number",
 		"default": "1.75rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -549,7 +549,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-32.hint",
 		"type": "number",
 		"default": "2rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -559,7 +559,7 @@
 		"hint": "lib-themer.theme.fvtt.--font-size-48.hint",
 		"type": "number",
 		"default": "3rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -569,7 +569,7 @@
 		"hint": "lib-themer.theme.fvtt.--line-height-12.hint",
 		"type": "number",
 		"default": "0.75rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -579,7 +579,7 @@
 		"hint": "lib-themer.theme.fvtt.--line-height-16.hint",
 		"type": "number",
 		"default": "1rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -589,7 +589,7 @@
 		"hint": "lib-themer.theme.fvtt.--line-height-20.hint",
 		"type": "number",
 		"default": "1.25rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}
@@ -599,7 +599,7 @@
 		"hint": "lib-themer.theme.fvtt.--line-height-30.hint",
 		"type": "number",
 		"default": "1.875rem",
-		"metadata": {
+		"range": {
 			"min": 0,
 			"max": 5
 		}

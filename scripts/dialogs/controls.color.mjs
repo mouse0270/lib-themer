@@ -10,10 +10,10 @@ export function ControlColor(elemContainer, setting, properties) {
 		colorPicker: game.modules.get('colorsettings')?.active ?? false,
 		value: tinycolor(properties?.value ?? properties.default).toHex8String(),
 		alpha: parseInt(tinycolor(properties?.value ?? properties.default).getAlpha() * 100) ?? 100,
-		variations: (properties?.metadata?.variations ?? false),
-		palette: (properties?.metadata?.palette ?? false),
-		shades: (properties?.metadata?.shades ?? false),
-		buttons: (properties?.metadata?.buttons ?? false)
+		variations: (properties?.colors?.variations ?? false),
+		palette: (properties?.colors?.palette ?? false),
+		shades: (properties?.colors?.shades ?? false),
+		buttons: (properties?.colors?.buttons ?? false)
 	}
 	if (!controlProperties.colorPicker) controlProperties.value = tinycolor(properties?.value ?? properties.default).toHexString()
 

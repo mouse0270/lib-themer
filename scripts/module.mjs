@@ -328,20 +328,20 @@ export class Themer {
 				if ((Themer.#THEME[property]?.type ?? "") == "color") {
 					Themer.setColorContrast(property, value);
 				}
-				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.metadata?.variations ?? false)) {
+				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.colors?.variations ?? false)) {
 					Themer.setColorVariations(property, value);
 				}
-				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.metadata?.palette ?? false)) {
+				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.colors?.palette ?? false)) {
 					Themer.setColorPalette(property, value);
 				}
-				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.metadata?.shades ?? false)) {
-					if (!(Themer.#THEME[property]?.metadata?.palette ?? false)) {
+				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.colors?.shades ?? false)) {
+					if (!(Themer.#THEME[property]?.colors?.palette ?? false)) {
 						MODULE.warn(`${game.i18n.localize(Themer.#THEME[property].name)} tried to initialize color type shade without also setting palette to true`);
 					}else{
 						Themer.setColorShades(property, value);
 					}
 				}
-				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.metadata?.buttons ?? false)) {
+				if ((Themer.#THEME[property]?.type ?? "") == "color" && (Themer.#THEME[property]?.colors?.buttons ?? false)) {
 					Themer.setColorButtonStates(property, value);
 				}
 				
