@@ -238,6 +238,9 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 .chat-message .message-header {
 	color: var(--app-dialog-background-contrast);
 }
+#chat-controls .roll-type-select {
+	color: var(--app-background-contrast);
+}
 
 /* UI CONTROLS ────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */
 #navigation #nav-toggle,

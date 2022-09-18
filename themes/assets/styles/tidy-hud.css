@@ -74,3 +74,6 @@ aside#players ol li.player span.player-name {
 #ui-top.offset {
 	margin-left: var(--tidy-hud-offset-margin-left, '-83px');
 }
+#ui-top.offset #navigation {
+	margin-top: var(--tidy-hud-offset-margin-top, '6px');
+}

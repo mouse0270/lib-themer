@@ -54,6 +54,16 @@
 					"max": 36
 				}
 			},
+			"--tidy-hud-offset-margin-top": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginTop.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginTop.hint",
+				"type": "number",
+				"default": "6px",
+				"metadata": {
+					"min": 0,
+					"max": 12
+				}
+			},
 			"--tidy-hud-offset-margin-left": {
 				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.name",
 				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.hint",

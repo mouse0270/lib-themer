@@ -28,7 +28,8 @@
 				"errors": {
 					"noTitle": "Please enter a Title for your Preset."
 				}
-			}
+			},
+			"scriptreset.message": "The setting you are disabling contains a javascript file. Javascript files can't be dynamically unloaded, so it is recommended that you reload your page now. Would you like to reload?"
 		},
 		"theme": {
 			"warning.stylesheet": {
@@ -294,8 +295,12 @@
 						"name": "Controls Size",
 						"hint": "This allows you to adjust the size of the main controls"
 					},
+					"tidyHUDOffsetMarginTop": {
+						"name": "Scene Explorer Top Offset",
+						"hint": "This allows you to adjust the controls spacing from the top."
+					},
 					"tidyHUDOffsetMarginLeft": {
-						"name": "Scene Explorer Offset",
+						"name": "Scene Explorer Left Offset",
 						"hint": "This allows you to adjust the controls spacing from the left."
 					}
 				}

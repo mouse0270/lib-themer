@@ -246,7 +246,6 @@ export class Themer {
 	}
 
 	static setManageLibrary(property, value) {
-		MODULE.log(property, value, Themer.#THEME[property]?.files)
 		if (value == 'true') {
 			(Themer.#THEME[property]?.files ?? []).forEach(file => {
 				const isScriptFile = (file?.type ?? "").includes('javascript') || (file?.type ?? "").includes('js') || (file?.name ?? "").endsWith('js')
@@ -254,8 +253,9 @@ export class Themer {
 				if ((document.querySelector(`head ${isScriptFile ? 'script' : 'link'}[name="${property}"][${isScriptFile ? 'src' : 'href'}="${file?.name}"]`)?.length ?? 0) == 0) {
 					if (isScriptFile) {
 						let script = document.createElement('script');
+						script.setAttribute('name', property);
 						script.src = file?.name;
-						script.name = property;
+						
 						document.querySelector(`head script:last-of-type`).insertAdjacentElement('afterend', script);
 					}else{
 						document.querySelector(`head link:last-of-type`).insertAdjacentHTML('afterend', `<link name="${property}" href="${file?.name}" rel="stylesheet" type="text/css" />`);
@@ -263,6 +263,21 @@ export class Themer {
 				}
 			})
 		}else{
+			const hasScriptFile = (Themer.#THEME[property]?.files ?? []).filter(file => (file?.type ?? "").includes('javascript') || (file?.type ?? "").includes('js') || (file?.name ?? "").endsWith('js')).length >= 1;
+			if (hasScriptFile && (document.querySelectorAll(`head script[name="${property}"]`)?.length ?? 0) > 0) {
+				Dialog.confirm({
+					id: `${MODULE.ID}-has-script`,
+					title: MODULE.localize('title'),
+					content: `<p style="margin-top: 0px;">${MODULE.localize('dialog.scriptreset.message')}</p>`,
+					yes: (elemDialog) => {
+						location.reload();
+					},
+					no: () => {
+						return 'Player Rejected Setting'
+					}
+				}).then(response => {
+				});
+			}
 			(document.querySelectorAll(`head [name="${property}"]`) ?? []).forEach(file => {
 				file?.remove() ?? false;
 			});
