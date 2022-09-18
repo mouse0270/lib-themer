@@ -17,4 +17,6 @@ To help users expand on their UI design libThemer has added the ability to link 
 
 > **PLEASE NOTE:** That by adding a font via this interface, Google will recieve access to your IP address. If you are comfortable with this, turn off this feature.
 
+# Using libThemer
+
 Check out the [wiki](https://github.com/mouse0270/lib-themer/wiki) for all the Theme Type Options and how to [Register a Theme](https://github.com/mouse0270/lib-themer/wiki/Registering-a-Theme)
