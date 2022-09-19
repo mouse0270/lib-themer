@@ -1,3 +1,6 @@
+# Version 1.0.1 - Grammar is Hard
+- Fixed spelling on Readme
+
 # Version 1.0.0 - Foundry, Make it Your Way
 ## libThemer
 libThemer is mostly a library module designed to allow developers to define css variables and optional stylesheets for users to customize the look and feel of foundry, game systems or modules.
