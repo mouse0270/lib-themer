@@ -141,7 +141,6 @@
 				"colors": {
 					"variations": true
 				}
-				
 			},
 			"--app-background-image": {
 				"name": "lib-themer.theme.cssfoundryVTTColors.settings.--app-background-image.name",

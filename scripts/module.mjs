@@ -19,7 +19,7 @@ export class Themer {
 	// WHAT IS THIS?
 	/* ─────────────── ⋆⋅☆⋅⋆ ─────────────── */
 	static get hasPermission() {
-		return game.permissions.FILES_BROWSE.includes(game.user.role) || (game.modules.get('socketlib')?.active ?? false);
+		return game.permissions.FILES_BROWSE.includes(game.user.role);
 	}
 
 	/* ─────────────── ⋆⋅☆⋅⋆ ─────────────── */
