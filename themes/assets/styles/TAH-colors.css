@@ -1,0 +1,81 @@
+.tah-title-button {
+	background-color: var(--app-background) !important; /* TAH APPLIES STYLE ON ELEMENT */
+    border-color: var(--app-background-dark) !important; /* TAH APPLIES STYLE ON ELEMENT */
+    color: var(--app-background-shaded);
+    box-shadow: 0 0 10px var(--app-background-dark);
+	text-shadow: none;
+    transition: all 0.1s ease-in-out;
+
+	/* CLEAN UP UI/UX */
+	line-height: 16px;
+	margin-right: 0.5rem;
+	padding: 0.5rem;
+}
+.tah-title-button:hover,
+.hover > .tah-title-button {
+    background-color: var(--palette-secondary-hover) !important; /* TAH APPLIES STYLE ON ELEMENT */
+    border-color: var(--palette-secondary-hover-outline) !important; /* TAH APPLIES STYLE ON ELEMENT */
+    box-shadow: 0 0 10px var(--palette-secondary-hover-outline);
+    color: var(--palette-secondary-hover-contrast);
+    text-shadow: none;
+}
+.tah-title-button:hover > .fa, .tah-title-button:hover > .fas {
+	display: none !important;
+}
+
+.tah-subcategory .tah-subtitle {
+	margin-top: 0.5rem;
+}
+
+.tah-subcategory .tah-action {
+	margin-right: 0.5rem;
+}
+.tah-subcategory .tah-action button {
+	background-color: var(--app-background) !important; /* TAH APPLIES STYLE ON ELEMENT */
+    border-color: var(--app-background-dark) !important; /* TAH APPLIES STYLE ON ELEMENT */
+    color: var(--app-background-shaded);
+    box-shadow: 0 0 10px var(--app-background-dark);
+	text-shadow: none;
+    transition: all 0.1s ease-in-out;
+
+	/* CLEAN UP UI/UX */
+	line-height: 16px;
+	margin-top: 0.5rem;
+}
+.tah-subcategory .tah-action button:hover {
+    background-color: var(--palette-primary) !important; /* TAH APPLIES STYLE ON ELEMENT */
+    border-color: var(--palette-primary-outline) !important; /* TAH APPLIES STYLE ON ELEMENT */
+    box-shadow: 0 0 10px var(--palette-primary-outline);
+    color: var(--palette-primary-contrast);
+    text-shadow: none;
+}
+
+.tah-subcategory .tah-action button .tah-info1,
+.tah-subcategory .tah-action button .tah-info2,
+.tah-subcategory .tah-action button .tah-info3 {
+    border-radius: 3px;
+	font-size: 0.6rem;
+	font-weight: 600;
+    padding: 0.15rem 0.25rem;
+	text-shadow: none;
+}
+.tah-subcategory .tah-action button .tah-info1 {
+	background-color: var(--palette-green);
+    color: var(--palette-green-contrast);
+}
+.tah-subcategory .tah-action button .tah-info2 {
+	background-color: var(--palette-pink);
+    color: var(--palette-pink-contrast);
+}
+.tah-subcategory .tah-action button .tah-info3 {
+	background-color: var(--palette-light-blue);
+    color: var(--palette-light-blue-contrast);
+}
+.tah-subcategory .tah-action button .tah-info1:before,
+.tah-subcategory .tah-action button .tah-info1:after,
+.tah-subcategory .tah-action button .tah-info2:before,
+.tah-subcategory .tah-action button .tah-info2:after,
+.tah-subcategory .tah-action button .tah-info3:before,
+.tah-subcategory .tah-action button .tah-info3:after {
+	content: '';
+}

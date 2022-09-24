@@ -1,0 +1,26 @@
+{
+	"title": "Token Action HUD",
+	"requires": [
+		{
+			"id": "token-action-hud",
+			"type": "module"
+		}
+	],
+	"tokenActionHUDColors": {
+		"name": "Colorize Token Action HUD",
+		"hint": "Enabling this stylesheet will theme your Token Action HUD to use libThemer colors",
+		"type": "library",
+		"default": false,
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/TAH-colors.css",
+			"type": "text/css"
+		}],
+		"settings": {
+			"csstidy5eSheetColorsWarning": {
+				"name": "lib-themer.theme.warning.stylesheet.name",
+				"hint": "lib-themer.theme.warning.stylesheet.hint",
+				"type": "message"
+			}
+		}
+	}
+}
