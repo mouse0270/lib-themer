@@ -1,5 +1,6 @@
 # Version 1.0.1 - Grammar is Hard
 - Fixed spelling on Readme
+- Added Experimental Themeing Support for Token Action HUD
 
 # Version 1.0.0 - Foundry, Make it Your Way
 ## libThemer
