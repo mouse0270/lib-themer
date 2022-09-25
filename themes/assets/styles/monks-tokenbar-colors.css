@@ -1,0 +1,78 @@
+#tokenbar .bar-controls {
+	background-color: var(--app-background);
+	background-blend-mode: var(--app-background-image-blend);
+	background-image: var(--app-background-image-url);
+	color: var(--app-background-contrast);
+}
+#tokenbar .bar-controls div#tokenbar-move-handle {
+	background-color: var(--app-background-dark);
+}
+#tokenbar .bar-controls .tokenbar-buttons div.active:not(.disabled) i, 
+#tokenbar[movement="free"] #movement-free:not(.disabled) i,
+ #tokenbar[movement="none"] #movement-none:not(.disabled) i, 
+ #tokenbar[movement="combat"] #movement-combat:not(.disabled) i {
+	border-color: var(--palette-primary-outline);
+	color: var(--palette-primary);
+}
+#tokenbar:not(.hidectrl) .bar-controls .tokenbar-buttons div:not(.disabled):hover {
+	filter: none;
+}
+#tokenbar:not(.hidectrl) .bar-controls .tokenbar-buttons div:not(.disabled):hover i {
+	border-color: var(--palette-secondary-outline);
+}
+#tokenbar .token {
+}
+#tokenbar .token .token-stats {
+	background-color: var(--app-background);
+	background-blend-mode: var(--app-background-image-blend);
+	background-image: var(--app-background-image-url);
+	color: var(--app-background-contrast);
+}
+
+.monks-tokenbar .sheet .items-list {
+	color: var(--app-background-shaded);
+}
+.monks-tokenbar .sheet .items-list .items-header {
+	border-color: var(--app-background-shaded);
+	border-style: solid;
+	color: var(--app-background-contrast);
+}
+.monks-tokenbar .sheet .items-list .item .item-name {
+	color: var(--app-background-contrast);
+}
+.monks-tokenbar .sheet select {
+	border-color: var(--app-background-shaded);
+	color: var(--app-background-contrast);
+}
+.monks-tokenbar:not(.editstats) .sheet input[type="text"], 
+.monks-tokenbar .sheet input[type="number"] {
+	border-color: var(--app-background-shaded);
+	color: var(--app-background-contrast);
+}
+
+#requestsavingthrow .request-header {
+	background-color: var(--app-background-dark);
+	color: var(--app-background-contrast);
+	box-shadow: none;
+	padding: 0.25rem 0.5rem;
+}
+#requestsavingthrow .request-grid > div {
+	color: var(--app-background-contrast);
+}
+#requestsavingthrow .request-grid > div:hover {
+	background-color: var(--palette-primary-hover);
+	border-color: var(--palette-primary-hover-outline);
+	box-shadow: none;
+	color: var(--palette-primary-hover-contrast);
+}
+#requestsavingthrow .request-grid > div.selected,
+#requestsavingthrow .request-grid > div:active {
+	background-color: var(--palette-primary-active);
+	border-color: var(--palette-primary-active-outline);
+	box-shadow: 0 0 10px var(--palette-primary-active-outline);
+	color: var(--palette-primary-active-contrast);
+}
+
+.monks-tokenbar.chat-card .card-header h3 {
+	color: var(--app-dialog-background-contrast);
+}

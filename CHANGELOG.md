@@ -1,3 +1,6 @@
+# Version 1.0.2 - More Support
+- Added Themeing Support for Monks Tokenbar
+
 # Version 1.0.1 - Grammar is Hard
 - Fixed spelling on Readme
 - Added Themeing Support for Token Action HUD

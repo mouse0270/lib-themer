@@ -1,0 +1,26 @@
+{
+	"title": "Monks Tokenbar",
+	"requires": [
+		{
+			"id": "monks-tokenbar",
+			"type": "module"
+		}
+	],
+	"cssMonksTokenbarColors": {
+		"name": "Colorize Monks Tokenbar",
+		"hint": "Enabling this stylesheet will theme monks tokenbar to use libThemer colors",
+		"type": "library",
+		"default": false,
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/monks-tokenbar-colors.css",
+			"type": "text/css"
+		}],
+		"settings": {
+			"csstidy5eSheetColorsWarning": {
+				"name": "lib-themer.theme.warning.stylesheet.name",
+				"hint": "lib-themer.theme.warning.stylesheet.hint",
+				"type": "message"
+			}
+		}
+	}
+}
