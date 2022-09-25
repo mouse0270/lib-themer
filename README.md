@@ -8,9 +8,11 @@ libThemer is mostly a library module designed to allow developers to define css 
 ## Features
 Define css variables with the following types:
 - **Color:** Generates a color input using either the default color picker or the amazing color picker from [lib - Color Settings](https://github.com/ardittristan/VTTColorSettings). 
+- **Background:** Generates an input that allows users to choose a background image and its blend mode.
 - **Number:** Generates an *adequate* range slider that allows users to pick a number. This range slider allows you to define a suffix or it assumes on based on the default.
 - **Font Family:** Generates a dropdown that will allow you to pick from any fonts registered in foundry.
-- **Stylesheet:** Generates an input that allows users to toggle optional stylesheets.
+- **Choices:** Generates an input that allows users to select a value from a dropdown list.
+- **Library:** Generates an input that allows users to toggle optional stylesheet/script files.
 
 ### Google Fonts
 To help users expand on their UI design libThemer has added the ability to link to and use fonts from [Google Fonts](https://fonts.google.com/). The most common license is the [SIL Open Font License](https://scripts.sil.org/OFL). Some fonts are under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0) or [Ubuntu Font License](https://ubuntu.com/legal/font-licence).
