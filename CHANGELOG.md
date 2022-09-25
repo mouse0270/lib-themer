@@ -1,9 +1,10 @@
 # Version 1.0.2 - More Support
-- Added Themeing Support for Monks Tokenbar
+- Added Theming Support for Monks Tokenbar
+- Added Theming Support for Quick Insert - Search Widget 
 
 # Version 1.0.1 - Grammar is Hard
 - Fixed spelling on Readme
-- Added Themeing Support for Token Action HUD
+- Added Theming Support for Token Action HUD
 
 # Version 1.0.0 - Foundry, Make it Your Way
 ## libThemer

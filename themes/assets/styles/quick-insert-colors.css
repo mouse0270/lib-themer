@@ -1,0 +1,35 @@
+.quick-insert-app {
+	border-color: var(--app-background-dark);
+	box-shadow: 0 0 20px var(--app-background-dark);
+}
+
+.quick-insert-app .search-editable-input {
+	background-color: var(--app-background);
+	background-blend-mode: var(--app-background-image-blend);
+	background-image: var(--app-background-image-url);
+	color: var(--app-background-contrast);
+}
+.quick-insert-hint {
+	background-color: var(--app-background-dark);
+	background-blend-mode: var(--app-background-image-blend);
+	background-image: var(--app-background-image-url);
+	color: var(--app-background-contrast);
+}
+.quick-insert-result {
+	background-color: var(--app-dialog-background);
+	background-blend-mode: var(--app-dialog-background-image-blend);
+	background-image: var(--app-dialog-background-image-url);
+	color: var(--app-dialog-background-contrast);
+}
+.quick-insert-result li span.sub,
+.quick-insert-result li a i.action-icon {
+	color: var(--app-dialog-background-shaded);
+}
+.quick-insert-app .search-selected a, 
+.quick-insert-app .search-selected a:hover,
+.quick-insert-result li a:hover {
+	background-color: var(--app-dialog-background-light);
+}
+.quick-insert-result li a strong {
+	background: var(--app-dialog-background-dark);
+}

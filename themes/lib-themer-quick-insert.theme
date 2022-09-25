@@ -1,0 +1,26 @@
+{
+	"title": "Quick Insert - Search Widget",
+	"requires": [
+		{
+			"id": "quick-insert",
+			"type": "module"
+		}
+	],
+	"cssQuickInsertColors": {
+		"name": "Colorize Quick Insert - Search Widget",
+		"hint": "Enabling this stylesheet will theme Quick Insert - Search Widget to use libThemer colors",
+		"type": "library",
+		"default": false,
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/quick-insert-colors.css",
+			"type": "text/css"
+		}],
+		"settings": {
+			"csstidy5eSheetColorsWarning": {
+				"name": "lib-themer.theme.warning.stylesheet.name",
+				"hint": "lib-themer.theme.warning.stylesheet.hint",
+				"type": "message"
+			}
+		}
+	}
+}
