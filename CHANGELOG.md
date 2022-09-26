@@ -1,6 +1,7 @@
 # Version 1.0.2 - More Support
 - Added Theming Support for Monks Tokenbar
 - Added Theming Support for Quick Insert - Search Widget 
+- Fixed Styling for Library Sub Elements when only one Sub Element Exists
 
 # Version 1.0.1 - Grammar is Hard
 - Fixed spelling on Readme
@@ -24,7 +25,7 @@ Define css variables with the following types:
 #### Google Fonts
 To help users expand on their UI design libThemer has added the ability to link to and use fonts from [Google Fonts](https://fonts.google.com/). The most common license is the [SIL Open Font License](https://scripts.sil.org/OFL). Some fonts are under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0) or [Ubuntu Font License](https://ubuntu.com/legal/font-licence).
 
-> **PLEASE NOTE:** That by adding a font via this interface, Google will recieve access to your IP address. If you are comfortable with this, turn off this feature.
+> **PLEASE NOTE:** That by adding a font via this interface, Google will recieve access to your IP address. If you are uncomfortable with this, turn off this feature.
 
 ## Using libThemer
 

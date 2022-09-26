@@ -38,6 +38,11 @@
 	margin: 0px;
 	padding: 0px 1rem;
 }
+#lib-themer-dialog .journal-entry-content article.journal-entry-page form .form-group .stylesheet-settings .form-group:first-of-type:last-of-type {
+	border-top: 1px solid var(--color-border-light-primary);
+	margin-top: 10px;
+	padding-top: 10px;
+}
 #lib-themer-dialog.sheet.journal-entry .journal-sidebar .action-buttons button.manage {
     margin: 0.5rem 0.5rem;
 }
