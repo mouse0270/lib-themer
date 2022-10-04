@@ -78,7 +78,7 @@ export class Themer {
 		if (this.themeRequirementsMet(content)) {
 			foundry.utils.mergeObject(Themer.#THEMES, {
 				[content?.id ?? fileName(url)]: foundry.utils.mergeObject({ title: content?.id ?? fileName(url) }, content)
-			});
+			}, {});
 
 			return Themer.setTheme(content);
 		}else {
@@ -90,7 +90,14 @@ export class Themer {
 	static async setTheme(theme) {
 		delete theme.title;
 
-		Themer.#THEME = foundry.utils.mergeObject(foundry.utils.mergeObject(Themer.#THEME, foundry.utils.mergeObject({ title: theme?.id ?? '' }, theme)), MODULE.setting('themeSettings'), { inplace: false });
+		Themer.#THEME = foundry.utils.mergeObject(
+			foundry.utils.mergeObject(
+				Themer.#THEME, 
+				foundry.utils.mergeObject(
+					{ title: theme?.id ?? '' }, 
+					theme, {}
+				), {}
+			), MODULE.setting('themeSettings'), { inplace: false });
 		return Themer.#THEME;
 	}
 
@@ -294,7 +301,7 @@ export class Themer {
 				if (typeof theme == "object") {
 					MODULE.log('Register Theme from Object', theme);
 					if (theme?.id ?? false) {
-						foundry.utils.mergeObject(Themer.#THEMES, { [theme.id]: theme });
+						foundry.utils.mergeObject(Themer.#THEMES, { [theme.id]: theme }, {});
 						await Themer.setTheme(theme);
 					}else{
 						MODULE.error('No Theme ID provided in:', theme)
@@ -313,7 +320,7 @@ export class Themer {
 					}
 
 					for await (const [theme, values] of Object.entries(Themer.#THEMES)) {
-						for await (const [property, value] of Object.entries(foundry.utils.mergeObject(values, Themer.#THEME, { inplace: false, insertKeys: false}))) {
+						for await (const [property, value] of Object.entries(foundry.utils.mergeObject(values, Themer.#THEME, { inplace: false, insertKeys: false }))) {
 							if (typeof value == 'object') {
 								game.modules.get(MODULE.ID).API.setCSSVariable(property, value.value ?? value.default)
 							}
@@ -355,12 +362,21 @@ export class Themer {
 					Themer.setManageLibrary(property, value);
 					for await (const [ssProperty, ssValue] of Object.entries(Themer.#THEME[property]?.settings ?? [])) {
 						if (typeof ssValue == 'object') {
-							Themer.#THEME[ssProperty] = foundry.utils.mergeObject(MODULE.setting('themeSettings')?.[ssProperty] ?? {}, ssValue);
+							Themer.#THEME[ssProperty] = foundry.utils.mergeObject(MODULE.setting('themeSettings')?.[ssProperty] ?? {}, ssValue, {});
 							if ((Themer.#THEME[ssProperty].value ?? Themer.#THEME[ssProperty].default) ?? false) {
 								game.modules.get(MODULE.ID).API.setCSSVariable(ssProperty, Themer.#THEME[ssProperty].value ?? Themer.#THEME[ssProperty].default);
 							}
 						}
 					}
+				}
+
+				if ((Themer.#THEME[property]?.format ?? "") != "") {
+					document.querySelector(":root").style.setProperty(property, game.i18n.format(Themer.#THEME[property]?.format ?? "", { value: value }));
+					document.querySelector(":root").style.setProperty(property, game.i18n.format(Themer.#THEME[property]?.format ?? "", { value: value }));
+				};
+
+				if (typeof (Themer.#THEME[property]?.onchange ?? 'INVALID') == 'function') {
+					Themer.#THEME[property]?.onchange.call(Themer.#THEME[property], value);
 				}
 
 				// Save Setting

@@ -1,3 +1,5 @@
+
+
 #lib-themer-dialog.sheet.journal-entry .journal-sidebar.collapsed .directory-header .header-search p {
     display: none;
 }
@@ -7,12 +9,8 @@
 #lib-themer-dialog.sheet.journal-entry  .journal-sidebar:not(.collapsed) .scrollable > li {
 	padding-right: 0.5rem;
 }
-#lib-themer-dialog.sheet.journal-entry .journal-entry-pages {
-	margin: 0px;
-	margin-bottom: 1rem;
-}
 #lib-themer-dialog.sheet.journal-entry .journal-entry-pages > .scrollable {
-	padding: 0 0.5rem 1rem 1rem;
+	padding: 0 0.5rem 1rem;
 	padding-bottom: 0rem;
 }
 
@@ -25,7 +23,7 @@
 	flex-basis: 100%;
 }
 #lib-themer-dialog .journal-entry-content article.journal-entry-page form .form-group .stylesheet-settings .form-group {
-	padding: 0px 1rem;
+	padding-left: 1rem;
 	padding-bottom: 10px;
 }
 #lib-themer-dialog .journal-entry-content article.journal-entry-page form .form-group .stylesheet-settings .form-group:first-of-type {
@@ -36,7 +34,7 @@
 #lib-themer-dialog .journal-entry-content article.journal-entry-page form .form-group .stylesheet-settings .form-group:last-of-type {
 	border-bottom-width: 0px;
 	margin: 0px;
-	padding: 0px 1rem;
+	padding-left: 1rem;
 }
 #lib-themer-dialog .journal-entry-content article.journal-entry-page form .form-group .stylesheet-settings .form-group:first-of-type:last-of-type {
 	border-top: 1px solid var(--color-border-light-primary);
@@ -254,6 +252,30 @@ input[name="lib-themer-preset-title"] {
 
 #lib-themer-preset-dialog.dialog .dialog-buttons button.import {
 	flex: 0;
-    padding: 0 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     white-space: nowrap;
+}
+
+
+
+#lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] {
+	padding-left: calc(30px - 0.5rem);
+	position: relative;
+}
+
+#lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] .toggle {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	left: calc(0px - 0.5rem);
+	position: absolute;
+	width: 30px;
+}
+#lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] .toggle i.expanded {
+	transform: rotate(180deg);
+}
+#lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] .stylesheet-settings {
+	padding-left: 1rem;
 }

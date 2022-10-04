@@ -41,7 +41,7 @@ export function ControlBackground(elemContainer, setting, properties) {
 		<p class="notes${(properties?.hint ?? false) ? '' : ' hidden'}">${this.localize(properties?.hint ?? `${setting}.hint`) ?? ''}</p>
 	</div>`);
 	// Get Element Added
-	const elem = elemContainer.querySelector('.form-group:last-of-type');
+	const elem = elemContainer.querySelector(`.form-group[data-type="${properties.type}"]:last-of-type`);
 
 	if (!game.permissions.FILES_BROWSE.includes(game.user.role)) elem.querySelector('button.file-picker').remove();
 

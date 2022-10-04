@@ -461,7 +461,8 @@
 		"default": "0.6875rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-12": {
@@ -471,7 +472,8 @@
 		"default": "0.75rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-13": {
@@ -481,7 +483,8 @@
 		"default": "0.8125rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-14": {
@@ -491,7 +494,8 @@
 		"default": "0.875rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-16": {
@@ -501,7 +505,8 @@
 		"default": "1rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-18": {
@@ -511,7 +516,8 @@
 		"default": "1.125rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-20": {
@@ -521,7 +527,8 @@
 		"default": "1.25rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-24": {
@@ -531,7 +538,8 @@
 		"default": "1.5rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-28": {
@@ -541,7 +549,8 @@
 		"default": "1.75rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-32": {
@@ -551,7 +560,8 @@
 		"default": "2rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--font-size-48": {
@@ -561,7 +571,8 @@
 		"default": "3rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--line-height-12": {
@@ -571,7 +582,8 @@
 		"default": "0.75rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--line-height-16": {
@@ -581,7 +593,8 @@
 		"default": "1rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--line-height-20": {
@@ -591,7 +604,8 @@
 		"default": "1.25rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--line-height-30": {
@@ -601,7 +615,8 @@
 		"default": "1.875rem",
 		"range": {
 			"min": 0,
-			"max": 5
+			"max": 5,
+			"step": 0.0025
 		}
 	},
 	"--color-level-info": {

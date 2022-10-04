@@ -1,3 +1,12 @@
+# version 1.0.3 - Patch'm Up Boi's
+- Dropped Token Action HUD as its support has been added to TAH
+- Fixed Controls querySelector to be more Specific
+- Updated `Library` control to do collapsible elements
+ - Collapse state does not save. Will be fixed at a later time
+- Added `format` key word for theme settings
+- Added `onchange` event for themes declared in javascript.
+- Fixed Foundry VTT them font options to have a step of `0.0025` instead of `1`
+
 # Version 1.0.2 - More Support
 - Added Theming Support for Monks Tokenbar
 - Added Theming Support for Quick Insert - Search Widget 

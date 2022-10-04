@@ -20,7 +20,7 @@ export function ControlFontFamily(elemContainer, setting, properties) {
 		<p class="notes${(properties?.hint ?? false) ? '' : ' hidden'}">${this.localize(properties?.hint ?? `${setting}.hint`) ?? ''}</p>
 	</div>`);
 	// Get Element Added
-	const elem = elemContainer.querySelector('.form-group:last-of-type');
+	const elem = elemContainer.querySelector(`.form-group[data-type="${properties.type}"]:last-of-type`);
 
 	// Add Default Fonts
 	if (Object.entries(CONFIG.fontDefinitions)?.length > 0 ?? false) elem.querySelector(`select[name="${setting}"]`).insertAdjacentHTML('beforeend', `<optgroup label="System Fonts"></optgroup>`);

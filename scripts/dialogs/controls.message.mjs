@@ -14,5 +14,5 @@ export function ControlMessage(elemContainer, setting, properties) {
 		<div class="notes${(properties?.hint ?? false) ? '' : ' hidden'}">${this.localize(properties?.hint ?? `${setting}.hint`) ?? ''}</div>
 	</div>`);
 	// Get Element Added
-	const elem = elemContainer.querySelector('.form-group:last-of-type');
+	const elem = elemContainer.querySelector(`.form-group[data-type="${properties.type}"]:last-of-type`);
 }

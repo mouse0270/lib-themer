@@ -13,7 +13,7 @@ export function ControlNumber(elemContainer, setting, properties) {
 	}
 
 	// Add Element To Container
-	elemContainer.insertAdjacentHTML('beforeend', `<div class="form-group">
+	elemContainer.insertAdjacentHTML('beforeend', `<div class="form-group" data-type="${properties.type}">
 		<label><strong>${this.localize(properties?.name ?? `${setting}.name`) ?? setting}</strong></label>
 		<div class="form-fields${controlProperties.suffix == '' ? ' hide-suffix' : ''}">
 			<input type="range" name="${setting}" value="${controlProperties.value}" min="${controlProperties.min}" max="${controlProperties.max}" step="${controlProperties.step}" data-tooltip="${controlProperties.value}${controlProperties.suffix}" />
@@ -24,7 +24,7 @@ export function ControlNumber(elemContainer, setting, properties) {
 		<p class="notes${(properties?.hint ?? false) ? '' : ' hidden'}">${this.localize(properties?.hint ?? `${setting}.hint`) ?? ''}</p>
 	</div>`);
 	// Get Element Added
-	const elem = elemContainer.querySelector('.form-group:last-of-type');
+	const elem = elemContainer.querySelector(`.form-group[data-type="${properties.type}"]:last-of-type`);
 
 	const updateRange = (event) => {
 		const elem = event.target.closest('.form-group');

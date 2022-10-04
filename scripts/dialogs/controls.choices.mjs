@@ -19,7 +19,7 @@ export function ControlChoices(elemContainer, setting, properties) {
 	</div>`);
 
 	// Get Element Added
-	const elem = elemContainer.querySelector('.form-group:last-of-type');
+	const elem = elemContainer.querySelector(`.form-group[data-type="${properties.type}"]:last-of-type`);
 
 	// Add Default Options
 	for (const [value, text] of Object.entries(controlProperties.choices)) {

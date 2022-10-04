@@ -118,7 +118,7 @@ export function ControlColor(elemContainer, setting, properties) {
 		</ul>
 	</div>`);
 	// Get Element Added
-	const elem = elemContainer.querySelector('.form-group:last-of-type');
+	const elem = elemContainer.querySelector(`.form-group[data-type="${properties.type}"]:last-of-type`);
 
 	// Bind Browser Color Events
 	const browserColorWidget = (event) => {
