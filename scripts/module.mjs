@@ -375,9 +375,8 @@ export class Themer {
 					document.querySelector(":root").style.setProperty(property, game.i18n.format(Themer.#THEME[property]?.format ?? "", { value: value }));
 				};
 
-				if (typeof (Themer.#THEME[property]?.onchange ?? 'INVALID') == 'function') {
-					Themer.#THEME[property]?.onchange.call(Themer.#THEME[property], value);
-				}
+				// Call Hook UpdateSetting, THEME PROPERTIES, THEME KEY, THEME VALUE
+				Hooks.callAll(`${MODULE.ID}.UpdateSetting`, Themer.#THEME[property], property, value);
 
 				// Save Setting
 				MODULE.setting('themeSettings', foundry.utils.mergeObject(MODULE.setting('themeSettings'), {
