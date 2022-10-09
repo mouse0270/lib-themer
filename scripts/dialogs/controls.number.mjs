@@ -8,7 +8,7 @@ export function ControlNumber(elemContainer, setting, properties) {
 		min: (!isNaN(parseFloat(properties?.range?.min)) ? parseFloat(properties?.range?.min) : 0),
 		max: (!isNaN(parseFloat(properties?.range?.max)) ? parseFloat(properties?.range?.max) : (parseFloat((properties?.value ?? properties.default)) ?? 1) * 3),
 		step: (!isNaN(parseFloat(properties?.range?.step)) ? parseFloat(properties?.range?.step) : 1),
-		suffix: (properties?.suffix ?? (properties?.value ?? properties.default)).replace(parseFloat(properties?.value ?? properties.default), ''),
+		suffix: (properties?.suffix ?? (properties?.value ?? properties.default)).toString().replace(parseFloat(properties?.value ?? properties.default), ''),
 		value: parseFloat(properties?.value ?? properties.default) ?? 0
 	}
 

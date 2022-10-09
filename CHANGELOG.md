@@ -1,3 +1,6 @@
+# version 1.0.3 - You can't replace Integers with a string...
+- Fixed `number` control not working correctly if default was set to a value that wasn't a string.
+
 # version 1.0.2 - Patch'm Up Boi's
 - Dropped Token Action HUD as its support has been added to TAH
 - Fixed Controls querySelector to be more Specific
