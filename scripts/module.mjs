@@ -392,6 +392,10 @@ export class Themer {
 	}
 	
 	static init = () => {
+		if (!game.user.isGM && MODULE.setting('enableMasterTheme')) {
+			MODULE.setting('themeSettings', MODULE.setting('masterTheme'))
+		}
+
 		this.installAPI();
 		this.getThemes();
 
@@ -438,7 +442,7 @@ export class Themer {
 			</button>`);
 
 			if (MODULE.setting('enableMasterTheme') && !game.user.isGM) {
-				elem[0].querySelector('#settings-game button[data-action="themer"]').classList.add('hidden');
+				elem[0].querySelector('#settings-game button[data-action="themer"]').style.display = 'none';
 			}
 
 			elem[0].querySelector('#settings-game button[data-action="themer"]').addEventListener('click', async (event) => {

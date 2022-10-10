@@ -26,13 +26,12 @@ Hooks.once('setup', () => {
 		config: false,
 		onChange: (event) => {
 			if (MODULE.setting('enableMasterTheme') && !game.user.isGM) {
-				MODULE.setting('themeSettings', event).then(response => {
-					for (const [key, theme] of Object.entries(MODULE.setting('registeredThemes'))) {
-						game.modules.get(MODULE.ID).API.register(foundry.utils.mergeObject(theme, {
-							id: key
-						}, { inplace: false }));
+				for (const [key, value] of Object.entries(event)) {
+					if (MODULE.setting('themeSettings')[key].value != value.value) {
+						game.modules.get(MODULE.ID).API.setCSSVariable(key, value.value)
 					}
-				});
+				};
+				MODULE.setting('themeSettings', event);
 			}
 		}
 	});
@@ -62,10 +61,10 @@ Hooks.once('setup', () => {
 		scope: 'world',
 		onChange: (event) => {
 			if (MODULE.setting('enableMasterTheme') && !game.user.isGM) {
-				document.querySelector('#settings-game button[data-action="themer"]').classList.add('hidden');
+				document.querySelector('#settings-game button[data-action="themer"]').style.display = 'none';
 				document.querySelector('#lib-themer-dialog .header-button.close').click() ?? false;
 			}else{
-				document.querySelector('#settings-game button[data-action="themer"]').classList.remove('hidden');
+				document.querySelector('#settings-game button[data-action="themer"]').style.removeProperty('display');
 			}
 		}
 	});

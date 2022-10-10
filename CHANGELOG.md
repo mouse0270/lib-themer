@@ -1,3 +1,8 @@
+# version 1.0.4 - GM Theme
+- Fixed issue with GM Theme not hiding Configure Theme Button with Fantasy RPG UI
+- Fixed GM Theme not applying to user when logging into world
+- Updated GM Theme logic to only update changed setting on players end, This should make it more efficient when changing settings
+
 # version 1.0.3 - You can't replace Integers with a string...
 - Fixed `number` control not working correctly if default was set to a value that wasn't a string.
 
