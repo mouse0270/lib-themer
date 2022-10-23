@@ -1,0 +1,17 @@
+#controls {
+	padding: 0.25rem;
+}
+#controls ol.control-tools.main-controls,
+#controls ol.control-tools.sub-controls {
+	justify-content: var(--tidy-hud-controls-alignment, 'center');;
+	margin-top: var(--tidy-hud-controls-margin-top, '0px');
+}
+#controls ol.control-tools > li {
+    align-items: center;
+    display: flex;
+    font-size: var(--tidy-hud-controls-font-size, '20px');
+    height: var(--tidy-hud-controls-size, '30px');
+    justify-content: center;
+    padding: 0px;
+    width: var(--tidy-hud-controls-size, '30px');
+}

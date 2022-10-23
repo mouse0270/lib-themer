@@ -1,0 +1,28 @@
+#hotbar {
+	bottom: 0px;
+	left: 50%;
+	margin-bottom: 0px;
+	margin-left: var(--tidy-hud-hotbar-offset);
+	position: fixed;
+	transition: all 0.3s ease-in-out;
+	transform: translateX(-50%);
+}
+#hotbar.align-left {
+	left: 0px;
+	margin-left: var(--tidy-hud-hotbar-offset);
+	transform: translateX(calc(var(--players-width) + 1rem));
+}
+#hotbar.align-right {
+	left: calc(100% - var(--hotbar-width));
+	margin-left: auto;
+	margin-right: var(--tidy-hud-hotbar-offset);
+	transform: translateX(calc(var(--sidebar-width) * -1 - 1rem));
+}
+#hotbar.align-right.sidebar-collapsed {
+	transform: translateX(calc(0px * -1 - 1rem));
+}
+
+/* FOR WHEN HAS IS SUPPORTED */
+body:has(#sidebar.collapsed) #hotbar.align-right {
+	transform: translateX(calc(0px * -1 - 1rem));
+}

@@ -273,8 +273,15 @@ input[name="lib-themer-preset-title"] {
 	position: absolute;
 	width: 30px;
 }
-#lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] .toggle i.expanded {
-	transform: rotate(180deg);
+#lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] .toggle.expanded i:before {
+	content: '\f056';
+}
+#lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] .toggle + label {
+	cursor: pointer;
+	user-select: none;
+}
+#lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] .toggle + label * {
+	user-select: none;
 }
 #lib-themer-dialog.sheet.journal-entry .journal-entry-page form .form-group-stacked[data-type="library"] .stylesheet-settings {
 	padding-left: 1rem;

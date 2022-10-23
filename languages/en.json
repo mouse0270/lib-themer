@@ -7,7 +7,15 @@
 			"enableMasterTheme.name": "Enable GM Theme",
 			"enableMasterTheme.hint": "When enabled, all connected players will recieve the Game Masters theme. This is useful if you want everyone to use the same theme.",
 			"userStorage.name": "Custom Theme Directory",
-			"userStorage.hint": "libThemer will attempt to load in any .theme files in this directory. Useful for custom themes without needing to make a whole module."
+			"userStorage.hint": "libThemer will attempt to load in any .theme files in this directory. Useful for custom themes without needing to make a whole module.",
+			"presets.createDefault": {
+				"name": "Enable Default Theme Presets",
+				"hint": "This will add predefined theme presets to libThemer's Manage Presets menu.",
+				"label": "Add Theme Presets",
+				"content": "Would you like to add predefined theme presets to libThemer's Manage Presets Menu?",
+				"confirm": "Confirm",
+				"cancel": "Cancel"
+			}
 		},
 		"dialog": {
 			"theme": {
@@ -25,6 +33,7 @@
 				"overwritePreset": "Update this preset with your current theme values?",
 				"deletePreset": "Are you sure you want to delete this Preset?",
 				"deletePresetWarning": "This action can <strong>NOT</strong> be undone!",
+				"activatePreset": "Activate this Preset?",
 				"errors": {
 					"noTitle": "Please enter a Title for your Preset."
 				}
@@ -274,6 +283,34 @@
 				"name": "Tidy HUD",
 				"hint": "This stylesheet attempts to tidy up / minify the HUD elements of foundry for a cleaner look.",
 				"settings": {
+					"cssTidyHUDDisableLogo": {
+						"name": "Hide Logo",
+						"hint": "This will hide the logo in the top left of the UI"
+					},
+					"cssTidyHUDControls": {
+						"name": "Adjust UI Controls",
+						"hint": "This allows you to change the size and position of the UI Controls."
+					},
+					"cssTidyHUDSceneBrowser": {
+						"name": "Adjust UI Scene Browser",
+						"hint": "This allows you to change the position of the UI Scene Browser."
+					},
+					"cssTidyHUDPlayers": {
+						"name": "Minify Players UI",
+						"hint": "This will shrink the players UI to make it more compact"
+					},
+					"cssTidyHUDPlayersExpandOffline": {
+						"name": "Expand Player UI",
+						"hint": "The Player UI will expand to full width when showing offline players."
+					},
+					"cssTidyHUDHotbar": {
+						"name": "Adjust UI Hotbar",
+						"hint": "This allows you to change the position of the UI Hotbar."
+					},
+					"cssTidyHUDNotifications": {
+						"name": "Minify Notifications",
+						"hint": "This will make notifications appear more like a OS notification, but making them less wide and placing them next to the Sidebar."
+					},
 					"tidyHUDControlsAlignment": {
 						"name": "Controls Alignment",
 						"hint": "This allows you to adjust the alignment of the controls.",
@@ -302,6 +339,19 @@
 					"tidyHUDOffsetMarginLeft": {
 						"name": "Scene Explorer Left Offset",
 						"hint": "This allows you to adjust the controls spacing from the left."
+					},
+					"tidyHUDHotbarAlignment": {
+						"name": "Hotbar Alignment",
+						"hint": "This allows you to adjust the alignment of the hotbar.",
+						"choices": {
+							"left": "Left",
+							"center": "Center",
+							"right": "right"
+						}
+					},
+					"tidyHUDHotbarOffset": {
+						"name": "Hotbar Offset",
+						"hint": "This allows you to adjust the offset of the hotbar alignment."
 					}
 				}
 			},

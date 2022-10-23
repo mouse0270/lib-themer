@@ -168,6 +168,7 @@ export function ControlColor(elemContainer, setting, properties) {
 			value: tinycolor(properties.default).toHex8String(),
 			alpha: parseInt(tinycolor(properties.default).getAlpha() * 100) ?? 100,
 		}
+		if (!controlProperties.colorPicker) defaults.value = tinycolor(properties.default).toHexString();
 		
 		elem.querySelector('input[is="colorpicker-input"]').value = defaults.value;
 		elem.querySelector('input[type="range"]').value = defaults.alpha;

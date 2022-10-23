@@ -1,0 +1,20 @@
+aside#players.expand-players {
+	--players-width: 200px;
+	width: var(--players-width);
+}
+
+aside#players.expand-players h3,
+aside#players.expand-players ol li {
+	align-items: center;
+	flex-direction: row;
+	font-size: var(--font-size-13);
+	padding: 0.25rem 0.5rem;
+}
+aside#players.expand-players h3 {
+	padding: 0.5rem 0rem;
+}
+
+aside#players.expand-players ol li.player span.player-name {
+	display: block; 
+	padding-left: 0.5rem;
+}

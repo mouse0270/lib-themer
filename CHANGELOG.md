@@ -1,3 +1,16 @@
+# Version 1.0.5 - QOL Stuff
+- Blatantly copied @TyphonJS StyleManager Logic to move css variables `html` element to `style` element.
+- Fixed Localization for Activating Preset.
+- Updated TidyHUD
+  - Broke Options into individual togglable options
+  - Added the ability to align the hotbar
+  - Added the option to expand player UI when showing offline Players
+- Updated Collapsible Button to a plus and minus
+  - Added the ability to click on the title to open and collapse.
+- Fixed resetting default color when not using lib - Color Settings from setting color to black
+- Updated Presets to only Save values that are not defaults
+- Added two Default Presets
+
 # version 1.0.4 - GM Theme
 - Fixed issue with GM Theme not hiding Configure Theme Button with Fantasy RPG UI
 - Fixed GM Theme not applying to user when logging into world

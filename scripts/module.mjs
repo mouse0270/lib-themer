@@ -8,9 +8,11 @@ import './_settings.mjs';
 // GET MODULE CORE
 import { MODULE } from './_module.mjs';
 import { ThemeDialog } from './dialogs/themer.mjs';
+import { StyleManager } from './styleManager.mjs';
 
 // DEFINE MODULE CLASS
 export class Themer {
+	static #cssManager = new StyleManager();
 	static #THEMES = {};
 	static #THEME = {};
 	static #FONTS = {};
@@ -106,7 +108,9 @@ export class Themer {
 	/* ─────────────── ⋆⋅☆⋅⋆ ─────────────── */
 	static setColorContrast(property, value) {
 		//Update CSS Variable
-		document.querySelector(":root").style.setProperty(`${property}-contrast`, tinycolor.mostReadable(tinycolor(value).toHex8String(), ['#000', '#fff']));
+		Themer.#cssManager.set({
+			[`${property}-contrast`]: tinycolor.mostReadable(tinycolor(value).toHex8String(), ['#000', '#fff'])
+		});
 	}
 
 	static setColorVariations(property, value) {
@@ -116,21 +120,24 @@ export class Themer {
 			base: tinycolor(value).toHex8String(),
 			dark: tinycolor(value).darken(intensity * 2).toHex8String()
 		}
+
 		// Set Shaded Colors
-		document.querySelector(":root").style.setProperty(`${property}-shaded`, tinycolor.mostReadable(colors['base'], [
-			tinycolor(colors['base']).lighten(50).toHex8String(), 
-			tinycolor(colors['base']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-light`, tinycolor(colors['light']).toHex8String());
-		document.querySelector(":root").style.setProperty(`${property}-light-shaded`, tinycolor.mostReadable(colors['light'], [
-			tinycolor(colors['light']).lighten(50).toHex8String(), 
-			tinycolor(colors['light']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-dark`, tinycolor(colors['dark']).toHex8String());
-		document.querySelector(":root").style.setProperty(`${property}-dark-shaded`, tinycolor.mostReadable(colors['dark'], [
-			tinycolor(colors['dark']).lighten(50).toHex8String(), 
-			tinycolor(colors['dark']).darken(50).toHex8String()
-		]));
+		Themer.#cssManager.set({
+			[`${property}-shaded`]: tinycolor.mostReadable(colors['base'], [
+				tinycolor(colors['base']).lighten(50).toHex8String(), 
+				tinycolor(colors['base']).darken(50).toHex8String()
+			]),
+			[`${property}-light`]: tinycolor(colors['light']).toHex8String(),
+			[`${property}-light-shaded`]: tinycolor.mostReadable(colors['light'], [
+				tinycolor(colors['light']).lighten(50).toHex8String(), 
+				tinycolor(colors['light']).darken(50).toHex8String()
+			]),
+			[`${property}-dark`]: tinycolor(colors['dark']).toHex8String(),
+			[`${property}-dark-shaded`]: tinycolor.mostReadable(colors['dark'], [
+				tinycolor(colors['dark']).lighten(50).toHex8String(), 
+				tinycolor(colors['dark']).darken(50).toHex8String()
+			])
+		});
 	}
 	
 	static setColorPalette(property, value) {
@@ -147,37 +154,37 @@ export class Themer {
 			900: tinycolor(value).darken(intensity * 4).toHex8String()
 		}
 
-		// Set Palette Range Colors 100-900
-		document.querySelector(":root").style.setProperty(`${property}-100`, colors['100']);
-		document.querySelector(":root").style.setProperty(`${property}-200`, colors['200']);
-		document.querySelector(":root").style.setProperty(`${property}-300`, colors['300']);
-		document.querySelector(":root").style.setProperty(`${property}-400`, colors['400']);
-		document.querySelector(":root").style.setProperty(`${property}-500`, `var(${property})`);
-		document.querySelector(":root").style.setProperty(`${property}-600`, colors['600']);
-		document.querySelector(":root").style.setProperty(`${property}-700`, colors['700']);
-		document.querySelector(":root").style.setProperty(`${property}-800`, colors['800']);
-		document.querySelector(":root").style.setProperty(`${property}-900`, colors['900']);
-
-		// Set Contrast Colors
-		document.querySelector(":root").style.setProperty(`${property}-100-contrast`, tinycolor.mostReadable(colors['100'], ['#000', '#fff']));
-		document.querySelector(":root").style.setProperty(`${property}-200-contrast`, tinycolor.mostReadable(colors['200'], ['#000', '#fff']));
-		document.querySelector(":root").style.setProperty(`${property}-300-contrast`, tinycolor.mostReadable(colors['300'], ['#000', '#fff']));
-		document.querySelector(":root").style.setProperty(`${property}-400-contrast`, tinycolor.mostReadable(colors['400'], ['#000', '#fff']));
-		document.querySelector(":root").style.setProperty(`${property}-500-contrast`, `var(${property}-contrast)`);
-		document.querySelector(":root").style.setProperty(`${property}-600-contrast`, tinycolor.mostReadable(colors['600'], ['#000', '#fff']));
-		document.querySelector(":root").style.setProperty(`${property}-700-contrast`, tinycolor.mostReadable(colors['700'], ['#000', '#fff']));
-		document.querySelector(":root").style.setProperty(`${property}-800-contrast`, tinycolor.mostReadable(colors['800'], ['#000', '#fff']));
-		document.querySelector(":root").style.setProperty(`${property}-900-contrast`, tinycolor.mostReadable(colors['900'], ['#000', '#fff']));
-
-		// Set Lightest - Darkest
-		document.querySelector(":root").style.setProperty(`${property}-lightest`, `var(${property}-100)`);
-		document.querySelector(":root").style.setProperty(`${property}-lightest-contrast`, `var(${property}-100-contrast)`);
-		document.querySelector(":root").style.setProperty(`${property}-light`, `var(${property}-300)`);
-		document.querySelector(":root").style.setProperty(`${property}-light-contrast`, `var(${property}-300-contrast)`);
-		document.querySelector(":root").style.setProperty(`${property}-dark`, `var(${property}-700)`);
-		document.querySelector(":root").style.setProperty(`${property}-dark-contrast`, `var(${property}-700-contrast)`);
-		document.querySelector(":root").style.setProperty(`${property}-darkest`, `var(${property}-900)`);
-		document.querySelector(":root").style.setProperty(`${property}-darkest-contrast`, `var(${property}-900-contrast)`);
+		Themer.#cssManager.set({
+			// Set Palette Range Colors 100-900
+			[`${property}-100`]: colors['100'],
+			[`${property}-200`]: colors['200'],
+			[`${property}-300`]: colors['300'],
+			[`${property}-400`]: colors['400'],
+			[`${property}-500`]: `var(${property})`,
+			[`${property}-600`]: colors['600'],
+			[`${property}-700`]: colors['700'],
+			[`${property}-800`]: colors['800'],
+			[`${property}-900`]: colors['900'],
+			// Set Contrast Colors
+			[`${property}-100-contrast`]: tinycolor.mostReadable(colors['100'], ['#000', '#fff']),
+			[`${property}-200-contrast`]: tinycolor.mostReadable(colors['200'], ['#000', '#fff']),
+			[`${property}-300-contrast`]: tinycolor.mostReadable(colors['300'], ['#000', '#fff']),
+			[`${property}-400-contrast`]: tinycolor.mostReadable(colors['400'], ['#000', '#fff']),
+			[`${property}-500-contrast`]: `var(${property}-contrast)`,
+			[`${property}-600-contrast`]: tinycolor.mostReadable(colors['600'], ['#000', '#fff']),
+			[`${property}-700-contrast`]: tinycolor.mostReadable(colors['700'], ['#000', '#fff']),
+			[`${property}-800-contrast`]: tinycolor.mostReadable(colors['800'], ['#000', '#fff']),
+			[`${property}-900-contrast`]: tinycolor.mostReadable(colors['900'], ['#000', '#fff']),
+			// Set Lightest - Darkest
+			[`${property}-lightest`]: `var(${property}-100)`,
+			[`${property}-lightest-contrast`]: `var(${property}-100-contrast)`,
+			[`${property}-light`]: `var(${property}-300)`,
+			[`${property}-light-contrast`]: `var(${property}-300-contrast)`,
+			[`${property}-dark`]: `var(${property}-700)`,
+			[`${property}-dark-contrast`]: `var(${property}-700-contrast)`,
+			[`${property}-darkest`]: `var(${property}-900)`,
+			[`${property}-darkest-contrast`]: `var(${property}-900-contrast)`
+		});
 	}
 	
 	static setColorShades(property, value) {
@@ -195,43 +202,46 @@ export class Themer {
 		}
 
 		// Set Shaded Colors
-		document.querySelector(":root").style.setProperty(`${property}-shaded`, tinycolor.mostReadable(colors['500'], [
-			tinycolor(colors['500']).lighten(50).toHex8String(), 
-			tinycolor(colors['500']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-100-shaded`, tinycolor.mostReadable(colors['100'], [
-			tinycolor(colors['100']).lighten(50).toHex8String(), 
-			tinycolor(colors['100']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-200-shaded`, tinycolor.mostReadable(colors['200'], [
-			tinycolor(colors['200']).lighten(50).toHex8String(), 
-			tinycolor(colors['200']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-300-shaded`, tinycolor.mostReadable(colors['300'], [
-			tinycolor(colors['300']).lighten(50).toHex8String(), 
-			tinycolor(colors['300']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-400-shaded`, tinycolor.mostReadable(colors['400'], [
-			tinycolor(colors['400']).lighten(50).toHex8String(), 
-			tinycolor(colors['400']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-500-shaded`, `var(${property}-shaded)`);
-		document.querySelector(":root").style.setProperty(`${property}-600-shaded`, tinycolor.mostReadable(colors['600'], [
-			tinycolor(colors['600']).lighten(50).toHex8String(), 
-			tinycolor(colors['600']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-700-shaded`, tinycolor.mostReadable(colors['700'], [
-			tinycolor(colors['700']).lighten(50).toHex8String(), 
-			tinycolor(colors['700']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-800-shaded`, tinycolor.mostReadable(colors['800'], [
-			tinycolor(colors['800']).lighten(50).toHex8String(), 
-			tinycolor(colors['800']).darken(50).toHex8String()
-		]));
-		document.querySelector(":root").style.setProperty(`${property}-900-shaded`, tinycolor.mostReadable(colors['900'], [
-			tinycolor(colors['900']).lighten(50).toHex8String(), 
-			tinycolor(colors['900']).darken(50).toHex8String()
-		]));
+		Themer.#cssManager.set({
+			[`${property}-shaded`]: tinycolor.mostReadable(colors['500'], [
+				tinycolor(colors['500']).lighten(50).toHex8String(), 
+				tinycolor(colors['500']).darken(50).toHex8String()
+			]),
+			
+			[`${property}-100-shaded`]: tinycolor.mostReadable(colors['100'], [
+				tinycolor(colors['100']).lighten(50).toHex8String(), 
+				tinycolor(colors['100']).darken(50).toHex8String()
+			]),
+			[`${property}-200-shaded`]: tinycolor.mostReadable(colors['100'], [
+				tinycolor(colors['200']).lighten(50).toHex8String(), 
+				tinycolor(colors['200']).darken(50).toHex8String()
+			]),
+			[`${property}-300-shaded`]: tinycolor.mostReadable(colors['100'], [
+				tinycolor(colors['300']).lighten(50).toHex8String(), 
+				tinycolor(colors['300']).darken(50).toHex8String()
+			]),
+			[`${property}-400-shaded`]: tinycolor.mostReadable(colors['100'], [
+				tinycolor(colors['400']).lighten(50).toHex8String(), 
+				tinycolor(colors['400']).darken(50).toHex8String()
+			]),
+			[`${property}-500-shaded`]: `var(${property}-shaded)`,
+			[`${property}-600-shaded`]: tinycolor.mostReadable(colors['100'], [
+				tinycolor(colors['600']).lighten(50).toHex8String(), 
+				tinycolor(colors['600']).darken(50).toHex8String()
+			]),
+			[`${property}-700-shaded`]: tinycolor.mostReadable(colors['100'], [
+				tinycolor(colors['700']).lighten(50).toHex8String(), 
+				tinycolor(colors['700']).darken(50).toHex8String()
+			]),
+			[`${property}-800-shaded`]: tinycolor.mostReadable(colors['100'], [
+				tinycolor(colors['800']).lighten(50).toHex8String(), 
+				tinycolor(colors['800']).darken(50).toHex8String()
+			]),
+			[`${property}-900-shaded`]: tinycolor.mostReadable(colors['100'], [
+				tinycolor(colors['900']).lighten(50).toHex8String(), 
+				tinycolor(colors['900']).darken(50).toHex8String()
+			])
+		});
 	}
 
 	static setColorButtonStates(property, value) {
@@ -243,13 +253,15 @@ export class Themer {
 		}
 		
 		// Set Button States
-		document.querySelector(":root").style.setProperty(`${property}-outline`, tinycolor(colors['base']).darken((intensity - 3) * 1).toHex8String());
-		document.querySelector(":root").style.setProperty(`${property}-hover`, colors['hover']);
-		document.querySelector(":root").style.setProperty(`${property}-hover-outline`, tinycolor(colors['hover']).darken((intensity - 3) * 1).toHex8String());
-		document.querySelector(":root").style.setProperty(`${property}-hover-contrast`, tinycolor.mostReadable(colors['hover'], ['#000', '#fff']));
-		document.querySelector(":root").style.setProperty(`${property}-active`, colors['active']);
-		document.querySelector(":root").style.setProperty(`${property}-active-outline`, tinycolor(colors['active']).darken((intensity - 3) * 1).toHex8String());
-		document.querySelector(":root").style.setProperty(`${property}-active-contrast`, tinycolor.mostReadable(colors['active'], ['#000', '#fff']));
+		Themer.#cssManager.set({
+			[`${property}-outline`]: tinycolor(colors['base']).darken((intensity - 3) * 1).toHex8String(),
+			[`${property}-hover`]: colors['hover'],
+			[`${property}-hover-outline`]: tinycolor(colors['hover']).darken((intensity - 3) * 1).toHex8String(),
+			[`${property}-hover-contrast`]: tinycolor.mostReadable(colors['hover'], ['#000', '#fff']),
+			[`${property}-active`]: colors['active'],
+			[`${property}-active-outline`]: tinycolor(colors['active']).darken((intensity - 3) * 1).toHex8String(),
+			[`${property}-active-contrast`]: tinycolor.mostReadable(colors['active'], ['#000', '#fff'])
+		});
 	}
 
 	static setManageLibrary(property, value) {
@@ -257,7 +269,7 @@ export class Themer {
 			(Themer.#THEME[property]?.files ?? []).forEach(file => {
 				const isScriptFile = (file?.type ?? "").includes('javascript') || (file?.type ?? "").includes('js') || (file?.name ?? "").endsWith('js')
 				// Make sure file isn't already active
-				if ((document.querySelector(`head ${isScriptFile ? 'script' : 'link'}[name="${property}"][${isScriptFile ? 'src' : 'href'}="${file?.name}"]`)?.length ?? 0) == 0) {
+				if ((document.querySelectorAll(`head ${isScriptFile ? 'script' : 'link'}[name="${property}"][${isScriptFile ? 'src' : 'href'}="${file?.name}"]`)?.length ?? 0) == 0) {
 					if (isScriptFile) {
 						let script = document.createElement('script');
 						script.setAttribute('name', property);
@@ -330,7 +342,7 @@ export class Themer {
 			},
 			setCSSVariable: async function(property, value) {
 				//Update CSS Variable
-				document.querySelector(":root").style.setProperty(property, value);
+				Themer.#cssManager.set({ [property]: value });
 
 				if ((Themer.#THEME[property]?.type ?? "") == "color") {
 					Themer.setColorContrast(property, value);
@@ -353,9 +365,11 @@ export class Themer {
 				}
 				
 				if ((Themer.#THEME[property]?.type ?? "") == "background") {
-					document.querySelector(":root").style.removeProperty(property) ?? false;
-					document.querySelector(":root").style.setProperty(`${property}-blend`, value?.blend ?? 'normal');
-					document.querySelector(":root").style.setProperty(`${property}-url`, value?.url != "url(/)" ? value?.url : '' ?? '');
+					Themer.#cssManager.remove(property);
+					Themer.#cssManager.set({ 
+						[`${property}-blend`]: value?.blend ?? 'normal', 
+						[`${property}-url`]: value?.url != "url(/)" ? value?.url : '' ?? ''
+					});
 				}
 				
 				if ((Themer.#THEME[property]?.type ?? "") == "library") {
@@ -371,8 +385,9 @@ export class Themer {
 				}
 
 				if ((Themer.#THEME[property]?.format ?? "") != "") {
-					document.querySelector(":root").style.setProperty(property, game.i18n.format(Themer.#THEME[property]?.format ?? "", { value: value }));
-					document.querySelector(":root").style.setProperty(property, game.i18n.format(Themer.#THEME[property]?.format ?? "", { value: value }));
+					Themer.#cssManager.set({ 
+						[`${property}`]: game.i18n.format(Themer.#THEME[property]?.format ?? "", { value: value }) 
+					});
 				};
 
 				// Call Hook UpdateSetting, THEME PROPERTIES, THEME KEY, THEME VALUE

@@ -39,7 +39,7 @@ export class PresetDialog extends FormApplication {
 			saveDataToFile(JSON.stringify(preset, null, 4), 'application/json', `${preset.name} Theme Preset.json`);
 		}
 
-		const updatePreset = (event) => {
+		const updatePreset = async (event) => {
 			const presetKey = event.target.closest('li').dataset.preset;
 			let presets = MODULE.setting('presets');
 
@@ -47,8 +47,15 @@ export class PresetDialog extends FormApplication {
 				id: `${MODULE.ID}-update-preset`,
 				title: MODULE.localize('title'),
 				content: `<p style="margin-top: 0px;">${MODULE.localize('dialog.presets.overwritePreset')}</p>`,
-				yes: (elemDialog) => {
+				yes: async (elemDialog) => {
 					presets[presetKey].theme = MODULE.setting('themeSettings');
+
+					// Cleanup Theme to Store only Active Values
+					for (const [property, value] of Object.entries(presets[presetKey].theme)) {
+						let setting = await game.modules.get(MODULE.ID).API.getThemeProperty(property);
+						if (value.value === setting?.default || typeof setting?.default == 'undefined') delete presets[presetKey].theme[property];
+					}
+
 					MODULE.setting('presets', presets).then(response => {
 						MODULE.log('UPDATE', response);
 					});
@@ -87,7 +94,7 @@ export class PresetDialog extends FormApplication {
 			Dialog.confirm({
 				id: `${MODULE.ID}-activate-preset`,
 				title: MODULE.localize('title'),
-				content: `<p style="margin-top: 0px;">This preset will enable the following Modules?</p>`,
+				content: `<p style="margin-top: 0px;">${MODULE.localize('dialog.presets.activatePreset')}</p>`,
 				yes: (elemDialog) => {
 					MODULE.setting('themeSettings', preset.theme).then(response => {
 						for (const [property, value] of Object.entries(MODULE.setting('themeSettings'))) {
@@ -114,8 +121,15 @@ export class PresetDialog extends FormApplication {
 			elemPreset.querySelector('button[data-action="activate"]').addEventListener('click', activatePreset);
 		});
 
-		const saveTheme = (theme, name) => {
+		const saveTheme = async (theme, name) => {
 			const presetKey = foundry.utils.randomID();
+
+			// Cleanup Theme to Store only Active Values
+			for (const [property, value] of Object.entries(theme)) {
+				let setting = await game.modules.get(MODULE.ID).API.getThemeProperty(property);
+				if (value.value === setting?.default || typeof setting?.default == 'undefined') delete theme[property];
+			}
+
 			MODULE.setting('presets', mergeObject(MODULE.setting('presets'), { 
 				[presetKey]: {
 					"name": name,

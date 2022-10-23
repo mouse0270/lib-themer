@@ -13,66 +13,168 @@
 			"type": "text/javscript"
 		}],
 		"settings": {
-			"--tidy-hud-controls-margin-top": {
-				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsMarginTop.name",
-				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsMarginTop.hint",
-				"type": "number",
-				"default": "0px",
-				"range": {
-					"min": -300,
-					"max": 300
+			"cssTidyHUDDisableLogo": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDDisableLogo.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDDisableLogo.hint",
+				"type": "library",
+				"default": false,
+				"files": [{
+					"name": "./modules/lib-themer/themes/assets/styles/tidy-hud-disable-logo.css",
+					"type": "text/css"
+				}],
+				"settings": {}
+			},
+			"cssTidyHUDControls": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDControls.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDControls.hint",
+				"type": "library",
+				"default": false,
+				"files": [{
+					"name": "./modules/lib-themer/themes/assets/styles/tidy-hud-controls.css",
+					"type": "text/css"
+				}],
+				"settings": {
+					"--tidy-hud-controls-margin-top": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsMarginTop.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsMarginTop.hint",
+						"type": "number",
+						"default": "0px",
+						"range": {
+							"min": -300,
+							"max": 300
+						}
+					},
+					"--tidy-hud-controls-alignment": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.hint",
+						"type": "choices",
+						"default": "center",
+						"choices": {
+							"start": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.start",
+							"center": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.center",
+							"end": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.end"
+						}
+					},
+					"--tidy-hud-controls-font-size": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsFontSize.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsFontSize.hint",
+						"type": "number",
+						"default": "20px",
+						"range": {
+							"min": 16,
+							"max": 24
+						}
+					},
+					"--tidy-hud-controls-size": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsSize.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsSize.hint",
+						"type": "number",
+						"default": "30px",
+						"range": {
+							"min": 24,
+							"max": 36
+						}
+					},
+					"--tidy-hud-offset-margin-top": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginTop.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginTop.hint",
+						"type": "number",
+						"default": "6px",
+						"range": {
+							"min": 0,
+							"max": 12
+						}
+					}
 				}
 			},
-			"--tidy-hud-controls-alignment": {
-				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.name",
-				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.hint",
-				"type": "choices",
-				"default": "center",
-				"choices": {
-					"start": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.start",
-					"center": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.center",
-					"end": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsAlignment.choices.end"
+			"cssTidyHUDSceneBrowser": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDSceneBrowser.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDSceneBrowser.hint",
+				"type": "library",
+				"default": false,
+				"files": [{
+					"name": "./modules/lib-themer/themes/assets/styles/tidy-hud-scene-browser.css",
+					"type": "text/css"
+				}],
+				"settings": {
+					"--tidy-hud-offset-margin-left": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.hint",
+						"type": "number",
+						"default": "-83px",
+						"range": {
+							"min": -200,
+							"max": 200
+						}
+					}
 				}
 			},
-			"--tidy-hud-controls-font-size": {
-				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsFontSize.name",
-				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsFontSize.hint",
-				"type": "number",
-				"default": "20px",
-				"range": {
-					"min": 16,
-					"max": 24
+			"cssTidyHUDPlayers": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDPlayers.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDPlayers.hint",
+				"type": "library",
+				"default": false,
+				"files": [{
+					"name": "./modules/lib-themer/themes/assets/styles/tidy-hud-players.css",
+					"type": "text/css"
+				}],
+				"settings": {
+					"cssTidyHUDPlayersExpandOffline": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDPlayersExpandOffline.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDPlayersExpandOffline.hint",
+						"type": "library",
+						"default": false,
+						"files": [{
+							"name": "./modules/lib-themer/themes/assets/styles/tidy-hud-players-show-offline.css",
+							"type": "text/css"
+						}],
+						"settings": {}
+					}
 				}
 			},
-			"--tidy-hud-controls-size": {
-				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsSize.name",
-				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDControlsSize.hint",
-				"type": "number",
-				"default": "30px",
-				"range": {
-					"min": 24,
-					"max": 36
+			"cssTidyHUDHotbar": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDHotbar.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDHotbar.hint",
+				"type": "library",
+				"default": false,
+				"files": [{
+					"name": "./modules/lib-themer/themes/assets/styles/tidy-hud-hotbar.css",
+					"type": "text/css"
+				}],
+				"settings": {
+					"--tidy-hud-hotbar-alignment": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDHotbarAlignment.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDHotbarAlignment.hint",
+						"type": "choices",
+						"default": "center",
+						"choices": {
+							"left": "lib-themer.theme.cssTidyHUD.settings.tidyHUDHotbarAlignment.choices.left",
+							"center": "lib-themer.theme.cssTidyHUD.settings.tidyHUDHotbarAlignment.choices.center",
+							"right": "lib-themer.theme.cssTidyHUD.settings.tidyHUDHotbarAlignment.choices.right"
+						}
+					},
+					"--tidy-hud-hotbar-offset": {
+						"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDHotbarOffset.name",
+						"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDHotbarOffset.hint",
+						"type": "number",
+						"default": "0px",
+						"range": {
+							"min": -200,
+							"max": 200
+						}
+					}
 				}
 			},
-			"--tidy-hud-offset-margin-top": {
-				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginTop.name",
-				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginTop.hint",
-				"type": "number",
-				"default": "6px",
-				"range": {
-					"min": 0,
-					"max": 12
-				}
-			},
-			"--tidy-hud-offset-margin-left": {
-				"name": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.name",
-				"hint": "lib-themer.theme.cssTidyHUD.settings.tidyHUDOffsetMarginLeft.hint",
-				"type": "number",
-				"default": "-83px",
-				"range": {
-					"min": -200,
-					"max": 200
-				}
+			"cssTidyHUDNotifications": {
+				"name": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDNotifications.name",
+				"hint": "lib-themer.theme.cssTidyHUD.settings.cssTidyHUDNotifications.hint",
+				"type": "library",
+				"default": false,
+				"files": [{
+					"name": "./modules/lib-themer/themes/assets/styles/tidy-hud-notifications.css",
+					"type": "text/css"
+				}],
+				"settings": {}
 			}
 		}
 	},

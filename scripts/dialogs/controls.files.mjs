@@ -10,7 +10,7 @@ export function ControlFiles(elemContainer, setting, properties) {
 	// Add Element To Container
 	elemContainer.insertAdjacentHTML('beforeend', `<div class="form-group-stacked" data-type="${properties.type}">
 		<div class="form-group">
-			<div class="toggle"><i class="fa-solid fa-circle-arrow-up"></i></div>
+			<div class="toggle"><i class="fa-solid fa-circle-plus"></i></div>
 			<label><strong>${this.localize(properties?.name ?? `${setting}.name`) ?? setting}</strong></label>
 			<div class="form-fields">
 				<input type="checkbox" name="${setting}" ${(controlProperties.value ? 'checked' : '')}>
@@ -51,12 +51,16 @@ export function ControlFiles(elemContainer, setting, properties) {
 
 	elem.querySelector('.toggle').addEventListener('click', (event) => {
 		elem.querySelector('.stylesheet-settings').classList.toggle('hidden');
-		event.target.classList.toggle('expanded', !elem.querySelector('.stylesheet-settings').classList.contains('hidden'))
+		event.target.closest('.toggle').classList.toggle('expanded', !elem.querySelector('.stylesheet-settings').classList.contains('hidden'))
 	});
 
 	// Check if Library has Settings
 	if (Object.keys(properties?.settings ?? []).length == 0) {
 		elem.style.paddingLeft = '0px';
 		elem.querySelector('.toggle').remove();
+	}else{
+		elem.querySelector('label').addEventListener('click', (event) => {
+			elem.querySelector('.toggle').click();
+		});
 	}
 };

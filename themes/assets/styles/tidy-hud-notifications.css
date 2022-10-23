@@ -1,0 +1,6 @@
+#notifications {
+    left: auto;
+    right: calc(var(--sidebar-width) + 1rem);
+	top: 1rem;
+    width: var(--sidebar-width);
+}

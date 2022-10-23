@@ -1,0 +1,46 @@
+aside#players {
+	--players-width: 40px;
+	border-radius: 0px;
+	border-top-right-radius: 5px;
+	border-left-width: 0px;
+	border-bottom-width: 0px;
+	bottom: 0px;
+	box-shadow: none;
+	left: 0px;
+	margin: 0px;
+	position: fixed;
+	width: auto;
+}
+aside#players h3,
+aside#players ol li {
+	font-size: 0rem;
+}
+aside#players h3 {
+    display: flex;
+	flex-direction: column-reverse;
+	margin: 0px;
+    padding: 0rem;
+}
+aside#players h3 i {
+	align-self: center;
+	font-size: var(--font-size-13);
+    margin: 0px;
+	padding: 0.25rem 0.5rem;
+}
+aside#players ol {
+	margin: 0px;
+}
+aside#players ol li.player {
+	justify-content: center;
+	padding: 0.25rem;
+}
+aside#players ol li.player span {
+	margin: 0px;
+}
+aside#players ol li.player span.player-active {
+	flex: 0 0 12px;
+	height: 12px;
+}
+aside#players ol li.player span.player-name {
+	display: none;
+}
