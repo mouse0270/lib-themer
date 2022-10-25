@@ -277,7 +277,7 @@ export class Themer {
 						
 						document.querySelector(`head script:last-of-type`).insertAdjacentElement('afterend', script);
 					}else{
-						document.querySelector(`head link:last-of-type`).insertAdjacentHTML('afterend', `<link name="${property}" href="${file?.name}" rel="stylesheet" type="text/css" />`);
+						document.querySelector(`head style[name="lib-themer"]`).insertAdjacentHTML('beforebegin', `<link name="${property}" href="${file?.name}" rel="stylesheet" type="text/css" />`);
 					}
 				}
 			})

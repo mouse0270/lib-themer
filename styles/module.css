@@ -181,6 +181,9 @@
 	margin: 0px;
 	min-height: 30px;
 }
+#lib-themer-dialog div.form-group[data-type="background"] .form-fields > button[data-action="reset"] {
+	order: 100;
+}
 #lib-themer-dialog div.form-group[data-type="background"] .form-fields > *:first-child {
 	border-bottom-left-radius: 3px;
 	border-top-left-radius: 3px;

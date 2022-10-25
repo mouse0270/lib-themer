@@ -10,6 +10,8 @@ export function ControlBackground(elemContainer, setting, properties) {
 			url: ((properties?.value?.url ?? properties.default?.url) ?? '').replace('url(/', '').replace(')', '')
 		}
 	}
+	// Handle for when url is a css variable
+	if ((properties?.value?.url ?? properties.default?.url).startsWith('var(')) controlProperties.value.url = properties?.value?.url;
 
 	// Add Element To Container
 	elemContainer.insertAdjacentHTML('beforeend', `<div class="form-group" data-type="${properties.type}">
@@ -37,6 +39,7 @@ export function ControlBackground(elemContainer, setting, properties) {
 			<button type="button" class="file-picker" title="Browse Images" tabindex="-1">
 				<i class="fas fa-file-import fa-fw"></i>
 			</button>
+			<button type="button" data-action="reset" data-tooltip="${MODULE.localize('dialog.theme.reset')}"><i class="fa-duotone fa-rotate"></i></button>
 		</div>
 		<p class="notes${(properties?.hint ?? false) ? '' : ' hidden'}">${this.localize(properties?.hint ?? `${setting}.hint`) ?? ''}</p>
 	</div>`);
@@ -53,6 +56,7 @@ export function ControlBackground(elemContainer, setting, properties) {
 		let url = elem.querySelector('input[type="text"]').value;
 		if (url.length > 0 && !url.startsWith('http')) url = `/${url}`;
 		if (url.length > 0) url = `url(${url})`;
+		if (elem.querySelector('input[type="text"]').value.startsWith('var(')) url = elem.querySelector('input[type="text"]').value
 		
 		game.modules.get(MODULE.ID).API.setCSSVariable(`${elem.querySelector('input[type="text"]').name}`, {
 			blend: elem.querySelector('select').value,
@@ -75,4 +79,13 @@ export function ControlBackground(elemContainer, setting, properties) {
 	elem.querySelector('select').addEventListener('change', updateURL, false);
 	elem.querySelector('input[type="text"]').addEventListener('change', updateURL, false);
 	elem.querySelector('button.file-picker')?.addEventListener('click', openFileBrowser, false) ?? false;
+
+	// Add Function to restore to default setting
+	const restoreDefault = (event) => {		
+		elem.querySelector('input[type="text"]').value = (properties?.default?.url ?? '');
+		elem.querySelector('select').value = (properties?.default?.blend ?? 'normal');
+
+		elem.querySelector('input[type="text"]').dispatchEvent(new Event('change'));
+	}
+	elem.querySelector('button[data-action="reset"]').addEventListener('click', restoreDefault, false);
 };

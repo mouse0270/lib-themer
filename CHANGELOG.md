@@ -1,3 +1,8 @@
+# Version 1.0.6 - Image Patches
+- stylesheets are now placed before libThemers style element so that the settings will always take effect.
+- Added reset to default for Images
+- Added logic to handle if image uses a css variable instead of a url
+
 # Version 1.0.5 - QOL Stuff
 - Blatantly copied @TyphonJS StyleManager Logic to move css variables `html` element to `style` element.
 - Fixed Localization for Activating Preset.
