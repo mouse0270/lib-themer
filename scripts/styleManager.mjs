@@ -19,7 +19,6 @@ export class StyleManager {
 
 	set(properties) {
 		for (const [property, value] of Object.entries(properties)) {
-			MODULE.log('Set CSS Variable', property, value);
 			this.#cssRules.setProperty(property, value);
 		}
 	}
