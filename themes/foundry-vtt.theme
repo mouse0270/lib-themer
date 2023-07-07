@@ -440,19 +440,19 @@
 		"name": "lib-themer.theme.fvtt.--font-primary.name",
 		"hint": "lib-themer.theme.fvtt.--font-primary.hint",
 		"type": "font-family",
-		"default": "Signika"
+		"default": "\"Signika\""
 	},
 	"--font-mono": {
 		"name": "lib-themer.theme.fvtt.--font-mono.name",
 		"hint": "lib-themer.theme.fvtt.--font-mono.hint",
 		"type": "font-family",
-		"default": "monospace"
+		"default": "\"monospace\""
 	},
 	"--font-awesome": {
 		"name": "lib-themer.theme.fvtt.--font-awesome.name",
 		"hint": "lib-themer.theme.fvtt.--font-awesome.hint",
 		"type": "font-family",
-		"default": "Font Awesome 6 Pro"
+		"default": "\"Font Awesome 6 Pro\""
 	},
 	"--font-size-11": {
 		"name": "lib-themer.theme.fvtt.--font-size-11.name",

@@ -2,10 +2,10 @@
 	"id": "lib-themer",
 	"title": "lib Themer",
 	"description": "One stop shop for styling Foundry",
-	"version": "1.0.2",
+	"version": "1.0.7",
 	"compatibility": {
 		"minimum": 10,
-		"verified": 10
+		"verified": 11
 	},
 	"authors": [
 		{

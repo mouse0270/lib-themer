@@ -11,8 +11,6 @@ export class StyleManager {
 
 		this.#stylesheet = document.querySelector(`head style[name="${MODULE.ID}"]`);
 		this.#cssRules = this.#stylesheet.sheet.cssRules[0].style;
-
-		console.log(this.#cssRules)
 	}
 
 	get(property) {
@@ -21,6 +19,7 @@ export class StyleManager {
 
 	set(properties) {
 		for (const [property, value] of Object.entries(properties)) {
+			MODULE.log('Set CSS Variable', property, value);
 			this.#cssRules.setProperty(property, value);
 		}
 	}

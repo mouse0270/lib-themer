@@ -1,3 +1,7 @@
+# Version 1.0.7 - v11 Probably...
+- Fixed an issue with the default fonts not being wrapped in quotes and breaking fonts with spaces such as *Font Awesome 6 Pro*
+- Removed `compatibility.max` from `module.json` and set `compatibility.verified` to `11`
+
 # Version 1.0.6 - Image Patches
 - stylesheets are now placed before libThemers style element so that the settings will always take effect.
 - Added reset to default for Images
