@@ -1,0 +1,32 @@
+#sidebar #chat .chat-message {
+	border-color: var(--player-color) !important;
+	border-radius: 0px;
+    border-width: 0 0 0 3px;
+    box-shadow: 0 0 5px black;
+    margin: 0px 3px;
+	padding-bottom: 0.5rem;
+	position: relative;
+	transition: box-shadow 0.2s ease-in-out;
+}
+#sidebar #chat .chat-message.message:hover {
+    z-index: 1;
+    box-shadow: 0 0 10px black;
+}
+#sidebar #chat .chat-message header.message-header {
+	border-bottom: 2px groove #FFF;
+	margin-bottom: 0.25rem;
+	padding-bottom: 0.25rem;
+}
+#sidebar #chat .chat-message header.message-header .message-sender {
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+#sidebar #chat .chat-message header.message-header span.message-metadata {
+	font-size: 0.6rem;
+	opacity: 0.6;
+}
+/* DND5e Patch */
+#sidebar #chat .chat-message .dnd5e.chat-card .card-header {
+	border-top: 0px;
+	padding-top: 0px;
+}

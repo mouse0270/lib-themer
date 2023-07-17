@@ -28,6 +28,9 @@ Hooks.once('init', () => {
 });
 Hooks.once('ready', async () => {	
 	Themer.init();
+	
+	// Create and Set Player CSS Variables
+	Themer.setPlayerColors();
 });
 
 /* ─────────────── ⋆⋅☆⋅⋆ ─────────────── */

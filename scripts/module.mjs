@@ -450,6 +450,24 @@ export class Themer {
 		Hooks.callAll(`${MODULE.ID}.Ready`, game.modules.get(MODULE.ID).API);
 	}
 
+	static async setPlayerColors() {
+		const setPlayerColor = (user) => {
+			let playerProperty = `--player-color-${user.id}`;
+			Themer.#cssManager.set({ 
+				[playerProperty]: user.color, 
+			});
+			Themer.setColorContrast(playerProperty, user.color);
+		};
+
+		for (const [key, user] of Object.entries(game.users.contents)) {
+			setPlayerColor(user);
+		}
+
+		Hooks.on('updateUser', async (user, data, options, userId) => {
+			setPlayerColor(user);
+		});
+	}
+
 	static async renderSidebarTab (app, elem, options) {
 		if (app.options.id == "settings") {
 			elem[0].querySelector('#settings-game button[data-action="controls"]').insertAdjacentHTML('afterend', `<button data-action="themer">

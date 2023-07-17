@@ -188,6 +188,19 @@
 			"type": "text/css"
 		}],
 		"settings": {
+			"--tidy-sidebar-chat": {
+				"name": "lib-themer.theme.cssTidySidebar.settings.tidySidebarChat.name",
+				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarChat.hint",
+				"type": "library",
+				"default": false,
+				"files": [{
+					"name": "./modules/lib-themer/themes/assets/styles/tidy-sidebar-chat.css",
+					"type": "text/css"
+				},{
+					"name": "./modules/lib-themer/themes/assets/scripts/tidy-sidebar-chat.js",
+					"type": "text/javscript"
+				}]
+			},
 			"--tidy-sidebar-padding-y": {
 				"name": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingY.name",
 				"hint": "lib-themer.theme.cssTidySidebar.settings.tidySidebarPaddingY.hint",

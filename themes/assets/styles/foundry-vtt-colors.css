@@ -252,8 +252,18 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 .chat-message .message-header {
 	color: var(--app-dialog-background-contrast);
 }
+.chat-message button {
+	color: var(--app-dialog-background-contrast);
+}
 #chat-controls .roll-type-select {
 	color: var(--app-background-contrast);
+}
+#chat-form textarea {
+	background-color: var(--app-dialog-background);
+	background-blend-mode: var(--app-dialog-background-image-blend);
+	background-image: var(--app-dialog-background-image-url);
+	border-color: var(--app-background-dark);
+	color: var(--app-dialog-background-contrast);
 }
 
 /* UI CONTROLS ────────────────── ⋆⋅☆⋅⋆ ────────────────────────────── */

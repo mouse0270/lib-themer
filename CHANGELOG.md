@@ -1,3 +1,32 @@
+# Version 1.0.8 - Tidy Chat
+- Added a Chat Card theme design stolen from [Luckas](https://discord.com/channels/170995199584108546/1065764029278212230/1130303762515361902) on Discord... It was too pretty not to steal.
+- Added CSS Variables for Player Color `--player-color-PLYAERID`and `--player-color-PLAYERID-contrast` variables
+  - These CSS variables will update anytime a player changes their color for live changes to any UI using them
+- Fixed Chat Textarea not getting themed in `Foundry Colorized`.... Sorry this took so long...
+- Some minor fixes to Chat Card CSS Buttons and headers...
+
+> Not really required but I found the best way to use is to do something like the following
+> on your element define a css variable like `--player-color: var(--player-color-PLAYERID, DEFAULT_COLOR);`
+> this way in your CSS you just have to do `var(--player-color)`
+
+Here is sample code for how its used in the Tidy Sidebar Chat
+```javascript
+// On Load of libThemer Logic
+// Get Chat Cards and Set Player Color
+document.querySelectorAll('#sidebar #chat .chat-message').forEach((elem) => {
+  // Loop through all messages that existed before libThemer was laaded
+	let message = game.messages.get(elem.dataset.messageId);
+  // Set the Player Color
+	elem.style.setProperty('--player-color', `var(--player-color-${message.user.id}, ${message.user.color})`);
+});
+
+// On New Chat Cards set Player Color
+Hooks.on('renderChatMessage', async (chatMessage, [elem], data) => {
+  // Hey, a new message! Lets set the Player Color
+	elem.style.setProperty('--player-color', `var(--player-color-${data.user.id}, ${data.user.color})`);
+});
+```
+
 # Version 1.0.7 - v11 Probably...
 - Fixed an issue with the default fonts not being wrapped in quotes and breaking fonts with spaces such as *Font Awesome 6 Pro*
 - Removed `compatibility.max` from `module.json` and set `compatibility.verified` to `11`

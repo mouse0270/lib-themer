@@ -359,6 +359,10 @@
 				"name": "Tidy Sidebar",
 				"hint": "This stylesheet attempts to clean up the sidebar settings buttons in a way I personally perfer.",
 				"settings": {
+					"tidySidebarChat": {
+						"name": "Tidy Sidebar Chat",
+						"hint": "This setting will format the chat cards in a manner that I personally like inspired by Lukas from Discord."
+					},
 					"tidySidebarPaddingY": {
 						"name": "Tidy Sidebar (Padding Y)",
 						"hint": "This setting controls the spacing between the top/bottom of the button groups."

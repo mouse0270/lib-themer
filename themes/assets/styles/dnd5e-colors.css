@@ -60,3 +60,7 @@
 .dnd5e.sheet.actor.character .inventory .item-controls .item-toggle.active, .dnd5e.sheet.actor.character .spellbook .item-controls .item-toggle.active {
     color: var(--app-dialog-background-dark);
 }
+
+.dnd5e.chat-card .card-header h3 {
+	color: var(--app-background-contrast);
+}
