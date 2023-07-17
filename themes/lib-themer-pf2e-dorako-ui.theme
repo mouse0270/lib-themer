@@ -1,0 +1,98 @@
+{
+	"id": "system-pf2e",
+	"title": "PF2e Dorako UI Theme",
+	"requires": [
+		{
+			"id": "pf2e-dorako-ui",
+			"type": "module"
+		}
+	],
+	"--sheet-sidebar-color": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--sheet-sidebar-color.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--sheet-sidebar-color.hint",
+		"type": "choices",
+		"default": "red",
+		"choices": {
+			"red": "lib-themer.theme.module.pf2e-dorako-ui.--sheet-sidebar-color.choices.red",
+			"blue": "lib-themer.theme.module.pf2e-dorako-ui.--sheet-sidebar-color.choices.blue"
+		}
+	},	
+	"--rarity-common": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--rarity-common.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--rarity-common.hint",
+		"type": "color",
+		"default": "#323232"
+	},
+	"--rarity-uncommon": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--rarity-uncommon.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--rarity-uncommon.hint",
+		"type": "color",
+		"default": "#98513d"
+	},
+	"--rarity-rare": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--rarity-rare.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--rarity-rare.hint",
+		"type": "color",
+		"default": "#002664"
+	},
+	"--rarity-unique": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--rarity-unique.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--rarity-unique.hint",
+		"type": "color",
+		"default": "#54166e"
+	},
+	"--gold-brown": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--gold-brown.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--gold-brown.hint",
+		"type": "color",
+		"default": "#956d58"
+	},
+	"--whisper-bg": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--whisper-bg.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--whisper-bg.hint",
+		"type": "color",
+		"default": "#e3e3ff"
+	},
+	"--blind-bg": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--blind-bg.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--blind-bg.hint",
+		"type": "color",
+		"default": "#a57aa5"
+	},
+	"--mats-dark": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--mats-dark.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--mats-dark.hint",
+		"type": "color",
+		"default": "#1c1c1c",
+		"colors": {
+			"variations": true
+		}
+	},
+	"--mats-gold": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--mats-gold.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--mats-gold.hint",
+		"type": "color",
+		"default": "#dbc682",
+		"colors": {
+			"variations": true
+		}
+	},
+	"--mats-green": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--mats-green.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--mats-green.hint",
+		"type": "color",
+		"default": "#3e644b",
+		"colors": {
+			"variations": true
+		}
+	},
+	"--glass-bg": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--glass-bg.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--glass-bg.hint",
+		"type": "color",
+		"default": "rgba(20, 20, 20, 0.6)",
+		"colors": {
+			"variations": true
+		}
+	}
+}

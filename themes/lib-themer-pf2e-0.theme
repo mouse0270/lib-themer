@@ -1,0 +1,139 @@
+{
+	"id": "system-pf2e",
+	"title": "PF2e Theme Options",
+	"requires": [
+		{
+			"id": "pf2e",
+			"type": "system"
+		}
+	],
+	"--primary": {
+		"name": "lib-themer.theme.system.pf2e.--primary.name",
+		"hint": "lib-themer.theme.system.pf2e.--primary.hint",
+		"type": "color",
+		"default": "#5e0000",
+		"colors": {
+			"variations": true
+		}
+	},
+	"--secondary": {
+		"name": "lib-themer.theme.system.pf2e.--secondary.name",
+		"hint": "lib-themer.theme.system.pf2e.--secondary.hint",
+		"type": "color",
+		"default": "#171f69",
+		"colors": {
+			"variations": true
+		}
+	},
+	"--tertiary": {
+		"name": "lib-themer.theme.system.pf2e.--tertiary.name",
+		"hint": "lib-themer.theme.system.pf2e.--tertiary.hint",
+		"type": "color",
+		"default": "#e9d7a1",
+		"colors": {
+			"variations": true
+		}
+	},
+	"--alt": {
+		"name": "lib-themer.theme.system.pf2e.--alt.name",
+		"hint": "lib-themer.theme.system.pf2e.--alt.hint",
+		"type": "color",
+		"default": "#786452",
+		"colors": {
+			"variations": true
+		}
+	},
+	"--bg": {
+		"name": "lib-themer.theme.system.pf2e.--bg.name",
+		"hint": "lib-themer.theme.system.pf2e.--bg.hint",
+		"type": "color",
+		"default": "#f8f4f1",
+		"colors": {
+			"variations": true
+		}
+	},
+	"--sub": {
+		"name": "lib-themer.theme.system.pf2e.--sub.name",
+		"hint": "lib-themer.theme.system.pf2e.--sub.hint",
+		"type": "color",
+		"default": "#605856"
+	},
+	"--color-disabled": {
+		"name": "lib-themer.theme.system.pf2e.--color-disabled.name",
+		"hint": "lib-themer.theme.system.pf2e.--color-disabled.hint",
+		"type": "color",
+		"default": "#ababab"
+	},
+	"--inline-link-bg": {
+		"name": "lib-themer.theme.system.pf2e.--inline-link-bg.name",
+		"hint": "lib-themer.theme.system.pf2e.--inline-link-bg.hint",
+		"type": "color",
+		"default": "#ddd"
+	},
+	"--inline-repost-bg": {
+		"name": "lib-themer.theme.system.pf2e.--inline-repost-bg.name",
+		"hint": "lib-themer.theme.system.pf2e.--inline-repost-bg.hint",
+		"type": "color",
+		"default": "#eaeaea"
+	},
+	"--visibility-gm-bg": {
+		"name": "lib-themer.theme.system.pf2e.--visibility-gm-bg.name",
+		"hint": "lib-themer.theme.system.pf2e.--visibility-gm-bg.hint",
+		"type": "color",
+		"default": "#e8e8ef"
+	},
+	"--visibility-owner-bg": {
+		"name": "lib-themer.theme.system.pf2e.--visibility-owner-bg.name",
+		"hint": "lib-themer.theme.system.pf2e.--visibility-owner-bg.hint",
+		"type": "color",
+		"default": "#ddebe1"
+	},
+	"--blind-roll": {
+		"name": "lib-themer.theme.system.pf2e.--blind-roll.name",
+		"hint": "lib-themer.theme.system.pf2e.--blind-roll.hint",
+		"type": "color",
+		"default": "#f5eaf5"
+	},
+	"--light": {
+		"name": "lib-themer.theme.system.pf2e.--light.name",
+		"hint": "lib-themer.theme.system.pf2e.--light.hint",
+		"type": "color",
+		"default": "#910000"
+	},
+	"--dark": {
+		"name": "lib-themer.theme.system.pf2e.--dark.name",
+		"hint": "lib-themer.theme.system.pf2e.--dark.hint",
+		"type": "color",
+		"default": "#2b0000"
+	},
+	"--color-text-trait": {
+		"name": "lib-themer.theme.system.pf2e.--color-text-trait.name",
+		"hint": "lib-themer.theme.system.pf2e.--color-text-trait.hint",
+		"type": "color",
+		"default": "#f5efe0"
+	},
+	"--text-dark": {
+		"name": "lib-themer.theme.system.pf2e.--text-dark.name",
+		"hint": "lib-themer.theme.system.pf2e.--text-dark.hint",
+		"type": "color",
+		"default": "#1c1c1c"
+	},
+	"--text-light": {
+		"name": "lib-themer.theme.system.pf2e.--text-light.name",
+		"hint": "lib-themer.theme.system.pf2e.--text-light.hint",
+		"type": "color",
+		"default": "#fff"
+	},
+	"--color-border-trait": {
+		"name": "lib-themer.theme.system.pf2e.--color-border-trait.name",
+		"hint": "lib-themer.theme.system.pf2e.--color-border-trait.hint",
+		"type": "color",
+		"default": "#d8c384"
+	},
+	"--color-border-divider": {
+		"name": "lib-themer.theme.system.pf2e.--color-border-divider.name",
+		"hint": "lib-themer.theme.system.pf2e.--color-border-divider.hint",
+		"type": "color",
+		"default": "#baa991"
+	}	
+}

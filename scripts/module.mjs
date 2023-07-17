@@ -78,6 +78,7 @@ export class Themer {
 		const fileName = (url) => url.split('/').pop().split('.')[0];
 
 		if (this.themeRequirementsMet(content)) {
+			MODULE.debug(`Registering Theme: ${content?.title ?? fileName(url)}`, content);
 			foundry.utils.mergeObject(Themer.#THEMES, {
 				[content?.id ?? fileName(url)]: foundry.utils.mergeObject({ title: content?.id ?? fileName(url) }, content)
 			}, {});
@@ -404,6 +405,7 @@ export class Themer {
 				return await Themer.#THEME[property] ?? false;
 			}
 		};
+		game.modules.get(MODULE.ID).api = game.modules.get(MODULE.ID).API;
 	}
 	
 	static init = () => {

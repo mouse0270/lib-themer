@@ -404,6 +404,147 @@
 					"--app-dialog-background-image.name": "App Background Image",
 					"--app-dialog-background-image.hint": "This applies a background image to the dialogs and sheets in foundry."
 				}
+			},
+			"system.pf2e": {
+				"--primary": {
+					"name": "Primary Color",
+					"hint": "This controls the primary color of the UI."
+				},
+				"--secondary": {
+					"name": "Secondary Color",
+					"hint": "This controls the secondary color of the UI."
+				},
+				"--tertiary": {
+					"name": "Tertiary Color",
+					"hint": "This controls the tertiary color of the UI."
+				},
+				"--alt": {
+					"name": "Alt Color",
+					"hint": "This controls the alt color of the UI."
+				},
+				"--bg": {
+					"name": "Background Color",
+					"hint": "This controls the background color of the UI."
+				},
+				"--sub": {
+					"name": "Sub Color",
+					"hint": "This controls the sub color of the UI."
+				},
+				"--color-disabled": {
+					"name": "Disabled Color",
+					"hint": "This controls the disabled color of the UI."
+				},
+				"--inline-link-bg": {
+					"name": "Inline Link Background Color",
+					"hint": "This controls the inline link background color of the UI."
+				},
+				"--inline-repost-bg": {
+					"name": "Inline Repost Background Color",
+					"hint": "This controls the inline repost background color of the UI."
+				},
+				"--visibility-gm-bg": {
+					"name": "GM Visibility Background Color",
+					"hint": "This controls the GM visibility background color of the UI."
+				},
+				"--visibility-owner-bg": {
+					"name": "Owner Visibility Background Color",
+					"hint": "This controls the owner visibility background color of the UI."
+				},
+				"--blind-roll": {
+					"name": "Blind Roll Color",
+					"hint": "This controls the blind roll color of the UI."
+				},
+				"--light": {
+					"name": "Light Color",
+					"hint": "This controls the light color of the UI."
+				},
+				"--dark": {
+					"name": "Dark Color",
+					"hint": "This controls the dark color of the UI."
+				},
+				"--color-text-trait": {
+					"name": "Trait Text Color",
+					"hint": "This controls the trait text color of the UI."
+				},
+				"--text-dark": {
+					"name": "Dark Text Color",
+					"hint": "This controls the dark text color of the UI."
+				},
+				"--text-light": {
+					"name": "Light Text Color",
+					"hint": "This controls the light text color of the UI."
+				},
+				"--color-border-trait": {
+					"name": "Trait Border Color",
+					"hint": "This controls the trait border color of the UI."
+				},
+				"--color-border-divider": {
+					"name": "Divider Border Color",
+					"hint": "This controls the divider border color of the UI."
+				}
+			},
+			"module.pf2e-dorako-ui": {
+				"--sheet-bg": {
+					"name": "Sheet Background Color",
+					"hint": "DROP THIS SETTING: The Sheet Background Color to Use. WARNING: DO NOT CHANGE THIS UNLESS YOU REALLY WANT TO TINKER WITH ALOT OF SETTINGS. Use The DARK THEME IN PF2e Dorako UI Settings.",
+					"choices": {
+						"inherit": "Inherit",
+						"light": "Light",
+						"dark": "Dark"
+					}
+				},
+				"--sheet-sidebar-color": {
+					"name": "Sheet Sidebar Color",
+					"hint": "The color of the sheet sidebar color.",
+					"choices": {
+						"red": "Red",
+						"blue": "Blue"
+					}
+				},
+				"--rarity-common": {
+					"name": "Common Rarity Color",
+					"hint": "The color of the common rarity."
+				},
+				"--rarity-uncommon": {
+					"name": "Uncommon Rarity Color",
+					"hint": "The color of the uncommon rarity."
+				},
+				"--rarity-rare": {
+					"name": "Rare Rarity Color",
+					"hint": "The color of the rare rarity."
+				},
+				"--rarity-unique": {
+					"name": "Unique Rarity Color",
+					"hint": "The color of the unique rarity."
+				},
+				"--gold-brown": {
+					"name": "Gold Brown Color",
+					"hint": "The color of the gold brown."
+				},
+				"--whisper-bg": {
+					"name": "Whisper Color",
+					"hint": "The color of the whisper."
+				},
+				"--blind-bg": {
+					"name": "Blind Color",
+					"hint": "The color of the blind."
+				},
+				"--mats-dark": {
+					"name": "Dark Mats Color",
+					"hint": "The color of the dark mats."
+				},
+				"--mats-gold": {
+					"name": "Gold Mats Color",
+					"hint": "The color of the gold mats."
+				},
+				"--mats-green": {
+					"name": "Green Mats Color",
+					"hint": "The color of the green mats."
+				},
+				"--glass-bg": {
+					"name": "Glass Color",
+					"hint": "The color of the glass."
+				}
 			}
 		}
 	}

@@ -1,0 +1,11 @@
+:root {
+	--sheet-light: url(/modules/pf2e-dorako-ui/img/background-light.webp);
+    --sheet-dark: url(/modules/pf2e-dorako-ui/img/background-dark4.webp);
+}
+
+.dorako-ui.actor.sheet .crb-style {
+	background-image: var(--sheet-header-color-bg), var(--sheet);
+}
+.actor.sheet .crb-style aside {
+	background-image: var(--sheet-sidebar-color-bg);
+}
