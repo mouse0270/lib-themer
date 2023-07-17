@@ -1,6 +1,6 @@
 #sidebar #chat .chat-message {
 	border-color: var(--player-color) !important;
-	border-radius: 5px 5px 0 0;
+	border-radius: var(--tidy-sidebar-chat-border-radius, 5px) var(--tidy-sidebar-chat-border-radius, 5px) 0 0;
     border-width: 0 0 0 3px;
     box-shadow: 0 0 5px black;
     margin: 0px 3px;
@@ -10,12 +10,12 @@
 	transition: box-shadow 0.2s ease-in-out, border-radius 0.2s ease-in-out;
 }
 #sidebar #chat .chat-message:last-child {
-	border-radius: 5px;
+	border-radius: var(--tidy-sidebar-chat-border-radius, 5px);
 }
 #sidebar #chat .chat-message.message:hover {
-	border-radius: 5px;
+	border-radius: var(--tidy-sidebar-chat-border-radius, 5px);
     box-shadow: 0 0 10px black;
-    z-index: 1;
+    z-index: var(--tidy-sidebar-chat-z-index, 1);
 }
 #sidebar #chat .chat-message header.message-header {
 	border-bottom: 2px groove #FFF;

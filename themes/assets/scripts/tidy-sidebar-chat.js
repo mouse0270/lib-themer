@@ -7,5 +7,5 @@ document.querySelectorAll('#sidebar #chat .chat-message').forEach((elem) => {
 
 // On New Chat Cards set Player Color
 Hooks.on('renderChatMessage', async (chatMessage, [elem], data) => {
-	elem.style.setProperty('--player-color', `var(--player-color-${data.user.id}, ${data.user.color})`);
+	elem.style.setProperty('--player-color', `var(--player-color-${chatMessage.user.id}, ${chatMessage.user.color})`);
 });

@@ -361,7 +361,17 @@
 				"settings": {
 					"tidySidebarChat": {
 						"name": "Tidy Sidebar Chat",
-						"hint": "This setting will format the chat cards in a manner that I personally like inspired by Lukas from Discord."
+						"hint": "This setting will format the chat cards in a manner that I personally like inspired by Lukas from Discord.",
+						"settings": {
+							"borderRadius": {
+								"name": "Border Radius",
+								"hint": "This setting controls the border radius of the chat cards."
+							},
+							"zIndex": {
+								"name": "On Chat Message Hover z-index",
+								"hint": "When set to 1, the chat card will appear above the other chat cards when hovered. When set to 0, the chat card will remain the same."
+							}
+						}
 					},
 					"tidySidebarPaddingY": {
 						"name": "Tidy Sidebar (Padding Y)",

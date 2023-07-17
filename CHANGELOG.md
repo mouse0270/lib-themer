@@ -1,5 +1,6 @@
 # Version 1.0.8 - Tidy Chat
 - Added a Chat Card theme design stolen from [Luckas](https://discord.com/channels/170995199584108546/1065764029278212230/1130303762515361902) on Discord... It was too pretty not to steal.
+  - Has two settings, one for the border radius of the chat cards and the other if the chat card should be brought to the front when hovered over.
 - Added CSS Variables for Player Color `--player-color-PLYAERID`and `--player-color-PLAYERID-contrast` variables
   - These CSS variables will update anytime a player changes their color for live changes to any UI using them
 - Fixed Chat Textarea not getting themed in `Foundry Colorized`.... Sorry this took so long...
