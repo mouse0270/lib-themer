@@ -1,0 +1,35 @@
+:root {
+	--frosted-glass: brightness(var(--frosted-glass-brightness)) contrast(var(--frosted-glass-contrast)) saturate(var(--frosted-glass-saturate)) blur(var(--frosted-glass-blur));
+}
+
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #hotbar .bar-controls,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #hotbar .macro,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body nav#navigation ol#scene-list li.nav-item,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body nav#controls ol.control-tools li.control-tool,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body nav#controls ol.control-tools li.scene-control,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #tah-expand-hud,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body .tah-title-button,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body .tah-action button,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #tokenbar .token,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #tokenbar .bar-controls,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #players,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body nav#navigation #nav-toggle,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #fps,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body .app {
+	backdrop-filter: var(--frosted-glass);
+}
+/* UNSET ELEMENTS */
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #navigation,
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body .control-tools {
+	backdrop-filter: unset;
+}
+
+/* MONKS */
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body .monks-scene-navigation:not(.category-filter) {
+	backdrop-filter: unset;
+}
+
+/* TOKEN HUD */
+html:has(head link[name="cssPF2eDorakoUIFrostedGlass"]) body #token-action-hud.dorako-ui  {
+	--dorako-vibrancy: var(--frosted-glass);
+}

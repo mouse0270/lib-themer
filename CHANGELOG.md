@@ -1,3 +1,12 @@
+# Version 1.0.10 - 
+- Added Loading Overlay to mark theme transition smoother between Foundry and libThemer
+  - You can disable this in the settings of libThemer
+- Moved Player CSS varaibles to Core libThemer, users will no longer need to enable Tidy Sidebar Chat to get these variables
+- Fixed D&D5e Char Card Header Colors
+- Fixed Module Management window using `shaded` text color instead of `contrast` text colors
+- Added PF2e Dorako UI Theme Frosted Glass Theme Options
+
+
 # Version 1.0.9 - PF2e System and PF2e Dorako UI Theme Support
 - Added Settings to allow users to adjust the CSS variables for the PF2e System
 - Added Settings to allow users to adjust the CSS variables for the PF2e Dorako UI Module

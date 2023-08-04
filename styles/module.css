@@ -1,3 +1,31 @@
+body::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(/ui/denim.png);
+	background-color: rgba(38, 50, 56, 1);
+	z-index: calc(var(--z-index-tooltip) + 5);
+	transition: opacity 250ms ease-in-out;
+	opacity: 0;
+	pointer-events: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5rem;
+	text-transform: uppercase;
+	color: rgba(255 255 255 / 0.8)
+}
+
+body.lib-themer-loading::after {
+	content: 'Loading...';
+	opacity: 1;
+}
+body.lib-themer-ready::after {
+	opacity: 0;
+}
 
 
 #lib-themer-dialog.sheet.journal-entry .journal-sidebar.collapsed .directory-header .header-search p {
@@ -18,6 +46,9 @@
 	border-bottom: 1px solid var(--color-border-light-primary);
 	margin-bottom: 10px;
 	padding-bottom: 10px;
+}
+#lib-themer-dialog .journal-entry-content article.journal-entry-page form .form-group .form-fields {
+	gap: 0;
 }
 #lib-themer-dialog .journal-entry-content article.journal-entry-page form .form-group .stylesheet-settings {
 	flex-basis: 100%;

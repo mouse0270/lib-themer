@@ -7,6 +7,62 @@
 			"type": "module"
 		}
 	],
+	"cssPF2eDorakoUIFrostedGlass": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.cssPF2eDorakoUIFrostedGlass.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.cssPF2eDorakoUIFrostedGlass.hint",
+		"type": "library",
+		"default": false,
+		"files": [{
+			"name": "./modules/lib-themer/themes/assets/styles/pf2e-dorako-ui-frosted-glass.css",
+			"type": "text/css"
+		}],
+		"settings": {
+			"--frosted-glass-brightness": {
+				"name": "lib-themer.theme.module.pf2e-dorako-ui.--frosted-glass-brightness.name",
+				"hint": "lib-themer.theme.module.pf2e-dorako-ui.--frosted-glass-brightness.hint",
+				"type": "number",
+				"default": "1.5",
+				"range": {
+					"min": 0,
+					"max": 5,
+					"step": 0.1
+				}
+			},
+			"--frosted-glass-contrast": {
+				"name": "lib-themer.theme.module.pf2e-dorako-ui.--frosted-glass-contrast.name",
+				"hint": "lib-themer.theme.module.pf2e-dorako-ui.--frosted-glass-contrast.hint",
+				"type": "number",
+				"default": "1.2",
+				"range": {
+					"min": 0,
+					"max": 5,
+					"step": 0.1
+				}
+			},
+			"--frosted-glass-saturate": {
+				"name": "lib-themer.theme.module.pf2e-dorako-ui.--frosted-glass-saturate.name",
+				"hint": "lib-themer.theme.module.pf2e-dorako-ui.--frosted-glass-saturate.hint",
+				"type": "number",
+				"default": "1.5",
+				"range": {
+					"min": 0,
+					"max": 5,
+					"step": 0.1
+				}
+			},
+			"--frosted-glass-blur": {
+				"name": "lib-themer.theme.module.pf2e-dorako-ui.--frosted-glass-blur.name",
+				"hint": "lib-themer.theme.module.pf2e-dorako-ui.--frosted-glass-blur.hint",
+				"type": "number",
+				"default": "5px",
+				"range": {
+					"min": 0,
+					"max": 10,
+					"step": 1
+				}
+			}
+		}
+	},
 	"--sheet-sidebar-color": {
 		"name": "lib-themer.theme.module.pf2e-dorako-ui.--sheet-sidebar-color.name",
 		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--sheet-sidebar-color.hint",

@@ -445,11 +445,15 @@ export class Themer {
 		themes = themes.concat(await this.useFilePicker(MODULE.setting("userStorage")) ?? []);
 		
 		for await (const theme of themes) {
-			game.modules.get(MODULE.ID).API.register(theme);
+			await game.modules.get(MODULE.ID).API.register(theme);
 		}
 
 		// register any modules as they init
 		Hooks.callAll(`${MODULE.ID}.Ready`, game.modules.get(MODULE.ID).API);
+
+		setTimeout(() => {
+			document.querySelector('body').classList.add(`${MODULE.ID}-ready`);
+		}, 250);
 	}
 
 	static async setPlayerColors() {

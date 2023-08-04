@@ -2,6 +2,8 @@
 	"lib-themer": {
 		"title": "libThemer",
 		"settings": {
+			"hideLibThemerLoading.name": "Hide Loading Screen",
+			"hideLibThemerLoading.hint": "When enabled, the loading screen will be hidden ASAP, instead of waiting for libThemer to finish.",
 			"enableGoogleFonts.name": "Enable Google Fonts",
 			"enableGoogleFonts.hint": "When enabled, you will be able to add google fonts from the Configure Additional Fonts setting. Please not that by adding a font from the Google Fonts API, Google will have access to your IP address. If you are uncomfortable with this, please don't use this feature or don't complain if you do.",
 			"enableMasterTheme.name": "Enable GM Theme",
@@ -484,6 +486,26 @@
 				}
 			},
 			"module.pf2e-dorako-ui": {
+				"cssPF2eDorakoUIFrostedGlass": {
+					"name": "Frosted Glass Effect",
+					"hint": "This setting applies a frosted glass effect to the sheet background."
+				},
+				"--frosted-glass-brightness": {
+					"name": "Brightness",
+					"hint": "Applies a linear multiplier value on an HTMLElement, making the HTMLElement appear brighter or darker."
+				},
+				"--frosted-glass-contrast": {
+					"name": "Contrast",
+					"hint": "Adjusts the contrast of the HTMLElement."
+				},
+				"--frosted-glass-saturate": {
+					"name": "Saturate",
+					"hint": "Super-saturates or desaturates the HTMLElement."
+				},
+				"--frosted-glass-blur": {
+					"name": "Blur",
+					"hint": "Applies a Gaussian blur to the HTMLElement."
+				},
 				"--sheet-bg": {
 					"name": "Sheet Background Color",
 					"hint": "DROP THIS SETTING: The Sheet Background Color to Use. WARNING: DO NOT CHANGE THIS UNLESS YOU REALLY WANT TO TINKER WITH ALOT OF SETTINGS. Use The DARK THEME IN PF2e Dorako UI Settings.",

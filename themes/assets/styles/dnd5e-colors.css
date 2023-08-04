@@ -62,5 +62,9 @@
 }
 
 .dnd5e.chat-card .card-header h3 {
-	color: var(--app-background-contrast);
+	color: inherit;
+}
+.dnd5e.chat-card .card-header h3:hover {
+    color: inherit;
+    text-shadow: 0 0 10px var(--palette-secondary-outline);
 }

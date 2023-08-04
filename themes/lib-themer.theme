@@ -196,9 +196,6 @@
 				"files": [{
 					"name": "./modules/lib-themer/themes/assets/styles/tidy-sidebar-chat.css",
 					"type": "text/css"
-				},{
-					"name": "./modules/lib-themer/themes/assets/scripts/tidy-sidebar-chat.js",
-					"type": "text/javscript"
 				}],
 				"settings": {
 					"--tidy-sidebar-chat-border-radius": {

@@ -42,6 +42,15 @@ Hooks.once('setup', () => {
 		config: false,
 	});
 
+	MODULE.setting('register', 'hideLibThemerLoading', {
+		type: Boolean,
+		default: false,
+		scope: 'world',
+	});
+
+	document.body.classList.toggle('lib-themer-loading', !MODULE.setting('hideLibThemerLoading'));
+	document.body.classList.toggle('lib-themer-ready', MODULE.setting('hideLibThemerLoading'));
+
 	MODULE.setting('register', 'enableGoogleFonts', {
 		type: Boolean,
 		default: true,

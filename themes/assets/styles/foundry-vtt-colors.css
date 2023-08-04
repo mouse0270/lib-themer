@@ -132,7 +132,7 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 
 /* MODULE MANAGEMENT WINDOW ───── ⋆⋅☆⋅⋆ ────────────────────────────── */
 #module-management .package-list .package-title, #module-management .package-list .package-metadata, #module-management .package-list .package-description {
-	color: var(--app-dialog-background-shaded);
+	color: var(--app-dialog-background-contrast);
 }
 
 /* SIDE BAR TABS STYLES ───────── ⋆⋅☆⋅⋆ ────────────────────────────── */
@@ -355,17 +355,20 @@ form h1.form-header, form h2.form-header, form h3.form-header {
 	border-color: var(--palette-primary-active-outline);
 	color: var(--palette-primary-active-contrast);
 }
+.dialog .dialog-buttons button.default,
 .dialog .dialog-buttons button.yes {
 	background-color: var(--palette-success);
 	border-color: var(--palette-success-700);
 	color: var(--palette-success-contrast);
 	transition: all 0.1s ease-in-out;
 }
+.dialog .dialog-buttons button.default:hover,
 .dialog .dialog-buttons button.yes:hover {
 	background-color: var(--palette-success-hover);
 	border-color: var(--palette-success-hover-outline);
 	color: var(--palette-success-hover-contrast);
 }
+.dialog .dialog-buttons button.default:active,
 .dialog .dialog-buttons button.yes:active {
 	background-color: var(--palette-success-active);
 	border-color: var(--palette-success-active-outline);

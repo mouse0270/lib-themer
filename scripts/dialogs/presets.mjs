@@ -195,7 +195,7 @@ export class PresetDialog extends FormApplication {
 			elemFile.multiple = true;
 
 			const selectFile = (event) => {
-				const elemFiles = event.path[0].files;
+				const elemFiles = event.target.files;
 				
 				Array.from(elemFiles).forEach(file => {
 					try {
