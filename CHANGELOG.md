@@ -1,7 +1,7 @@
 # Version 1.0.11 - Opt-in Loading Screen
 - Changed the loading overlay to opt-in instead of opt-out. My apologizes to those who were annoyed by it.
  - Also moved setting to client, so individual users can decide if they want to use it or not.
-- Moved the `--glass-bg` for PF2e Dorako UI closer to the top, as this variable is used for the app backgorund for this UI
+- Moved the `--glass-bg` for PF2e Dorako UI closer to the top, as this variable is used for the app background for this UI
 
 # Version 1.0.10 - Wait, I am Loading...
 - Added Loading Overlay to make theme transition smoother between Foundry and libThemer
