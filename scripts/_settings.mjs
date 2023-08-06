@@ -45,7 +45,7 @@ Hooks.once('setup', () => {
 	MODULE.setting('register', 'hideLibThemerLoading', {
 		type: Boolean,
 		default: true,
-		scope: 'world',
+		scope: 'client',
 	});
 
 	document.body.classList.toggle('lib-themer-loading', !MODULE.setting('hideLibThemerLoading'));
