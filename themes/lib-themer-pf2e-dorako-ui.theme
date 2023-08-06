@@ -7,6 +7,15 @@
 			"type": "module"
 		}
 	],
+	"--glass-bg": {
+		"name": "lib-themer.theme.module.pf2e-dorako-ui.--glass-bg.name",
+		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--glass-bg.hint",
+		"type": "color",
+		"default": "rgba(20, 20, 20, 0.6)",
+		"colors": {
+			"variations": true
+		}
+	},
 	"cssPF2eDorakoUIFrostedGlass": {
 		"name": "lib-themer.theme.module.pf2e-dorako-ui.cssPF2eDorakoUIFrostedGlass.name",
 		"hint": "lib-themer.theme.module.pf2e-dorako-ui.cssPF2eDorakoUIFrostedGlass.hint",
@@ -138,15 +147,6 @@
 		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--mats-green.hint",
 		"type": "color",
 		"default": "#3e644b",
-		"colors": {
-			"variations": true
-		}
-	},
-	"--glass-bg": {
-		"name": "lib-themer.theme.module.pf2e-dorako-ui.--glass-bg.name",
-		"hint": "lib-themer.theme.module.pf2e-dorako-ui.--glass-bg.hint",
-		"type": "color",
-		"default": "rgba(20, 20, 20, 0.6)",
 		"colors": {
 			"variations": true
 		}

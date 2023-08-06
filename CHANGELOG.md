@@ -1,5 +1,9 @@
+# Version 1.0.11 - Opt-in Loading Screen
+- Changed the loading overlay to opt-in instead of opt-out. My apologizes to those who were annoyed by it.
+- Moved the `--glass-bg` for PF2e Dorako UI closer to the top, as this variable is used for the app backgorund for this UI
+
 # Version 1.0.10 - Wait, I am Loading...
-- Added Loading Overlay to mark theme transition smoother between Foundry and libThemer
+- Added Loading Overlay to make theme transition smoother between Foundry and libThemer
   - You can disable this in the settings of libThemer
 - Moved Player CSS variables to Core libThemer, users will no longer need to enable Tidy Sidebar Chat to get these variables
 - Fixed D&D5e Char Card Header Colors
