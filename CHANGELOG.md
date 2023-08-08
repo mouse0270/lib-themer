@@ -1,3 +1,6 @@
+# Version 1.0.12 - Wait so you wanted the module to work? Weird...
+- Fixed an issue that caused missing images when using libThemer with the PF2e Dorako UI Theme
+
 # Version 1.0.11 - Opt-in Loading Screen
 - Changed the loading overlay to opt-in instead of opt-out. My apologizes to those who were annoyed by it.
  - Also moved setting to client, so individual users can decide if they want to use it or not.

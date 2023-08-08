@@ -63,16 +63,8 @@ Handlebars.registerHelper("incIndex", function(value, options) {
 /* ─────────────── ⋆⋅☆⋅⋆ ─────────────── */
 // PF2E HOOKS -> MODULE FUNCTIONS
 /* ─────────────── ⋆⋅☆⋅⋆ ─────────────── */
-Hooks.on(`${MODULE.ID}.Ready`, async () => {
+Hooks.on(`${MODULE.ID}.Ready`, async (libThemerAPI) => {
 	if (!(game.modules.get('pf2e-dorako-ui')?.active ?? false)) return;
-
-	// Attach PF2e Dorako UI Theme
-	const theme = {
-		id: 'cssPF2eDorakoUI',
-		file: `./modules/lib-themer/themes/assets/styles/pf2e-dorako-ui.css`,
-	};
-	
-	document.querySelector(`head style[name="${MODULE.ID}"]`).insertAdjacentHTML('beforebegin', `<link name="${theme.id}" href="${theme?.file}" rel="stylesheet" type="text/css" />`);
 
 	Hooks.on('lib-themer.UpdateSetting', async (setting, key, value) => {
 		if (!(['--sheet-bg', '--sheet-sidebar-color'].includes(key))) return;
@@ -96,4 +88,14 @@ Hooks.on(`${MODULE.ID}.Ready`, async () => {
 			game.modules.get(MODULE.ID).api.setCSSVariable(`--sheet-header-color-bg`, `url("${path}/${value == 'blue' ? 'blue_' : ''}header.webp")`);
 		}
 	})
+
+	// Attach PF2e Dorako UI Theme
+	const theme = {
+		id: 'cssPF2eDorakoUI',
+		file: `./modules/lib-themer/themes/assets/styles/pf2e-dorako-ui.css`,
+	};
+	
+	document.querySelector(`head style[name="${MODULE.ID}"]`).insertAdjacentHTML('beforebegin', `<link name="${theme.id}" href="${theme?.file}" rel="stylesheet" type="text/css" />`);
+
+	libThemerAPI.setCSSVariable(`--sheet-sidebar-color`, game.settings.get('lib-themer', 'themeSettings')?.['--sheet-sidebar-color']?.value ?? 'red');
 });
