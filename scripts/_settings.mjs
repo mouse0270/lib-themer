@@ -6,7 +6,7 @@ Hooks.once('setup', () => {
 	MODULE.setting('register', 'registeredThemes', {
 		type: Object,
 		default: {},
-		scope: 'world',
+		scope: 'client',
 		config: false,
 	});
 	MODULE.setting('register', 'themeSettings', {
